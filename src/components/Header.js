@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { translations } from "./translations";
@@ -67,6 +68,18 @@ export default function Header() {
         flexDirection: isArabic ? "row-reverse" : "row",
         position: "relative"
       }}>
+        {/* Logo */}
+        <Link href={`/${locale}`} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }} onClick={() => { setIsMobileMenuOpen(false); setIsCtaDropdownOpen(false); }}>
+          <Image 
+            src="/kerala_motors_logo_transparent.png" 
+            alt="Kerala Auto Motors Logo" 
+            width={160} 
+            height={50} 
+            style={{ objectFit: "contain" }}
+            priority
+          />
+        </Link>
+
         {/* Navigation (Desktop) */}
         <nav style={{ display: "flex", gap: "2rem", alignItems: "center", flexDirection: isArabic ? "row-reverse" : "row" }} className="header-nav">
           {navItems.map((item) => {
