@@ -113,7 +113,8 @@ export default function LocalizedHomePage({ params }) {
           <path d="M12 7v4M12 11h.01" />
         </svg>
       ),
-      platform: "BMW / MINI / Rolls-Royce"
+      platform: "BMW / MINI / Rolls-Royce",
+      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: isArabic ? "مرسيدس-بنز (Xentry)" : "Mercedes-Benz Xentry",
@@ -126,7 +127,8 @@ export default function LocalizedHomePage({ params }) {
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       ),
-      platform: "Mercedes-Benz / Smart / Maybach"
+      platform: "Mercedes-Benz / Smart / Maybach",
+      image: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: isArabic ? "تشخيص ABRITES" : "ABRITES Diagnostics",
@@ -139,7 +141,8 @@ export default function LocalizedHomePage({ params }) {
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       ),
-      platform: "Multi-Brand Security Engine"
+      platform: "Multi-Brand Security Engine",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: isArabic ? "أوتيل MaxiSYS Ultra S2" : "Autel MaxiSYS Ultra S2",
@@ -152,7 +155,8 @@ export default function LocalizedHomePage({ params }) {
           <circle cx="12" cy="18" r="1" />
         </svg>
       ),
-      platform: "Universal Luxury Vehicle Coverage"
+      platform: "Universal Luxury Vehicle Coverage",
+      image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -656,10 +660,6 @@ export default function LocalizedHomePage({ params }) {
                 <p style={{ color: "#71717a", fontSize: "0.8rem", lineHeight: "1.4", margin: "0.25rem 0" }}>
                   {service.desc}
                 </p>
-                
-                <span style={{ fontSize: "0.9rem", fontWeight: "800", color: "#e11d48", marginTop: "0.5rem" }}>
-                  {service.price}
-                </span>
               </div>
 
               {/* Right content block (Image 38% width) */}
@@ -913,21 +913,24 @@ export default function LocalizedHomePage({ params }) {
           border: "1px solid #e4e4e7"
         }}>
           <div style={{ textAlign: isArabic ? "right" : "left" }}>
-            <div style={{ display: "inline-block", marginBottom: "1rem" }}>
-              {softwares[activeSlide].iconSvg}
+            {/* Stable height container to prevent layout shifting on transitions */}
+            <div style={{ minHeight: "220px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+              <div style={{ display: "inline-block", marginBottom: "1rem" }}>
+                {softwares[activeSlide].iconSvg}
+              </div>
+              <span style={{ display: "block", fontSize: "0.75rem", color: "var(--accent)", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.5rem" }}>
+                {softwares[activeSlide].platform}
+              </span>
+              <h3 style={{ fontSize: "1.8rem", fontWeight: "800", color: "#18181b", marginBottom: "1rem" }}>
+                {softwares[activeSlide].title}
+              </h3>
+              <p style={{ color: "#71717a", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
+                {softwares[activeSlide].description}
+              </p>
             </div>
-            <span style={{ display: "block", fontSize: "0.75rem", color: "var(--accent)", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.5rem" }}>
-              {softwares[activeSlide].platform}
-            </span>
-            <h3 style={{ fontSize: "1.8rem", fontWeight: "800", color: "#18181b", marginBottom: "1rem" }}>
-              {softwares[activeSlide].title}
-            </h3>
-            <p style={{ color: "#71717a", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "2rem" }}>
-              {softwares[activeSlide].description}
-            </p>
             
             {/* Control buttons */}
-            <div style={{ display: "flex", gap: "1rem", flexDirection: isArabic ? "row-reverse" : "row", justifyContent: isArabic ? "flex-start" : "flex-start" }}>
+            <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexDirection: isArabic ? "row-reverse" : "row", justifyContent: isArabic ? "flex-start" : "flex-start" }}>
               <button onClick={prevSlide} className="btn btn-secondary" style={{ padding: "0.5rem 1rem", fontSize: "0.9rem", background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
                 {isArabic ? "السابق ←" : "← Prev"}
               </button>
@@ -937,32 +940,53 @@ export default function LocalizedHomePage({ params }) {
             </div>
           </div>
 
+          {/* Premium image card with constant size */}
           <div style={{
-            background: "rgba(0,0,0,0.03)",
+            position: "relative",
+            width: "100%",
+            height: "280px",
+            borderRadius: "8px",
+            overflow: "hidden",
             border: "1px solid #e4e4e7",
-            borderRadius: "6px",
-            padding: "2rem",
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "220px"
+            boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+            background: "#eaeaea"
           }}>
-            <h4 style={{ color: "#18181b", fontSize: "1.4rem", fontWeight: "800", letterSpacing: "1px" }}>
-              {softwares[activeSlide].title.split(" ")[0]}
-            </h4>
+            <Image
+              src={softwares[activeSlide].image}
+              alt={softwares[activeSlide].title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{ objectFit: "cover" }}
+              priority
+            />
+            {/* Premium Gradient Overlay with Software Metadata */}
             <div style={{
-              marginTop: "1rem",
-              padding: "0.4rem 1.2rem",
-              borderRadius: "4px",
-              background: "rgba(225,29,72,0.1)",
-              border: "1px solid rgba(225,29,72,0.2)",
-              fontSize: "0.8rem",
-              color: "var(--accent)",
-              fontWeight: "600"
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)",
+              padding: "1.5rem",
+              textAlign: isArabic ? "right" : "left",
+              direction: isArabic ? "rtl" : "ltr"
             }}>
-              {t.software.module}
+              <span style={{
+                display: "inline-block",
+                padding: "0.25rem 0.6rem",
+                borderRadius: "4px",
+                background: "var(--accent, #e11d48)",
+                fontSize: "0.7rem",
+                color: "#ffffff",
+                fontWeight: "700",
+                marginBottom: "0.5rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.5px"
+              }}>
+                {t.software.module}
+              </span>
+              <h4 style={{ color: "#ffffff", fontSize: "1.25rem", fontWeight: "800", margin: 0, textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
+                {softwares[activeSlide].title}
+              </h4>
             </div>
           </div>
         </div>
@@ -990,7 +1014,7 @@ export default function LocalizedHomePage({ params }) {
               margin: "0.25rem 0 0.5rem 0",
               letterSpacing: "2px"
             }}>
-              ///
+              {"///"}
             </div>
             <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)", fontWeight: "900", color: "#18181b", lineHeight: "1.2", margin: 0 }}>
               {isArabic ? (

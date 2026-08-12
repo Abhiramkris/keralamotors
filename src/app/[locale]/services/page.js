@@ -119,10 +119,6 @@ export default function LocalizedServicesPage({ params }) {
                 <p style={{ color: "#71717a", fontSize: "0.8rem", lineHeight: "1.4" }}>
                   {cat.desc}
                 </p>
-                
-                <span style={{ fontSize: "0.9rem", fontWeight: "800", color: "#e11d48", marginTop: "0.25rem" }}>
-                  {cat.price}
-                </span>
 
                 <div style={{ borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "0.5rem", marginTop: "0.5rem" }}>
                   <span style={{ fontSize: "0.75rem", fontWeight: "700", color: "#18181b", display: "block", marginBottom: "0.25rem" }}>
