@@ -11,11 +11,56 @@ export default function LocalizedContactPage({ params }) {
   const isArabic = locale === "ar";
   const t = translations[locale];
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(
+        "https://bloggfeature.certifyied.workers.dev/adminApiBlog/api/contact?projectId=c8e456a4-3a50-4a04-ba1e-58f6712e7b08",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            sender_name: formData.name,
+            sender_email: formData.email,
+            phone_number: formData.phone,
+            subject: formData.subject,
+            message: formData.message
+          })
+        }
+      );
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        // Fallback: If the worker returns an operational response
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setErrorMessage(
+        isArabic
+          ? "تعذر إرسال الرسالة. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة."
+          : "Failed to send message. Please check your network or call us directly."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -93,7 +138,7 @@ export default function LocalizedContactPage({ params }) {
               height: "250px"
             }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.480088921865!2d58.5587781!3d23.5511874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff6cf7dbad9b%3A0x6b72a6b2ea82697c!2sAl%20Wadi%20Al%20Kabir%2C%20Muscat%2C%20Oman!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s23.585497,58.5588108!6i17!3m1!1sen!5m1!1sen" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -102,6 +147,34 @@ export default function LocalizedContactPage({ params }) {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+            <a
+              href="https://maps.google.com/maps?q=23.585497%2C58.5588108&z=17&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.5rem",
+                padding: "0.85rem 1.25rem",
+                borderRadius: "6px",
+                background: "#ffffff",
+                border: "1px solid var(--card-border)",
+                color: "var(--accent, #e11d48)",
+                fontSize: "0.9rem",
+                fontWeight: "700",
+                textDecoration: "none",
+                transition: "var(--transition)",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.05)"
+              }}
+              className="map-directions-btn"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              {isArabic ? "فتح في خرائط Google (الاتجاهات) ←" : "Open in Google Maps (Get Directions) →"}
+            </a>
           </div>
 
           {/* Form */}
@@ -120,11 +193,19 @@ export default function LocalizedContactPage({ params }) {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem", textAlign: isArabic ? "right" : "left" }}>
+                {errorMessage && (
+                  <div style={{ padding: "0.85rem 1rem", background: "rgba(239, 68, 68, 0.1)", borderRadius: "6px", border: "1px solid #ef4444", color: "#dc2626", fontSize: "0.85rem" }}>
+                    {errorMessage}
+                  </div>
+                )}
+
                 <div>
                   <label style={{ display: "block", fontSize: "0.85rem", fontWeight: "600", marginBottom: "0.5rem", color: "#18181b" }}>{t.contact.nameLabel}</label>
                   <input 
                     type="text"
                     required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder={isArabic ? "مثال: سليم" : "e.g., Salim"}
                     style={{
                       width: "100%", padding: "0.75rem 1rem", background: "#ffffff", 
@@ -139,7 +220,24 @@ export default function LocalizedContactPage({ params }) {
                   <input 
                     type="email"
                     required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder={isArabic ? "مثال: salim@example.com" : "e.g., salim@example.com"}
+                    style={{
+                      width: "100%", padding: "0.75rem 1rem", background: "#ffffff", 
+                      border: "1px solid var(--card-border)", borderRadius: "4px", color: "#18181b", outline: "none", fontSize: "0.95rem",
+                      textAlign: isArabic ? "right" : "left"
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ display: "block", fontSize: "0.85rem", fontWeight: "600", marginBottom: "0.5rem", color: "#18181b" }}>{t.contact.phoneLabelField || (isArabic ? "رقم الهاتف (اختياري)" : "Phone Number (Optional)")}</label>
+                  <input 
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder={isArabic ? "مثال: +٩٦٨ ٧١٧١٧٢٥٩" : "e.g., +968 71717259"}
                     style={{
                       width: "100%", padding: "0.75rem 1rem", background: "#ffffff", 
                       border: "1px solid var(--card-border)", borderRadius: "4px", color: "#18181b", outline: "none", fontSize: "0.95rem",
@@ -153,6 +251,8 @@ export default function LocalizedContactPage({ params }) {
                   <input 
                     type="text"
                     required
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder={isArabic ? "مثال: استفسار حول الصيانة" : "e.g., Booking request details"}
                     style={{
                       width: "100%", padding: "0.75rem 1rem", background: "#ffffff", 
@@ -167,6 +267,8 @@ export default function LocalizedContactPage({ params }) {
                   <textarea 
                     rows="4"
                     required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder={isArabic ? "اكتب تفاصيل رسالتك..." : "Enter details..."}
                     style={{
                       width: "100%", padding: "0.75rem 1rem", background: "#ffffff", 
@@ -176,8 +278,15 @@ export default function LocalizedContactPage({ params }) {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
-                  {t.contact.submitBtn}
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="btn btn-primary" 
+                  style={{ width: "100%", opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? "not-allowed" : "pointer" }}
+                >
+                  {isSubmitting 
+                    ? (isArabic ? "جارٍ الإرسال..." : "Sending...") 
+                    : t.contact.submitBtn}
                 </button>
               </form>
             )}

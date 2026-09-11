@@ -20,7 +20,7 @@ export default function SectionTag({ text, isArabic = false }) {
             key={i} 
             style={{ 
               width: "4px", 
-              height: "14px", 
+              height: "16px", 
               background: "var(--accent)", 
               transform: isArabic ? "skewX(20deg)" : "skewX(-20deg)",
               display: "inline-block"
@@ -31,7 +31,7 @@ export default function SectionTag({ text, isArabic = false }) {
       
       {/* Label Text */}
       <span style={{
-        fontSize: "0.85rem",
+        fontSize: "0.92rem",
         fontWeight: "800",
         letterSpacing: "3px",
         color: "var(--accent)",

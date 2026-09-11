@@ -1,5 +1,12 @@
+import { notFound } from "next/navigation";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import { translations } from "@/components/translations";
+
 export default async function LocalizedLayout({ children, params }) {
   const { locale } = await params;
+  if (!translations[locale]) {
+    notFound();
+  }
   const isArabic = locale === "ar";
   const dir = isArabic ? "rtl" : "ltr";
 
@@ -12,6 +19,7 @@ export default async function LocalizedLayout({ children, params }) {
       direction: dir
     }}>
       {children}
+      <FloatingWhatsApp locale={locale} />
     </div>
   );
 }

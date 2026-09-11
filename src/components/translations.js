@@ -5,8 +5,11 @@ export const translations = {
       services: "Services",
       brands: "Brands We Service",
       about: "About",
+      blog: "Blog",
       contact: "Contact",
       phone: "+968 71717259",
+      email: "info@keralamotor.om",
+      locations: "Our Locations",
       langToggle: "العربية"
     },
     hero: {
@@ -70,16 +73,16 @@ export const translations = {
       contact: "Contact Us"
     },
     about: {
-      tag: "Our Legacy",
+      tag: "Our Story",
       title: "The Standard in Automotive Care",
-      desc1: "For years, Kerala Auto Motors has served Muscat's premium and luxury car owners. Our foundation stands on absolute honesty, manufacturer-guided repair standards, and deep technical knowledge.",
-      desc2: "We bridge the gap between expensive corporate dealerships and local workshops. By investing in official diagnostic software (ISTA, Xentry, ABRITES) and employing brand-certified mechanics, we ensure your luxury vehicle receives the exact calibration it requires.",
+      desc1: "Founded in December 2023 in Al Wadi Al Kabir, Muscat, Sultanate of Oman Kerala Auto Motors was born from a singular vision: to bring world-class, manufacturer-level expertise to owners of premium European and American vehicles in Oman. We understand that these are not merely machines — they are engineering masterpieces, and they deserve to be treated as such.",
+      desc2: "Our workshop is equipped with genuine, manufacturer-grade diagnostic systems and staffed by technicians who bring precision, discretion, and an unwavering commitment to excellence to every vehicle we touch. From the autobahns of Germany to the highways of Detroit, we speak the technical language of your vehicle fluently.",
       facilityTitle: "OEM-Grade Facilities",
       facilityDesc: "Modern service bays located in Al Wadi Al Kabir, Muscat.",
       toolingTitle: "Dealer-Grade Tooling",
       toolingDesc: "Equipped with state-of-the-art lifts, specialized transmission tables, fluid flushing systems, and multi-axis wheel aligners.",
       diagnosticTitle: "Diagnostic Platforms",
-      diagnosticDesc: "Direct access to BMW ISTA, Mercedes Xentry, ABRITES, and Autel MaxiSYS Ultra S2 interfaces.",
+      diagnosticDesc: "Direct access to ABRITES, Autel MaxiSYS Ultra S2, BMW ISTA, and Mercedes-Benz Xentry interfaces.",
       loungeTitle: "Comfortable Lounge",
       loungeDesc: "Relax in our air-conditioned lounge with complimentary Wi-Fi, refreshments, and a full view of the service bays.",
       teamTag: "Our Technicians",
@@ -139,9 +142,17 @@ export const translations = {
       successDesc: "We have received your message and will reply via email within 24 hours.",
       nameLabel: "Your Name",
       emailLabelField: "Email Address",
+      phoneLabelField: "Phone Number (Optional)",
       subjectLabel: "Subject",
       msgLabel: "Message",
       submitBtn: "Submit Message"
+    },
+    blog: {
+      tag: "Insights & News",
+      title: "Automotive News & Insights",
+      subtitle: "Latest stories, technical guides, and engineering updates from Kerala Auto Motors in Muscat.",
+      backToBlogs: "← Back to Articles",
+      readMore: "Read More"
     },
     footer: {
       desc: "Premium care for European and American luxury vehicles. Dealership-level service, diagnostics, and paint restoration with certified expertise in Oman.",
@@ -149,6 +160,12 @@ export const translations = {
       location: "WORKSHOP LOCATION",
       find: "FIND US",
       rights: "© 2026 Kerala Auto Motors. All Rights Reserved."
+    },
+    floatingWhatsApp: {
+      ariaLabel: "Chat with Kerala Auto Motors on WhatsApp",
+      tooltipTitle: "Chat with us",
+      status: "Online",
+      defaultMessage: "Hello Kerala Auto Motors, I would like to inquire about vehicle servicing."
     }
   },
   ar: {
@@ -157,8 +174,11 @@ export const translations = {
       services: "خدماتنا",
       brands: "علامات نخدمها",
       about: "من نحن",
+      blog: "المدونة",
       contact: "اتصل بنا",
       phone: "+٩٦٨ ٧١٧١٧٢٥٩",
+      email: "info@keralamotor.om",
+      locations: "مواقعنا",
       langToggle: "English"
     },
     hero: {
@@ -222,16 +242,16 @@ export const translations = {
       contact: "اتصل بنا"
     },
     about: {
-      tag: "إرثنا",
+      tag: "قصتنا",
       title: "المعيار الذهبي في رعاية السيارات",
-      desc1: "لأعوام طويلة، خدمت كيرلا أوتو موتورز ملاك السيارات الفاخرة والمتميزة في مسقط. يرتكز أساسنا على الأمانة المطلقة، ومعايير الإصلاح الموجهة من المصنع، والمعرفة الفنية العميقة.",
-      desc2: "نحن نختصر الفجوة بين الوكالات الكبرى والورش المحلية. من خلال الاستثمار في برامج التشخيص الرسمية وتوظيف الميكانيكيين المعتمدين، نضمن حصول سيارتك على المعايرة الدقيقة المطلوبة.",
+      desc1: "تأسست كيرلا أوتو موتورز في ديسمبر 2023 في منطقة الوادي الكبير، مسقط، سلطنة عمان، انطلاقاً من رؤية فريدة: تقديم خبرة عالمية بمستوى الوكالات الرسمية لملاك المركبات الأوروبية والأمريكية الفاخرة في سلطنة عمان. نحن ندرك تماماً أن هذه السيارات ليست مجرد آلات — بل هي تحف هندسية متطورة تستحق أرقى مستويات العناية.",
+      desc2: "ورشتنا مجهزة بأحدث أنظمة الفحص والتشخيص الأصلية المعتمدة من المصنع، ويعمل بها فنيون يجمعون بين الدقة والاحترافية والالتزام المطلق بالتميز مع كل سيارة نعتني بها. من أوتوبان ألمانيا إلى طرق ديترويت السريعة، نتحدث اللغة التقنية لسيارتك بطلاقة تامة.",
       facilityTitle: "مرافق بمستوى الوكلاء",
       facilityDesc: "صالة خدمة حديثة تقع في الوادي الكبير، مسقط.",
       toolingTitle: "أدوات بمستوى الوكلاء",
       toolingDesc: "مجهزة بأحدث الرافعات، وطاولات ناقل الحركة المتخصصة، وأنظمة غسيل السوائل، ومحاذاة العجلات متعددة المحاور.",
       diagnosticTitle: "منصات التشخيص",
-      diagnosticDesc: "وصول مباشر إلى واجهات BMW ISTA و Mercedes Xentry و ABRITES و Autel MaxiSYS Ultra S2.",
+      diagnosticDesc: "وصول مباشر إلى واجهات ABRITES و Autel MaxiSYS Ultra S2 و BMW ISTA و Mercedes-Benz Xentry.",
       loungeTitle: "استراحة مريحة",
       loungeDesc: "استرخ في استراحتنا المكيفة التي توفر خدمة الواي فاي المجانية والمشروبات مع إطلالة كاملة على ورشة العمل.",
       teamTag: "فنيونا",
@@ -291,9 +311,17 @@ export const translations = {
       successDesc: "لقد تلقينا رسالتك وسنقوم بالرد عبر البريد الإلكتروني في غضون ٢٤ ساعة.",
       nameLabel: "اسمك",
       emailLabelField: "البريد الإلكتروني",
+      phoneLabelField: "رقم الهاتف (اختياري)",
       subjectLabel: "الموضوع",
       msgLabel: "الرسالة",
       submitBtn: "إرسال الرسالة"
+    },
+    blog: {
+      tag: "المقالات والأخبار",
+      title: "رؤى وأخبار السيارات",
+      subtitle: "أحدث المقالات والإرشادات الهندسية لصيانة السيارات الفاخرة من كيرلا أوتو موتورز في مسقط.",
+      backToBlogs: "← العودة إلى كافة المقالات",
+      readMore: "اقرأ المزيد"
     },
     footer: {
       desc: "رعاية فائقة للمركبات الأوروبية والأمريكية الفاخرة. خدمة بمستوى الوكلاء، تشخيص الأعطال، وإعادة طلاء السيارات بخبرة معتمدة في سلطنة عمان.",
@@ -301,6 +329,12 @@ export const translations = {
       location: "موقع الورشة",
       find: "تجدنا هنا",
       rights: "© ٢٠٢٦ كيرلا أوتو موتورز. جميع الحقوق محفوظة."
+    },
+    floatingWhatsApp: {
+      ariaLabel: "تواصل مع كيرلا أوتو موتورز عبر واتساب",
+      tooltipTitle: "تواصل معنا عبر واتساب",
+      status: "متواجدون الآن",
+      defaultMessage: "مرحباً كيرلا أوتو موتورز، أود الاستفسار عن خدمات صيانة السيارات."
     }
   }
 };

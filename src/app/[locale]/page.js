@@ -3,15 +3,21 @@
 import { useState, useEffect, use, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { translations } from "@/components/translations";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
+import BlogEmbed from "@/components/BlogEmbed";
 
 export default function LocalizedHomePage({ params }) {
   const { locale } = use(params);
   const isArabic = locale === "ar";
   const t = translations[locale];
+
+  if (!t) {
+    notFound();
+  }
 
   // Brands list (Premium transparent logos mapped to auto-scrolling marquee)
   const europeanBrands = [
@@ -101,36 +107,6 @@ export default function LocalizedHomePage({ params }) {
   // Diagnostic software slider
   const softwares = [
     {
-      title: isArabic ? "تشخيص بي إم دبليو (ISTA)" : "BMW ISTA Diagnostics",
-      description: isArabic 
-        ? "واجهة تشخيص المصنع الرسمية لسيارات بي إم دبليو تتيح برمجة الوحدات وتعديل الكود والوصول للمخططات والتشخيص الدقيق."
-        : "Official BMW factory diagnostic interface allowing module programming, vehicle coding, wiring diagrams access, and exact troubleshooting guides.",
-      iconSvg: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-          <line x1="8" y1="21" x2="16" y2="21" />
-          <line x1="12" y1="17" x2="12" y2="21" />
-          <path d="M12 7v4M12 11h.01" />
-        </svg>
-      ),
-      platform: "BMW / MINI / Rolls-Royce",
-      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: isArabic ? "مرسيدس-بنز (Xentry)" : "Mercedes-Benz Xentry",
-      description: isArabic
-        ? "منصة تشخيص الأعطال وبرمجة (SCN) المتصلة مباشرة بخوادم المصنع لتنفيذ التعديلات الأمنية وبرمجة وحدات التحكم."
-        : "Direct server-linked workshop diagnosis and SCN programming platform to execute security adaptions and flash control modules.",
-      iconSvg: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
-          <circle cx="12" cy="12" r="10" />
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-        </svg>
-      ),
-      platform: "Mercedes-Benz / Smart / Maybach",
-      image: "https://images.unsplash.com/photo-1615906655593-ad0386982a0f?auto=format&fit=crop&w=800&q=80"
-    },
-    {
       title: isArabic ? "تشخيص ABRITES" : "ABRITES Diagnostics",
       description: isArabic
         ? "النظام الرائد لتعديل أمان المركبات، ومزامنة الوحدات، وبرمجة أجهزة الإرسال والاستقبال، ومطابقة حماية المكونات."
@@ -142,7 +118,7 @@ export default function LocalizedHomePage({ params }) {
         </svg>
       ),
       platform: "Multi-Brand Security Engine",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+      image: "/diagnostics/abrites.png"
     },
     {
       title: isArabic ? "أوتيل MaxiSYS Ultra S2" : "Autel MaxiSYS Ultra S2",
@@ -156,7 +132,37 @@ export default function LocalizedHomePage({ params }) {
         </svg>
       ),
       platform: "Universal Luxury Vehicle Coverage",
-      image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80"
+      image: "/diagnostics/autel.png"
+    },
+    {
+      title: isArabic ? "تشخيص بي إم دبليو (ISTA)" : "BMW ISTA Diagnostics",
+      description: isArabic 
+        ? "واجهة تشخيص المصنع الرسمية لسيارات بي إم دبليو تتيح برمجة الوحدات وتعديل الكود والوصول للمخططات والتشخيص الدقيق."
+        : "Official BMW factory diagnostic interface allowing module programming, vehicle coding, wiring diagrams access, and exact troubleshooting guides.",
+      iconSvg: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+          <path d="M12 7v4M12 11h.01" />
+        </svg>
+      ),
+      platform: "BMW / MINI / Rolls-Royce",
+      image: "/diagnostics/bmw-ista.png"
+    },
+    {
+      title: isArabic ? "مرسيدس-بنز (Xentry)" : "Mercedes-Benz Xentry",
+      description: isArabic
+        ? "منصة تشخيص الأعطال وبرمجة (SCN) المتصلة مباشرة بخوادم المصنع لتنفيذ التعديلات الأمنية وبرمجة وحدات التحكم."
+        : "Direct server-linked workshop diagnosis and SCN programming platform to execute security adaptions and flash control modules.",
+      iconSvg: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ),
+      platform: "Mercedes-Benz / Smart / Maybach",
+      image: "/diagnostics/mercedes-xentry.png"
     }
   ];
 
@@ -183,10 +189,8 @@ export default function LocalizedHomePage({ params }) {
       image: "/service_general.jpg",
       path: "/services/general-maintenance",
       iconSvg: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-          <line x1="12" y1="17" x2="12.01" y2="17" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </svg>
       )
     },
@@ -197,8 +201,13 @@ export default function LocalizedHomePage({ params }) {
       image: "/service_engine.jpg",
       path: "/services/engine-repair",
       iconSvg: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="6" y="2" width="12" height="7.5" rx="1.5" />
+          <line x1="6" y1="4.5" x2="18" y2="4.5" />
+          <line x1="6" y1="7" x2="18" y2="7" />
+          <path d="M10 9.5v5.5a2.5 2.5 0 0 0 4 0V9.5" />
+          <circle cx="12" cy="18" r="2.5" />
+          <circle cx="12" cy="18" r="0.8" fill="currentColor" />
         </svg>
       )
     },
@@ -209,9 +218,11 @@ export default function LocalizedHomePage({ params }) {
       image: "/service_transmission.jpg",
       path: "/services/transmission-service",
       iconSvg: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="8" />
-          <path d="M12 2v20M2 12h20" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="8" cy="8" r="2.5" />
+          <path d="M8 2.5v2.5M8 11v2.5M2.5 8H5M11 8h2.5M4.1 4.1l1.8 1.8M10.1 10.1l1.8 1.8M4.1 11.9l1.8-1.8M10.1 5.9l1.8-1.8" />
+          <circle cx="16" cy="16" r="2" />
+          <path d="M16 11.5V13M16 19v1.5M11.5 16H13M19 16h1.5M12.8 12.8l1.1 1.1M18.1 18.1l1.1 1.1M12.8 19.2l1.1-1.1M18.1 13.9l1.1-1.1" />
         </svg>
       )
     },
@@ -222,10 +233,12 @@ export default function LocalizedHomePage({ params }) {
       image: "/service_brake.jpg",
       path: "/services/suspension-steering",
       iconSvg: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <circle cx="12" cy="12" r="6" />
-          <circle cx="12" cy="12" r="2" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="7" y1="2.5" x2="17" y2="2.5" />
+          <line x1="12" y1="2.5" x2="12" y2="5" />
+          <path d="M7 5c0 1.5 10 1.5 10 3s-10 1.5-10 3 10 1.5 10 3-10 1.5-10 3 10 1.5 10 3" />
+          <line x1="12" y1="20" x2="12" y2="22" />
+          <line x1="7" y1="22" x2="17" y2="22" />
         </svg>
       )
     },
@@ -236,8 +249,16 @@ export default function LocalizedHomePage({ params }) {
       image: "/service_ac.jpg",
       path: "/services/air-conditioning",
       iconSvg: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2v20M4.93 4.93l14.14 14.14M2 12h20M4.93 19.07L19.07 4.93" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="12" y1="2" x2="12" y2="22" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <line x1="5" y1="5" x2="19" y2="19" />
+          <line x1="5" y1="19" x2="19" y2="5" />
+          <path d="M8 6l4-3 4 3" />
+          <path d="M8 18l4 3 4-3" />
+          <path d="M6 8l-3 4 3 4" />
+          <path d="M18 8l3 4-3 4" />
+          <circle cx="12" cy="12" r="1.5" fill="currentColor" />
         </svg>
       )
     },
@@ -248,9 +269,13 @@ export default function LocalizedHomePage({ params }) {
       image: "/service_ecu.jpg",
       path: "/services/electrical-electronics",
       iconSvg: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
-          <path d="M6 6h12v12H6z" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="5" width="14" height="14" rx="2" />
+          <rect x="9" y="9" width="6" height="6" />
+          <path d="M9 2v3M12 2v3M15 2v3" />
+          <path d="M9 19v3M12 19v3M15 19v3" />
+          <path d="M2 9h3M2 12h3M2 15h3" />
+          <path d="M19 9h3M19 12h3M19 15h3" />
         </svg>
       )
     }
@@ -456,185 +481,8 @@ export default function LocalizedHomePage({ params }) {
         </div>
       </section>
 
-      {/* 2. BRANDS WE SERVICE */}
-      <section id="brands" style={{
-        padding: "5rem 0",
-        background: "#ffffff",
-        borderBottom: "1px solid rgba(0,0,0,0.06)",
-        overflow: "hidden",
-        position: "relative"
-      }}>
-        <div style={{
-          maxWidth: "var(--max-width)",
-          margin: "0 auto 2.5rem auto",
-          padding: "0 2rem",
-          textAlign: "center"
-        }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "800", color: "#18181b", marginBottom: "0.5rem" }}>
-            {t.brands.title}
-          </h2>
-          <p style={{ color: "#71717a", fontSize: "0.95rem" }}>
-            {isArabic ? "موثوق به من قبل مالكي أرقى السيارات في العالم." : "Trusted by owners of the world's finest automobiles."}
-          </p>
-        </div>
-
-        {/* European Brands Track */}
-        <div style={{ marginBottom: "2.5rem" }}>
-          <div style={{ maxWidth: "var(--max-width)", margin: "0 auto 1rem auto", padding: "0 2rem", textAlign: isArabic ? "right" : "left" }}>
-            <span style={{ fontSize: "0.85rem", fontWeight: "800", color: "var(--accent, #e11d48)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-              {isArabic ? "— السيارات الأوروبية" : "— European Specialists"}
-            </span>
-          </div>
-          <div className="marquee-container">
-            <div className="marquee-content-left">
-              {[...europeanBrands, ...europeanBrands].map((brand, idx) => (
-                <div key={idx} className="marquee-item">
-                  <div style={{ position: "relative", width: "70px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Image 
-                      src={brand.logo} 
-                      alt={brand.name} 
-                      fill
-                      sizes="70px"
-                      style={{ objectFit: "contain" }}
-                      className="brand-logo-img"
-                    />
-                  </div>
-                  <span style={{ fontSize: "0.9rem", fontWeight: "700", color: "#18181b" }}>{brand.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* American Brands Track */}
-        <div>
-          <div style={{ maxWidth: "var(--max-width)", margin: "0 auto 1rem auto", padding: "0 2rem", textAlign: isArabic ? "right" : "left" }}>
-            <span style={{ fontSize: "0.85rem", fontWeight: "800", color: "var(--accent, #e11d48)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-              {isArabic ? "— السيارات الأمريكية" : "— American Specialists"}
-            </span>
-          </div>
-          <div className="marquee-container">
-            <div className="marquee-content-right">
-              {[...americanBrands, ...americanBrands, ...americanBrands, ...americanBrands].map((brand, idx) => (
-                <div key={idx} className="marquee-item">
-                  <div style={{ position: "relative", width: "70px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Image 
-                      src={brand.logo} 
-                      alt={brand.name} 
-                      fill
-                      sizes="70px"
-                      style={{ objectFit: "contain" }}
-                      className="brand-logo-img"
-                    />
-                  </div>
-                  <span style={{ fontSize: "0.9rem", fontWeight: "700", color: "#18181b" }}>{brand.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <style jsx global>{`
-          .marquee-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            display: flex;
-            padding: 0.5rem 0;
-          }
-          /* Masking gradient overlay on both sides for premium fading look */
-          .marquee-container::before,
-          .marquee-container::after {
-            content: "";
-            height: 100%;
-            width: 15%;
-            position: absolute;
-            z-index: 2;
-            pointer-events: none;
-            top: 0;
-          }
-          .marquee-container::before {
-            left: 0;
-            background: linear-gradient(to right, #ffffff 0%, transparent 100%);
-          }
-          .marquee-container::after {
-            right: 0;
-            background: linear-gradient(to left, #ffffff 0%, transparent 100%);
-          }
-
-          .marquee-content-left {
-            display: flex;
-            gap: 2rem;
-            animation: marquee-left 35s linear infinite;
-            white-space: nowrap;
-            width: max-content;
-          }
-
-          .marquee-content-right {
-            display: flex;
-            gap: 2rem;
-            animation: marquee-right 30s linear infinite;
-            white-space: nowrap;
-            width: max-content;
-          }
-          
-          .marquee-container:hover .marquee-content-left,
-          .marquee-container:hover .marquee-content-right {
-            animation-play-state: paused;
-          }
-
-          .marquee-item {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: #f4f4f5;
-            border: 1px solid #e4e4e7;
-            border-radius: 12px;
-            padding: 0.75rem 1.5rem;
-            min-width: 190px;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .marquee-item:hover {
-            background: #ffffff;
-            border-color: var(--accent, #e11d48);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transform: translateY(-2px);
-          }
-
-          .brand-logo-img {
-            filter: grayscale(100%) opacity(0.65);
-            transition: all 0.3s ease;
-          }
-
-          .marquee-item:hover .brand-logo-img {
-            filter: grayscale(0%) opacity(1);
-          }
-
-          @keyframes marquee-left {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-
-          @keyframes marquee-right {
-            0% {
-              transform: translateX(-50%);
-            }
-            100% {
-              transform: translateX(0);
-            }
-          }
-        `}</style>
-      </section>
-
-      {/* 3. SERVICES PREVIEW GRID */}
-      <section style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
+      {/* 2. SERVICES PREVIEW GRID (OUR PRECISION SOLUTIONS) */}
+      <section id="services-preview" style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <SectionTag text={t.services.subtitle} isArabic={isArabic} />
           <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
@@ -654,10 +502,10 @@ export default function LocalizedHomePage({ params }) {
                   }}>
                     {service.iconSvg}
                   </div>
-                  <h3 style={{ fontSize: "1.05rem", fontWeight: "800", color: "#18181b", lineHeight: "1.2" }}>{service.name}</h3>
+                  <h3 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#18181b", lineHeight: "1.2" }}>{service.name}</h3>
                 </div>
                   
-                <p style={{ color: "#71717a", fontSize: "0.8rem", lineHeight: "1.4", margin: "0.25rem 0" }}>
+                <p style={{ color: "#71717a", fontSize: "0.88rem", lineHeight: "1.5", margin: "0.25rem 0" }}>
                   {service.desc}
                 </p>
               </div>
@@ -672,7 +520,7 @@ export default function LocalizedHomePage({ params }) {
               }}>
                 <Image 
                   src={service.image} 
-                  alt={service.name}
+                  alt={service.name} 
                   fill
                   style={{ objectFit: "cover" }}
                 />
@@ -689,7 +537,7 @@ export default function LocalizedHomePage({ params }) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: "0.75rem",
+                  fontSize: "0.85rem",
                   fontWeight: "900",
                   border: "1.5px solid #ffffff",
                   zIndex: 5
@@ -700,9 +548,53 @@ export default function LocalizedHomePage({ params }) {
             </Link>
           ))}
         </div>
+
+        {/* Load More Option -> Redirect to /services */}
+        <div style={{ marginTop: "3.5rem", textAlign: "center" }}>
+          <Link
+            href={`/${locale}/services`}
+            className="load-more-services-btn"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.75rem",
+              padding: "1rem 2.5rem",
+              borderRadius: "8px",
+              background: "#18181b",
+              color: "#ffffff",
+              fontSize: "1rem",
+              fontWeight: "700",
+              letterSpacing: "0.02em",
+              textDecoration: "none",
+              boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
+              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+              border: "1px solid #27272a",
+              flexDirection: isArabic ? "row-reverse" : "row"
+            }}
+          >
+            <span>{isArabic ? "تحميل المزيد من الخدمات (استكشف كافة الخدمات)" : "Load More Services (View All Services)"}</span>
+            <span style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "26px",
+              height: "26px",
+              borderRadius: "50%",
+              background: "var(--accent, #e11d48)",
+              color: "#ffffff",
+              fontSize: "0.85rem",
+              fontWeight: "900",
+              transition: "transform 0.3s ease"
+            }}>
+              {isArabic ? "←" : "→"}
+            </span>
+          </Link>
+        </div>
       </section>
 
-      {/* 4. WHY CHOOSE US? */}
+
+      {/* 3. WHY CHOOSE US? */}
       <section style={{ padding: "6rem 2rem", background: "#ffffff", borderTop: "1px solid var(--card-border)", borderBottom: "1px solid var(--card-border)" }}>
         <div className="why-choose-us-grid" style={{ 
           maxWidth: "var(--max-width)", 
@@ -890,7 +782,7 @@ export default function LocalizedHomePage({ params }) {
         `}</style>
       </section>
 
-      {/* 5. DIAGNOSTIC SOFTWARE SHOWCASE */}
+      {/* 4. DIAGNOSTIC SOFTWARE SHOWCASE */}
       <section style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <SectionTag text={t.software.tag} isArabic={isArabic} />
@@ -930,13 +822,39 @@ export default function LocalizedHomePage({ params }) {
             </div>
             
             {/* Control buttons */}
-            <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexDirection: isArabic ? "row-reverse" : "row", justifyContent: isArabic ? "flex-start" : "flex-start" }}>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "1.25rem",
+              marginTop: "2rem",
+              flexDirection: isArabic ? "row-reverse" : "row",
+              justifyContent: isArabic ? "flex-start" : "flex-start"
+            }}>
               <button onClick={prevSlide} className="btn btn-secondary" style={{ padding: "0.5rem 1rem", fontSize: "0.9rem", background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
                 {isArabic ? "السابق ←" : "← Prev"}
               </button>
               <button onClick={nextSlide} className="btn btn-primary" style={{ padding: "0.5rem 1rem", fontSize: "0.9rem" }}>
                 {isArabic ? "التالي →" : "Next →"}
               </button>
+              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+                {softwares.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveSlide(idx)}
+                    style={{
+                      width: activeSlide === idx ? "20px" : "8px",
+                      height: "8px",
+                      borderRadius: "4px",
+                      background: activeSlide === idx ? "var(--accent, #e11d48)" : "#d4d4d8",
+                      border: "none",
+                      cursor: "pointer",
+                      padding: 0,
+                      transition: "all 0.3s ease"
+                    }}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -944,55 +862,26 @@ export default function LocalizedHomePage({ params }) {
           <div style={{
             position: "relative",
             width: "100%",
-            height: "280px",
+            height: "320px",
             borderRadius: "8px",
             overflow: "hidden",
             border: "1px solid #e4e4e7",
             boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-            background: "#eaeaea"
+            background: "#ffffff"
           }}>
             <Image
               src={softwares[activeSlide].image}
               alt={softwares[activeSlide].title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain", padding: "1.25rem" }}
               priority
             />
-            {/* Premium Gradient Overlay with Software Metadata */}
-            <div style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%)",
-              padding: "1.5rem",
-              textAlign: isArabic ? "right" : "left",
-              direction: isArabic ? "rtl" : "ltr"
-            }}>
-              <span style={{
-                display: "inline-block",
-                padding: "0.25rem 0.6rem",
-                borderRadius: "4px",
-                background: "var(--accent, #e11d48)",
-                fontSize: "0.7rem",
-                color: "#ffffff",
-                fontWeight: "700",
-                marginBottom: "0.5rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.5px"
-              }}>
-                {t.software.module}
-              </span>
-              <h4 style={{ color: "#ffffff", fontSize: "1.25rem", fontWeight: "800", margin: 0, textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>
-                {softwares[activeSlide].title}
-              </h4>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* 6. OUR PROCESS */}
+      {/* 5. OUR PROCESS */}
       <section style={{ padding: "6rem 2rem", background: "#ffffff", borderTop: "1px solid var(--card-border)" }}>
         <div style={{ maxWidth: "var(--max-width)", margin: "0 auto" }}>
           
@@ -1234,7 +1123,7 @@ export default function LocalizedHomePage({ params }) {
         `}</style>
       </section>
 
-      {/* 7. GOOGLE REVIEWS */}
+      {/* 6. GOOGLE REVIEWS (TESTIMONIALS) */}
       <section style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <SectionTag text={t.testimonials.tag} isArabic={isArabic} />
@@ -1276,7 +1165,205 @@ export default function LocalizedHomePage({ params }) {
         </div>
       </section>
 
-      {/* 8. CALL TO ACTION */}
+      {/* 7. BRANDS WE SERVICE */}
+      <section id="brands" style={{
+        padding: "5rem 0",
+        background: "#ffffff",
+        borderTop: "1px solid rgba(0,0,0,0.06)",
+        borderBottom: "1px solid rgba(0,0,0,0.06)",
+        overflow: "hidden",
+        position: "relative"
+      }}>
+        <div style={{
+          maxWidth: "var(--max-width)",
+          margin: "0 auto 2.5rem auto",
+          padding: "0 2rem",
+          textAlign: "center"
+        }}>
+          <h2 style={{ fontSize: "2rem", fontWeight: "800", color: "#18181b", marginBottom: "0.5rem" }}>
+            {t.brands.title}
+          </h2>
+          <p style={{ color: "#71717a", fontSize: "0.95rem" }}>
+            {isArabic ? "موثوق به من قبل مالكي أرقى السيارات في العالم." : "Trusted by owners of the world's finest automobiles."}
+          </p>
+        </div>
+
+        {/* European Brands Track */}
+        <div style={{ marginBottom: "2.5rem" }}>
+          <div style={{ maxWidth: "var(--max-width)", margin: "0 auto 1rem auto", padding: "0 2rem", textAlign: isArabic ? "right" : "left" }}>
+            <span style={{ fontSize: "0.85rem", fontWeight: "800", color: "var(--accent, #e11d48)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              {isArabic ? "— السيارات الأوروبية" : "— European Specialists"}
+            </span>
+          </div>
+          <div className="marquee-container">
+            <div className="marquee-content-left">
+              {[...europeanBrands, ...europeanBrands].map((brand, idx) => (
+                <div key={idx} className="marquee-item">
+                  <div style={{ position: "relative", width: "70px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Image 
+                      src={brand.logo} 
+                      alt={brand.name} 
+                      fill
+                      sizes="70px"
+                      style={{ objectFit: "contain" }}
+                      className="brand-logo-img"
+                    />
+                  </div>
+                  <span style={{ fontSize: "0.9rem", fontWeight: "700", color: "#18181b" }}>{brand.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* American Brands Track */}
+        <div>
+          <div style={{ maxWidth: "var(--max-width)", margin: "0 auto 1rem auto", padding: "0 2rem", textAlign: isArabic ? "right" : "left" }}>
+            <span style={{ fontSize: "0.85rem", fontWeight: "800", color: "var(--accent, #e11d48)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              {isArabic ? "— السيارات الأمريكية" : "— American Specialists"}
+            </span>
+          </div>
+          <div className="marquee-container">
+            <div className="marquee-content-right">
+              {[...americanBrands, ...americanBrands, ...americanBrands, ...americanBrands].map((brand, idx) => (
+                <div key={idx} className="marquee-item">
+                  <div style={{ position: "relative", width: "70px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Image 
+                      src={brand.logo} 
+                      alt={brand.name} 
+                      fill
+                      sizes="70px"
+                      style={{ objectFit: "contain" }}
+                      className="brand-logo-img"
+                    />
+                  </div>
+                  <span style={{ fontSize: "0.9rem", fontWeight: "700", color: "#18181b" }}>{brand.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <style jsx global>{`
+          .marquee-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            display: flex;
+            padding: 0.5rem 0;
+          }
+          /* Masking gradient overlay on both sides for premium fading look */
+          .marquee-container::before,
+          .marquee-container::after {
+            content: "";
+            height: 100%;
+            width: 15%;
+            position: absolute;
+            z-index: 2;
+            pointer-events: none;
+            top: 0;
+          }
+          .marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+          }
+          .marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+          }
+
+          .marquee-content-left {
+            display: flex;
+            gap: 2rem;
+            animation: marquee-left 35s linear infinite;
+            white-space: nowrap;
+            width: max-content;
+          }
+
+          .marquee-content-right {
+            display: flex;
+            gap: 2rem;
+            animation: marquee-right 30s linear infinite;
+            white-space: nowrap;
+            width: max-content;
+          }
+          
+          .marquee-container:hover .marquee-content-left,
+          .marquee-container:hover .marquee-content-right {
+            animation-play-state: paused;
+          }
+
+          .marquee-item {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f4f4f5;
+            border: 1px solid #e4e4e7;
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            min-width: 190px;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .marquee-item:hover {
+            background: #ffffff;
+            border-color: var(--accent, #e11d48);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+          }
+
+          .brand-logo-img {
+            filter: grayscale(100%) opacity(0.65);
+            transition: all 0.3s ease;
+          }
+
+          .marquee-item:hover .brand-logo-img {
+            filter: grayscale(0%) opacity(1);
+          }
+
+          @keyframes marquee-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+
+          @keyframes marquee-right {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+        `}</style>
+      </section>
+
+      {/* 8. AUTOMOTIVE INSIGHTS & BLOG (3x3 Grid) */}
+      <section id="blog" style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
+        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <SectionTag text={t.blog?.tag || (isArabic ? "المقالات والأخبار" : "Insights & News")} isArabic={isArabic} />
+          <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
+            {t.blog?.title || (isArabic ? "رؤى وأخبار السيارات" : "Automotive News & Insights")}
+          </h2>
+          <p style={{ color: "var(--text-muted)", maxWidth: "600px", margin: "0.75rem auto 0 auto", lineHeight: "1.6" }}>
+            {t.blog?.subtitle || (isArabic ? "أحدث المقالات والإرشادات الهندسية لصيانة السيارات الفاخرة في مسقط." : "Latest stories, technical guides, and engineering updates from Kerala Auto Motors.")}
+          </p>
+        </div>
+
+        <BlogEmbed 
+          type="container" 
+          projectId="c8e456a4-3a50-4a04-ba1e-58f6712e7b08" 
+          limit={9} 
+          redirectUrl={`/${locale}/blog`} 
+        />
+      </section>
+
+      {/* 9. CALL TO ACTION */}
       <section style={{
         padding: "6rem 2rem",
         background: "linear-gradient(rgba(225,29,72,0.92), rgba(225,29,72,0.98)), url('/pierre.jpg')",

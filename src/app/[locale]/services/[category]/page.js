@@ -11,34 +11,34 @@ import Footer from "@/components/Footer";
 const serviceDetails = {
   en: {
     "general-maintenance": {
-      title: "General Maintenance",
-      tagline: "Comprehensive care to keep your vehicle performing at its best.",
-      desc: "Routine, proactive maintenance is vital to the lifespan and integrity of a luxury vehicle. Our technicians carry out thorough, factory-compliant servicing that mirrors the standards of authorized dealers.",
+      title: "Certified Periodic Maintenance & Digital Inspection",
+      tagline: "Factory-compliant scheduled servicing, synthetic fluid engineering, and bumper-to-bumper multi-point digital diagnostic inspections.",
+      desc: "Routine proactive maintenance is vital to the lifespan and mechanical integrity of a luxury vehicle. Our technicians execute comprehensive dealer-level protocols using premium synthetic lubricants and diagnostic telemetry.",
       features: [
-        { name: "Periodic Vehicle Service", desc: "Scheduled intervals aligned with manufacturer requirements to keep warranties active." },
+        { name: "Periodic Vehicle Service", desc: "Scheduled intervals aligned with manufacturer requirements to preserve performance and warranties." },
         { name: "Minor Service", desc: "Lube, filter updates, and general performance diagnostics." },
         { name: "Major Service", desc: "In-depth checks including spark plugs, engine components, and comprehensive system tests." },
-        { name: "Oil & Filter Change", desc: "Using high-grade full synthetic lubricants (Castrol/Mobil 1) matched to your engine's spec." },
-        { name: "Multi-Point Vehicle Inspection", desc: "A rigorous bumper-to-bumper check covering electronics, structure, and mechanics." },
+        { name: "Oil & Filter Change", desc: "Using high-grade full synthetic lubricants (Castrol/Mobil 1) matched to your engine spec." },
+        { name: "Multi-Point Vehicle Inspection", desc: "A rigorous bumper-to-bumper check covering electronics, structure, braking, and mechanics." },
         { name: "Fluid Top-Up & Replacement", desc: "Testing and replacing coolant, steering fluid, and washer fluids to safeguard systems." }
       ]
     },
     "engine-repair": {
-      title: "Engine Services",
-      tagline: "Advanced diagnostics and complete engine block restorations.",
-      desc: "Your premium car has a complex power plant requiring specialized diagnostic platforms and mechanical skills. From simple leaks to complete engine overhauls, we manage every step with precision.",
+      title: "Precision Engine Diagnostics & Blueprint Overhaul",
+      tagline: "Specialized dealer-level diagnostics, cylinder block machining, timing chain synchronization, and precision rebuilds for German and European high-performance engines.",
+      desc: "Your premium vehicle houses a high-precision power plant requiring specialized diagnostic platforms and mechanical mastery. From sensor faults to complete engine blueprint overhauls, we deliver precision care.",
       features: [
         { name: "Engine Diagnostics", desc: "Using specialized platforms like BMW ISTA and Mercedes Xentry to locate sensor or timing errors." },
-        { name: "Engine Repair & Overhaul", desc: "Complete engine dismantling, component block machining, and blueprint rebuilds." },
-        { name: "Timing Belt/Chain Replacement", desc: "Preventative and reactive replacements to avoid catastrophic engine crashes." },
+        { name: "Engine Repair & Overhaul", desc: "Complete engine dismantling, component block machining, cylinder honing, and blueprint rebuilds." },
+        { name: "Timing Belt/Chain Replacement", desc: "Preventative and reactive replacements to avoid catastrophic engine valvetrain crashes." },
         { name: "Cooling System Service", desc: "Thermostats, coolant pumps, and expansion tanks flushed and upgraded." },
         { name: "Radiator Repair & Replacement", desc: "Fixing system pressure drops and heat dissipation leaks." }
       ]
     },
     "transmission-service": {
-      title: "Transmission Services",
-      tagline: "Calibrated transmission repairs, gearbox coding, and oil flushes.",
-      desc: "Dual-clutch (DCT), torque-converter, and multi-speed luxury gearboxes demand highly trained technicians. We carry out preventative transmission servicing and full gearbox rebuilds.",
+      title: "Transmission Diagnostics, Mechatronics & Gearbox Overhaul",
+      tagline: "Calibrated transmission repairs, pressurized fluid flushes, and mechatronic coding for automatic, dual-clutch (DCT), and ZF multi-speed gearboxes.",
+      desc: "Dual-clutch (DCT), torque-converter, and multi-speed luxury gearboxes demand highly trained technicians. We carry out preventative transmission servicing, pressurized fluid flushing, and full gearbox rebuilds.",
       features: [
         { name: "Automatic Transmission Service", desc: "Comprehensive clutch, torque converter, and pressure solenoid checks." },
         { name: "Gearbox Diagnostics", desc: "Electronic module scanning to isolate gear slippage or shifts delays." },
@@ -47,9 +47,9 @@ const serviceDetails = {
       ]
     },
     "brake-repair": {
-      title: "Brake Services",
-      tagline: "High-performance braking system checks and replacements.",
-      desc: "Safety is paramount. We handle everything from basic pad changes to rebuilding electronic parking brakes and complex multi-piston calipers using OEM or OE-quality brake parts.",
+      title: "High-Performance Braking Systems & Caliper Servicing",
+      tagline: "Precision laser runout testing, carbon-ceramic and ventilated disc replacement, multi-piston monobloc caliper overhauls, and pressurized DOT fluid flushes.",
+      desc: "Safety is paramount. We handle everything from basic pad changes to rebuilding electronic parking brakes, testing rotor tolerances with micrometers, and rebuilding multi-piston monobloc calipers.",
       features: [
         { name: "Brake Pad Replacement", desc: "Installing low-dust premium ceramic or semi-metallic friction pads." },
         { name: "Brake Disc/Rotor Replacement", desc: "High-carbon brake discs fitted to minimize heat deformation and judder." },
@@ -59,62 +59,123 @@ const serviceDetails = {
       ]
     },
     "suspension-steering": {
-      title: "Suspension & Steering",
-      tagline: "Expert repair of advanced Airmatic and Hydraulic suspension systems.",
-      desc: "Luxury passenger cars feature sophisticated ride systems that guarantee ultimate comfort. We possess the rare tools and expertise to repair these complex setups.",
+      title: "Active Airmatic Suspension & 3D Laser Steering Alignment",
+      tagline: "Expert diagnostics and replacement of pneumatic air springs, electronic dampers, hydraulic steering racks, and multi-axis 3D laser geometry alignment.",
+      desc: "Luxury passenger cars feature sophisticated ride systems that guarantee ultimate comfort. We possess the rare tools and expertise to repair active pneumatic air suspensions and calibrate 3D steering geometry.",
       features: [
         { name: "Suspension Repair", desc: "Replacing control arms, ball joints, bushings, and sway bar links." },
-        { name: "Shock Absorber Replacement", desc: "Specialized diagnostics and replacement of pneumatic air springs and active hydraulic dampening systems." },
-        { name: "Steering System Repair", desc: "Fixing EPS steering racks, fluid pumps, high-pressure lines, and inner/outer tie rods." },
+        { name: "Shock Absorber Replacement (Airmatic & Hydraulic)", desc: "Specialized diagnostics and replacement of pneumatic air springs and active hydraulic dampening systems." },
+        { name: "Steering System Repair (Electrical & Hydraulic)", desc: "Fixing EPS steering racks, fluid pumps, high-pressure lines, and inner/outer tie rods." },
         { name: "Wheel Alignment", desc: "Multi-axis laser alignment matching strict manufacturer ride-height specifications." },
         { name: "Wheel Balancing", desc: "Correcting tire mass distribution to eliminate high-speed steering vibration." }
       ]
     },
     "electrical-electronics": {
-      title: "Electrical & Electronics",
-      tagline: "ECU programming, SCN coding, and software diagnostic sweeps.",
-      desc: "Modern German and European automobiles are rolling supercomputers. We have licensed software capabilities equivalent to local dealerships to code, update, and program modules.",
+      title: "ECU / TCU Programming & Dealer-Level SCN Coding",
+      tagline: "Direct-server software calibration, CAN-bus network troubleshooting, module synchronization, and dealership-grade computerized electronics diagnosis.",
+      desc: "Modern German and European automobiles are rolling supercomputers. We have licensed dealer-level software capabilities to code, update, and program onboard control units and CAN-bus networks.",
       features: [
-        { name: "Computer Diagnostics", desc: "Complete code sweeps mapping localized network communication status." },
-        { name: "Battery Testing & Replacement", desc: "Testing cranking voltage and registering new AGM/Li-Ion batteries to the vehicle." },
-        { name: "Starter Motor & Alternator Repair", desc: "Overhauling primary starting solenoids and electrical power generators." },
-        { name: "ECU Programming", desc: "Updating engine control software mapping to resolve driveability faults." },
-        { name: "VGS 3&4 Programming", desc: "Specialized transmission module calibration and security adaptations." },
-        { name: "TCU / SCN Coding", desc: "Software Calibration Number coding and Transmission Control Module synchronization." }
+        { name: "Computer Diagnostics", desc: "Complete code sweeps mapping localized network communication status and CAN-bus telemetry." },
+        { name: "Battery Testing & Replacement", desc: "Testing cranking voltage and registering new AGM/Li-Ion batteries to the vehicle power management system." },
+        { name: "Starter Motor Repair", desc: "Overhauling primary starting solenoids and electrical power starters." },
+        { name: "Alternator Repair", desc: "Testing rectifiers, replacing voltage regulators, and heavy-duty alternator overhauls." },
+        { name: "ECU Programming", desc: "Updating engine control software mapping to resolve driveability faults and optimize performance." },
+        { name: "VGS (Vehicle Gateway System) 3&4 programming", desc: "Specialized transmission module calibration and security adaptations for Mercedes-Benz platforms." },
+        { name: "Software Updation", desc: "Full-vehicle factory firmware updates keeping all onboard modules aligned with manufacturer service bulletins." },
+        { name: "TCU replacement and coding", desc: "Transmission Control Unit replacement, adaptive coding, and drive synchronization." },
+        { name: "SCN Coding", desc: "Online Software Calibration Number coding directly synchronizing new modules to the vehicle VIN database." },
+        { name: "Sensor Replacement", desc: "Sourcing and installing OEM oxygen sensors, MAF sensors, crankshaft sensors, and radar modules." },
+        { name: "Lighting System Repair", desc: "Troubleshooting and repair of adaptive Matrix LED, Bi-Xenon headlights, taillights, and control modules." }
       ]
     },
     "air-conditioning": {
-      title: "Air Conditioning",
-      tagline: "Precision climate control service keeping you cool in Oman's heat.",
-      desc: "Oman's extreme climate calls for a perfectly functioning A/C system. We provide system diagnosis, recharging, leak testing, and deep-dash repairs.",
+      title: "Climate Control Precision & Dual-Refrigerant Recovery",
+      tagline: "Computerized recovery and digital recharging for R-134a and R-1234yf systems, deep dashboard evaporator replacement, and whisper-quiet cooling engineered for Oman heat.",
+      desc: "Oman extreme climate calls for a perfectly functioning A/C system. We provide automated digital recovery, precision digital scale charging, UV leak detection, compressor rebuilding, and deep dashboard evaporator repairs.",
       features: [
         { name: "A/C Performance Check", desc: "Testing discharge temperature, blower speeds, and vent actuator movement." },
-        { name: "A/C Gas Recharge", desc: "Evacuating moisture and recharging refrigerant using strict digital scales." },
+        { name: "A/C Gas Recharge (R-134a & R-1234yf)", desc: "Evacuating moisture and recharging refrigerant using strict digital scales for both legacy and new refrigerants." },
         { name: "Compressor Repair", desc: "Replacing magnetic clutches, control valves, or complete compressor assemblies." },
         { name: "Cabin Filter Replacement", desc: "Replacing filters with active carbon variants to guarantee clean cabin air." },
         { name: "A/C Leak Detection", desc: "Injecting UV dye and vacuum-testing lines to isolate trace gas leaks." },
-        { name: "A/C Evaporator Changing", desc: "Expert dashboard disassembly and structural reassembly to replace leaking evaporators." }
+        { name: "A/C Evaporator Changing (Dash Board remove and Installation)", desc: "Expert dashboard disassembly and structural reassembly to replace leaking evaporators." }
+      ]
+    },
+    "tires-wheels": {
+      title: "Road-Force Dynamic Balancing & Ultra-High-Performance Tires",
+      tagline: "Harmonic road-force diagnostics, touchless mounting of low-profile UHP run-flat tires, curb rash alloy wheel restoration, and pure nitrogen inflation.",
+      desc: "Your tires are your only connection to the road. We supply top-tier premium tires, perform computerized Road-Force harmonic balancing, repair alloy rim curb rash, and optimize tire longevity.",
+      features: [
+        { name: "Tire Replacement", desc: "Sourcing and fitting ultra-high-performance (UHP) and run-flat tires from Michelin, Continental, Pirelli, and Bridgestone." },
+        { name: "Tire Rotation", desc: "Systematic tire pattern rotation to ensure uniform tread wear, extend tire lifespan, and improve road grip." },
+        { name: "Tire Repair", desc: "Permanent vulcanized puncture repairs meeting strict road safety and high-speed tire ratings." },
+        { name: "Nitrogen Filling", desc: "High-purity dry nitrogen inflation maintaining stable tire pressures under extreme Oman desert heat." },
+        { name: "Alloy Wheel Repair", desc: "Straightening bent wheels, fixing curb rash, rim welding, and custom CNC face refinishing." }
       ]
     },
     "body-paint": {
-      title: "Body & Paint",
-      tagline: "Showroom-grade painting, paint protection, and dent restoration.",
-      desc: "Restore the exterior finish of your luxury automobile. Our paint facility utilizes color spectrophotometers and premium clear coats for matching finish quality.",
+      title: "Downdraft Thermal Bake Painting & Structural Body Restoration",
+      tagline: "Spectrophotometer computerized paint matching, factory-spec Glasurit and Standox multi-stage clearcoats, and structural chassis restoration in sealed downdraft bake booths.",
+      desc: "Restore the exterior finish of your luxury automobile. Our paint facility utilizes computerized color spectrophotometers, dust-free downdraft spray bake ovens, and premium clearcoats for matching OEM finish quality.",
       features: [
-        { name: "Dent Repair", desc: "Traditional dent pulling and panel beating back to smooth factory curvatures." },
-        { name: "Premium Painting & Refinishing", desc: "Multi-stage base-coat / clear-coat painting matching luxury paint specs." },
-        { name: "Scratch Removal & Paint Correction", desc: "Compounding and polishing paint surfaces to clear micro-scratches." },
-        { name: "Ceramic Coating", desc: "Adding multi-year molecular barrier coatings to guard paint against UV rays and heat." },
-        { name: "Accident Repair", desc: "Replacing bumpers, fenders, grilles, and structural components after minor or major impacts." },
-        { name: "Engine Bay Cleaning", desc: "Safe degreasing and detailed cleaning of plastic covers and engine brackets." }
+        { name: "Dent Repair", desc: "Traditional dent pulling, panel beating, and Paintless Dent Repair (PDR) back to smooth factory curvatures." },
+        { name: "Scratch Removal", desc: "Multi-stage wet sanding, micro-scratch buffing, and clearcoat touch-ups eliminating surface flaws." },
+        { name: "Full Body Painting", desc: "Complete exterior respraying inside downdraft bake ovens using premium Glasurit and Standox paints." },
+        { name: "Paint Protection", desc: "High-durability Paint Protection Films (PPF) and sealant shields guarding against rock chips and sand abrasion." },
+        { name: "Accident Repair", desc: "Structural chassis realignment, bumper and fender alignment, and panel replacements restoring OEM crash safety." }
+      ]
+    },
+    "detailing-protection": {
+      title: "Multi-Stage Paint Correction & 9H Ceramic Shield Protection",
+      tagline: "Precision rotary machine polishing eliminating swirl marks, deep interior leather restoration, and ultra-hydrophobic 9H nano-ceramic coatings safeguarding against UV and desert sand.",
+      desc: "Preserve and protect the interior elegance and exterior gloss of your automobile. From leather restoration and steam sanitization to 9H ceramic coating shields, we deliver unmatched detailing.",
+      features: [
+        { name: "Premium Car Wash", desc: "Gentle hand wash using pH-neutral luxury shampoos, microfiber wash mitts, and filtered spot-free rinse." },
+        { name: "Interior Deep Cleaning", desc: "Steam extraction of carpets, deep leather conditioning, anti-bacterial cabin disinfection, and headliner cleaning." },
+        { name: "Exterior Detailing", desc: "Clay bar decontamination, iron particle removal, wheel well cleaning, and trim restoration." },
+        { name: "Paint Correction", desc: "Multi-stage rotary machine polishing removing swirl marks, holograms, and heavy oxidation." },
+        { name: "Ceramic Coating", desc: "Application of 9H ultra-hydrophobic ceramic coatings creating an enduring glass-like shield against UV rays and heat." },
+        { name: "Headlight Restoration", desc: "Multi-step sanding, compounding, and UV sealant curing restoring crystal-clear headlight clarity and night vision." },
+        { name: "Engine Bay Cleaning", desc: "Safe electrical component masking, gentle steam degreasing, and protective dressing of engine bay covers." }
+      ]
+    },
+    "luxury-performance": {
+      title: "Dyno Performance Tuning & Sports Exhaust Enhancement",
+      tagline: "All-wheel-drive dynamometer horsepower calibration, electronically valved sports exhaust systems, high-flow downpipes, and track-engineered adaptations for supercars and luxury GTs.",
+      desc: "Exotic supercars and high-performance luxury vehicles require specialized engineering, high-tolerance tools, and bespoke parts. We enhance dynamics, dyno-test horsepower curves, and maintain supreme performance.",
+      features: [
+        { name: "Exhaust System Upgrades", desc: "Custom sports exhaust installations, downpipe upgrades, valve-controlled mufflers, and catalytic converter servicing." },
+        { name: "Suspension Upgrades", desc: "Performance coilover installations, adaptive sports dampening, anti-roll bars, and track-ready height adjustment." },
+        { name: "Luxury Vehicle Maintenance", desc: "Tailored care protocols for Ferrari, Aston Martin, Bentley, Rolls-Royce, Porsche, and AMG performance models." }
+      ]
+    },
+    "emergency-services": {
+      title: "24/7 Zero-Angle Hydraulic Flatbed Towing & Roadside Recovery",
+      tagline: "Rapid emergency roadside dispatch across Muscat with specialized zero-clearance flatbed recovery trucks protecting lowered supercars, exotic splitters, and luxury SUVs.",
+      desc: "Vehicle breakdowns happen without warning. Our emergency dispatch team is ready around the clock with zero-angle flatbed towing, surge-protected jump-start packs, and quick roadside problem resolution.",
+      features: [
+        { name: "Battery Jump Start", desc: "Rapid mobile dispatch with professional surge-protected battery jump-starter packs preventing electronic damage." },
+        { name: "Roadside Assistance", desc: "Quick roadside support for flat tires, fuel delivery, electrical lockouts, and emergency safety checks." },
+        { name: "Vehicle Recovery & Towing", desc: "Low-clearance flatbed recovery trucks specialized in transporting lowered sports cars and luxury SUVs safely." },
+        { name: "Emergency Breakdown Support", desc: "24/7 priority workshop access, emergency diagnostic triage, and immediate advisor coordination." }
+      ]
+    },
+    "additional-services": {
+      title: "Bespoke Leather Craft Upholstery & Nano-Ceramic Window Tinting",
+      tagline: "Handcrafted automotive leather re-trimming, custom diamond-stitch interior appointments, 99% UV-rejection thermal window films, and Apple CarPlay multimedia integration.",
+      desc: "Complete personalization and comfort upgrades for your driving experience. From heat-rejecting nano-ceramic window films to custom leather re-trimming and multimedia dash installations.",
+      features: [
+        { name: "Car Accessories Installation", desc: "Professional fitting of Android/Apple CarPlay screens, dash cams, ambient LED lighting, and body styling kits." },
+        { name: "Window Tinting", desc: "High-grade nano-ceramic thermal window films offering up to 99% UV rejection and maximum heat reduction." },
+        { name: "Car Upholstery", desc: "Handcrafted genuine Italian leather reupholstery, steering wheel leather restoration, and headliner repair." }
       ]
     }
   },
   ar: {
     "general-maintenance": {
-      title: "صيانة عامة",
-      tagline: "رعاية شاملة للحفاظ على أفضل أداء لسيارتك.",
-      desc: "الصيانة الدورية الاستباقية أمر حيوي لعمر مركبتك الفاخرة وسلامتها. يقوم الفنيون لدينا بإجراء فحص شامل متوافق مع معايير الوكيل لمطابقة المعايير الرسمية.",
+      title: "الصيانة الدورية المعتمدة والفحص الرقمي الشامل",
+      tagline: "صيانة مجدولة معتمدة وفق معايير المصنع، واستخدام زيوت تخليقية فائقة، وفحص رقمي شامل من المصد إلى المصد.",
+      desc: "الصيانة الدورية الاستباقية أمر حيوي لعمر مركبتك الفاخرة وسلامتها الميكانيكية. يقوم فنيونا المعتمدون بإجراء أدق الفحوصات ومطابقة معايير الوكالات الرسمية باستخدام زيوت تخليقية متطورة.",
       features: [
         { name: "خدمة المركبة الدورية", desc: "فترات مجدولة متوافقة مع متطلبات الشركة المصنعة للحفاظ على الضمان نشطًا." },
         { name: "صيانة صغرى", desc: "تحديثات الفلاتر، وتزييت المحرك، وتشخيصات الأداء العامة." },
@@ -125,9 +186,9 @@ const serviceDetails = {
       ]
     },
     "engine-repair": {
-      title: "خدمات المحرك",
-      tagline: "تشخيصات متقدمة وتوضيب كامل لكتل المحركات.",
-      desc: "تحتوي سيارتك الفاخرة على محرك معقد يتطلب منصات تشخيص متخصصة ومهارات ميكانيكية دقيقة. نقوم بإدارة كل خطوة بدقة متناهية.",
+      title: "تشخيص المحركات الدقيق والتوضيب الميكانيكي الشامل",
+      tagline: "تشخيص بأجهزة الوكالة المتخصصة، وخرط كتل المحركات، ومعايرة جنازير التوقيت، وإعادة بناء متقنة للمحركات الأوروبية عالية الأداء.",
+      desc: "تحتوي سيارتك الفاخرة على محرك معقد يتطلب منصات تشخيص متخصصة ومهارات ميكانيكية دقيقة. نقوم بإدارة كل خطوة بدقة متناهية من استبدال الحساسات إلى التوضيب الكامل للمحرك.",
       features: [
         { name: "تشخيص المحرك", desc: "باستخدام منصات متخصصة مثل BMW ISTA و Mercedes Xentry لتحديد أخطاء الحساسات والتوقيت." },
         { name: "إصلاح وتوضيب المحرك", desc: "تفكيك كامل للمحرك، وتجليخ أسطوانات المحرك، وإعادة البناء بالكامل." },
@@ -137,9 +198,9 @@ const serviceDetails = {
       ]
     },
     "transmission-service": {
-      title: "خدمات ناقل الحركة",
-      tagline: "إصلاح ناقل الحركة ومعايرة علبة التروس وغسيل الزيوت.",
-      desc: "تتطلب علب التروس الفاخرة مزدوجة القابض ومزدوجة السرعة فنيين مدربين تدريباً عالياً. نقوم بإجراء الصيانات الوقائية وإعادة البناء الكامل للتروس.",
+      title: "تشخيص نواقل الحركة وبرمجة الميكاترونيك وتوضيب الجير",
+      tagline: "معايرة دقيقة لناقلات الحركة، وغسيل الزيوت الهيدروليكية، وبرمجة وحدات الميكاترونيك لنواقل الحركة الأوتوماتيكية والدبل كلتش وZF.",
+      desc: "تتطلب علب التروس الفاخرة مزدوجة القابض ومزدوجة السرعة فنيين مدربين تدريباً عالياً. نقوم بإجراء الصيانات الوقائية وغسيل الزيوت بالضغط وإعادة البناء الكامل للتروس.",
       features: [
         { name: "صيانة ناقل الحركة الأوتوماتيكي", desc: "فحوصات شاملة للقابض ومحول عزم الدوران وصمامات الضغط." },
         { name: "تشخيص علبة التروس", desc: "مسح الوحدات الإلكترونية لعزل انزلاق التروس أو تأخر تبديل السرعة." },
@@ -148,9 +209,9 @@ const serviceDetails = {
       ]
     },
     "brake-repair": {
-      title: "خدمات الفرامل",
-      tagline: "فحوصات واستبدال أنظمة الكبح عالية الأداء.",
-      desc: "السلامة هي الأهم. نتعامل مع كل شيء من تغيير الفحمات البسيطة إلى إعادة بناء فرامل اليد الإلكترونية والكليبرات متعددة المكابس باستخدام قطع غيار عالية الجودة.",
+      title: "أنظمة المكابح عالية الأداء وصيانة الكليبرات الرياضية",
+      tagline: "فحص استقامة الديسكات بالليزر، وتركيب أقراص الكربون سيراميك المهواة، وصيانة كليبرات المكابح الرياضية وغسيل سائل الفرامل المضغوط.",
+      desc: "السلامة هي الأهم. نتعامل مع كل شيء من تغيير الفحمات الخزفية إلى فحص استقامة الديسكات بالميكروميتر وإعادة بناء فرامل اليد الإلكترونية والكليبرات متعددة المكابس.",
       features: [
         { name: "استبدال فحمات الفرامل", desc: "تركيب فحمات سيراميك فاخرة قليلة الغبار أو فحمات شبه معدنية." },
         { name: "استبدال ديسكات/أقراص الفرامل", desc: "تركيب ديسكات فرامل عالية الكربون لتقليل تشوه الحرارة والاهتزاز." },
@@ -160,9 +221,9 @@ const serviceDetails = {
       ]
     },
     "suspension-steering": {
-      title: "نظام التعليق والتوجيه",
-      tagline: "إصلاح خبير لأنظمة التعليق الهوائي (Airmatic) والهيدروليكي المتقدمة.",
-      desc: "تتميز السيارات الفاخرة بأنظمة تعليق متطورة تضمن الراحة القصوى في الركوب. نمتلك الأدوات النادرة والخبرة لإصلاح هذه الأنظمة المعقدة.",
+      title: "صيانة التعليق الهوائي والميزان الليزري ثلاثي الأبعاد",
+      tagline: "تشخيص واستبدال مساعدات التعليق الهوائي النشط (Airmatic)، ومخمدات الصدمات الإلكترونية، وميزان توجيه ثلاثي الأبعاد فائق الدقة بالليزر.",
+      desc: "تتميز السيارات الفاخرة بأنظمة تعليق متطورة تضمن الراحة القصوى في الركوب. نمتلك الأدوات النادرة والخبرة لإصلاح مساعدات الهواء الهيدروليكي ومحاذاة العجلات بالليزر وفق معايير المصنع.",
       features: [
         { name: "إصلاح نظام التعليق", desc: "استبدال مقصات التحكم، وجوزات التعليق، والجلد، ووصلات قضيب التوازن." },
         { name: "استبدال مساعدات التعليق الهوائي والهيدروليكي", desc: "تشخيص واستبدال مساعدات الهواء المضغوط (Airmatic) وأنظمة المخمدات الهيدروليكية النشطة." },
@@ -172,42 +233,103 @@ const serviceDetails = {
       ]
     },
     "electrical-electronics": {
-      title: "الأنظمة الكهربائية والإلكترونية",
-      tagline: "برمجة ECU وترميز SCN وتحديثات برمجيات السيارة بالكامل.",
-      desc: "السيارات الأوروبية الحديثة هي كمبيوترات متنقلة. لدينا قدرات برمجية مرخصة تعادل الوكلاء لبرمجة وتحديث وحدات التحكم المختلفة.",
+      title: "برمجة كمبيوتر السيارات وترميز SCN أونلاين بمستوى الوكالة",
+      tagline: "ترميز أونلاين متصل بسيرفرات المصنع، واستكشاف أخطاء شبكات CAN-bus، ومزامنة وحدات التحكم الإلكترونية وتحديث البرمجيات الكاملة.",
+      desc: "السيارات الأوروبية الحديثة هي كمبيوترات متنقلة. لدينا قدرات برمجية مرخصة تعادل الوكلاء لبرمجة وتحديث وحدات التحكم ومسح شبكات الاتصال الرقمية.",
       features: [
-        { name: "تشخيصات الكمبيوتر", desc: "فحص شامل للأكواد والبروتوعولات لتتبع حالة الاتصال بالشبكة المحلية للمركبة." },
+        { name: "تشخيصات الكمبيوتر", desc: "فحص شامل للأكواد والبروتوكولات لتتبع حالة الاتصال بالشبكة المحلية للمركبة." },
         { name: "فحص واستبدال البطارية", desc: "فحص بطاريات AGM/Li-Ion وتسجيل وتفعيل البطاريات الجديدة على نظام السيارة." },
         { name: "إصلاح السلف والدينامو", desc: "توضيب ملفات التشغيل الرئيسية والمولدات الكهربائية وتغيير الفحمات." },
+        { name: "إصلاح دينامو الشحن", desc: "فحص دينامو الشحن ومنظم الجهد الكهربائي لضمان كفاءة التغذية الكهربائية." },
         { name: "برمجة عقول السيارات (ECU)", desc: "تحديث برمجيات التحكم في المحرك لحل مشكلات استجابة القيادة والأداء." },
         { name: "برمجة بوابة المركبة (VGS 3&4)", desc: "معايرة وحدة ناقل الحركة المتخصصة وتعديلات الحماية الأمنية." },
-        { name: "تحديث TCU وترميز SCN", desc: "ترميز أرقام معايرة البرامج لمطابقة علبة التروس والتزامن الكامل." }
+        { name: "تحديث برمجيات السيارة", desc: "تحديث البرمجيات الشاملة لكافة وحدات التحكم بالسيارة لآخر إصدارات المصنع." },
+        { name: "استبدال وبرمجة عقل القير (TCU)", desc: "استبدال وتشفير وبرمجة عقول نواقل الحركة TCU ومزامنتها مع نظام الحركة." },
+        { name: "ترميز SCN أونلاين", desc: "ترميز أرقام معايرة البرامج لمطابقة علبة التروس والتزامن الكامل أونلاين." },
+        { name: "استبدال الحساسات", desc: "استبدال ومعايرة حساسات الأكسجين، والكرنك، وحساسات الهواء، والرادار، والكاميرات." },
+        { name: "إصلاح أنظمة الإضاءة", desc: "إصلاح ومعايرة أنظمة الإضاءة الذكية والمصابيح التفاعلية LED والماتريكس ووحدات التحكم." }
       ]
     },
     "air-conditioning": {
-      title: "تكييف الهواء",
-      tagline: "خدمة تحكم مناخي دقيقة تبقيك بارداً في أجواء عمان الحارة.",
-      desc: "يتطلب مناخ سلطنة عمان القاسي نظام تكييف يعمل بشكل مثالي. نحن نقدم تشخيص النظام، إعادة الشحن، اختبارات التسريب والاصلاحات العميقة.",
+      title: "أنظمة التكييف والمناخ وشحن غاز الفريون الرقمي الدقيق",
+      tagline: "شحن وسحب غاز الفريون رقمياً لأنظمة R-134a و R-1234yf، واستبدال ثلاجة المكيف بفك الداشبورد الاحترافي، وتبريد فائق مصمم لمقاومة حرارة عُمان.",
+      desc: "يتطلب مناخ سلطنة عمان القاسي نظام تكييف يعمل بكفاءة قصوى. نقدم تفريغ الرطوبة وإعادة شحن الفريون بمقاييس رقمية، وكشف التسريب بالأشعة فوق البنفسجية وتوضيب الكومبريسور.",
       features: [
         { name: "فحص أداء مكيف الهواء", desc: "اختبار درجات حرارة الهواء الخارج وسرعات المروحة وحركة بوابات الهواء." },
-        { name: "شحن غاز المكيف", desc: "تفريغ الرطوبة وإعادة شحن غاز الفريون باستخدام مقاييس رقمية دقيقة." },
+        { name: "شحن غاز المكيف (R-134a و R-1234yf)", desc: "تفريغ الرطوبة وإعادة شحن غاز الفريون باستخدام مقاييس رقمية دقيقة." },
         { name: "إصلاح الكومبريسور", desc: "استبدال الكلتش المغناطيسي، صمامات التحكم، أو تركيب كومبريسور كامل جديد." },
         { name: "استبدال فلتر المقصورة", desc: "استبدال فلاتر الكربون النشط لضمان نقاء وجودة الهواء داخل المقصورة." },
         { name: "اكتشاف تسريب غاز المكيف", desc: "حقن صبغة الأشعة فوق البنفسجية واختبار تفريغ خراطيم التكييف لعزل التسريب الدقيق." },
-        { name: "استبدال ثلاجة المكيف الداخلية", desc: "فك لوحة القيادة (الداشبورد) بالكامل بشكل خبير وتغيير ثلاجة المكيف التالفة." }
+        { name: "استبدال ثلاجة المكيف وفك الداشبورد", desc: "فك لوحة القيادة (الداشبورد) بالكامل بشكل خبير وتغيير ثلاجة المكيف التالفة." }
+      ]
+    },
+    "tires-wheels": {
+      title: "الترصيص الديناميكي المتطور وتركيب إطارات الأداء العالي",
+      tagline: "ترصيص ديناميكي بأحدث الأجهزة الليزرية، وتركيب الإطارات الرياضية منخفضة الارتفاع بدون خدش للجنوط، وتعديل الجنوط وتعبئة النيتروجين النقي.",
+      desc: "الإطارات هي نقطة الاتصال الوحيدة بسيارتك مع الطريق. نوفر أرقى ماركات الإطارات العالمية وإصلاح الجنوط وترصيص Road-Force الديناميكي لمنع الاهتزازات تماماً.",
+      features: [
+        { name: "تبديل الإطارات", desc: "تركيب وتوريد أفضل الإطارات الرياضية والعادية من ميشلان، بيريللي، وكونتيننتال." },
+        { name: "تدوير الإطارات الدوري", desc: "تدوير الإطارات دورياً لضمان تآكل متساوٍ لسطح الإطار وإطالة عمره التشغيلي." },
+        { name: "إصلاح رقع الإطارات", desc: "إصلاح ثقوب الإطارات بالرقع الحرارية المعتمدة وفق أعلى معايير السلامة للسرعات العالية." },
+        { name: "تعبئة غاز النيتروجين", desc: "تعبئة غاز النيتروجين النقي للحفاظ على ثبات ضغط الإطارات تحت حرارة الصيف الشديدة." },
+        { name: "إصلاح وتعديل الجنوط", desc: "تعديل الجنوط وإصلاح الخدوش والطعجات وتجديد لمعان الجنوط بأجهزة متطورة." }
       ]
     },
     "body-paint": {
-      title: "هيكل وطلاء السيارات",
-      tagline: "طلاء بجودة المعرض، تصحيح الطلاء، وتعديل هيكل السيارة.",
-      desc: "استعد المظهر الخارجي لسيارتك الفاخرة. تستخدم ورشة الطلاء لدينا أجهزة مطابقة الألوان بالكمبيوتر وطبقات حماية فاخرة مطابقة لجودة المصنع.",
+      title: "الرش الحراري في أفران متطورة وإصلاح هياكل السيارات",
+      tagline: "مطابقة ألوان الطلاء بالكمبيوتر، ودهانات ستاندوكس وجلاسوريت متعددة الطبقات في أفران رش حرارية خالية من الأتربة، وإصلاح صدمات الهيكل بدقة.",
+      desc: "استعد المظهر الخارجي لسيارتك الفاخرة. تستخدم ورشة الطلاء لدينا أجهزة مطابقة الألوان بالكمبيوتر وكبائن الرش الحراري الخالية من الأتربة وطبقات حماية فاخرة مطابقة لجودة المصنع.",
       features: [
-        { name: "تعديل الضربات (السمكرة)", desc: "سحب الصاج وتعديل هياكل السيارات المتضررة وإعادتها لانحناءات المصنع الناعمة." },
-        { name: "طلاء وتجديد دهان السيارات", desc: "رش الدهان متعدد المراحل ومطابقة طلاء السيارات الفاخرة بدقة متناهية." },
-        { name: "إزالة الخدوش وتصحيح الطلاء", desc: "صقل وتلميع أسطح الطلاء لإزالة الخدوش الدقيقة والبهتان." },
-        { name: "حماية النانو سيراميك", desc: "إضافة طبقة حماية جزيئية لحماية دهان السيارة من الأشعة فوق البنفسجية والحرارة الشديدة." },
-        { name: "إصلاح صدمات الحوادث", desc: "استبدال المصدات والرفارف والشبكات والقطع الهيكلية التالفة بعد الحوادث." },
-        { name: "تنظيف وتلميع حوض المحرك", desc: "إزالة الشحوم بأمان وتلميع الأغطية البلاستيكية ومثبتات المحرك بشكل تفصيلي." }
+        { name: "تعديل الضربات والسمكرة", desc: "سحب الصاج وتعديل هياكل السيارات المتضررة وإعادتها لانحناءات المصنع الناعمة دون طلاء." },
+        { name: "إزالة الخدوش ومعالجة السطح", desc: "صقل وتلميع أسطح الطلاء لإزالة الخدوش الدقيقة والبهتان." },
+        { name: "طلاء كامل في أفران حرارية", desc: "رش الدهان متعدد المراحل ومطابقة طلاء السيارات الفاخرة بدقة متناهية بأفران حرارية." },
+        { name: "حماية وتغليف الطلاء", desc: "إضافة طبقة حماية جزيئية وأفلام PPF لحماية دهان السيارة من الأشعة فوق البنفسجية والحرارة." },
+        { name: "إصلاح أضرار وصدمات الحوادث", desc: "استبدال المصدات والرفارف والشبكات والقطع الهيكلية التالفة بعد الحوادث." }
+      ]
+    },
+    "detailing-protection": {
+      title: "تصحيح الطلاء الاحترافي وحماية النانو سيراميك 9H",
+      tagline: "تلميع وتصحيح الطلاء الآلي لإزالة الخدوش الدقيقة، وتغذية الفرش الجلدي الفاخر، وتطبيق درع النانو سيراميك 9H لمقاومة الأشعة فوق البنفسجية وحرارة الصحراء.",
+      desc: "حافظ على فخامة ولمعان سيارتك الداخلية والخارجية. نقدم تصحيح الطلاء بالبولش متعدد المراحل، ومعالجة احترافية للجلود وحماية النانو سيراميك 9H المقاومة للحرارة.",
+      features: [
+        { name: "غسيل سيارات فاخر وتفصيلي", desc: "غسيل يدوي فاخر باستخدام صابون خاص متوازن الحموضة ومناشف مايكروفايبر ناعمة." },
+        { name: "تنظيف وتطهير داخلي عميق", desc: "تنظيف عميق بالبخار للمقاعد والأرضيات وتغذية الجلد وتعقيم فتحات التكييف والفرش." },
+        { name: "تلميع وتفصيل الهيكل الخارجي", desc: "إزالة الشوائب والأكسدة من سطح الطلاء وتلميع الجنوط واستعادة لمعان الزوائد البلاستيكية." },
+        { name: "تصحيح الطلاء وإزالة الدوائر", desc: "تصحيح الطلاء بمراحل متعددة وإزالة دوائر الغسيل والبهتان وإبراز عمق اللون." },
+        { name: "طلاء النانو سيراميك 9H", desc: "تطبيق طبقات النانو سيراميك 9H لتشكيل درع زجاجي صلب مقاوم للماء والحرارة والأوساخ." },
+        { name: "تلميع المصابيح الأمامية", desc: "إزالة الاصفرار والبهتان من المصابيح الأمامية وتطبيق طبقة حماية عازلة للأشعة." },
+        { name: "تنظيف وتلميع حوض المحرك", desc: "تنظيف حوض المحرك بالبخار مع حماية الأنظمة الكهربائية وتلميع الأغطية البلاستيكية." }
+      ]
+    },
+    "luxury-performance": {
+      title: "برمجة القوة على الداينو وتعديل أنظمة العادم الرياضية",
+      tagline: "معايرة القوة الحصانية وعزم الدوران على جهاز الداينو (Dyno)، وتركيب أنظمة العادم الرياضية بصمامات إلكترونية، وبرمجة الأداء للسيارات الرياضية الفارهة.",
+      desc: "تتطلب السيارات الرياضية والفاخرة دقة هندسية استثنائية وأدوات فائقة الجودة. نقدم خدمات الترقية، وفحص منحنيات القوة على الداينو، والصيانة المخصصة للحفاظ على الأداء الرياضي المميز.",
+      features: [
+        { name: "ترقية وتعديل أنظمة العادم", desc: "تركيب وتعديل أنظمة العادم الرياضية والصمامات الصوتية الذكية وخدمات الدوان بايب." },
+        { name: "ترقية أنظمة التعليق الرياضي", desc: "ترقية المساعدات الرياضية (Coilovers) وقضبان التوازن وتعديل ارتفاع وثبات السيارة." },
+        { name: "صيانة فائقة للسيارات الفاخرة والخارقة", desc: "بروتوكولات صيانة فائقة الدقة مخصصة لسيارات فيراري، بنتلي، رولز رويس، بورش، وموديلات AMG." }
+      ]
+    },
+    "emergency-services": {
+      title: "سحب هيدروليكي آمن 24/7 ودعم طارئ على مدار الساعة",
+      tagline: "استجابة طارئة فورية على مدار 24 ساعة بسطحات هيدروليكية منخفضة الزاوية لحماية الصدامات والسيارات الرياضية الفاخرة، مع شحن البطاريات ومساندة الطريق.",
+      desc: "أعطال السيارات قد تحدث في أي وقت. فريق الاستجابة السريعة لدينا جاهز على مدار الساعة لتقديم السحب الآمن بسطحات هيدروليكية منخفضة تماماً والمساعدة الطارئة على الطريق.",
+      features: [
+        { name: "اشتراك وشحن البطارية فوراً", desc: "وصول فوري بأجهزة اشتراك ذكية ومحمية ضد التيارات المرتفعة لحماية عقول السيارة." },
+        { name: "المساعدة الطارئة على الطريق", desc: "خدمة المساندة على الطريق لتبديل الإطارات وتوصيل الوقود وفحص الأعطال المفاجئة." },
+        { name: "سحب ونقل المركبات المتعطلة", desc: "سطحات هيدروليكية مجهزة لنقل السيارات الفاخرة والمنخفضة بأمان تام دون أي احتكاك." },
+        { name: "دعم فوري للأعطال الطارئة", desc: "دعم فني فوري واستقبال عاجل للحالات الطارئة في الورشة مع متابعة مستمرة للمركبة." }
+      ]
+    },
+    "additional-services": {
+      title: "تنجيد المقاعد بالجلد الفاخر والعزل الحراري النانو سيراميك",
+      tagline: "حرفية يدوية لتنجيد المقاعد بالجلود الإيطالية الطبيعية، وتركيب عوازل النوافذ الحرارية نانو سيراميك عازلة حتى 99%، وتركيب شاشات أبل كاربلاي المتطورة.",
+      desc: "ارتقِ بمستوى الراحة والفخامة داخل مركبتك. نوفر أفلام العزل الحراري النانو سيراميك وتجديد وتنجيد المقاعد بالجلد الفاخر بتطريزات ماسية مخصصة وتركيب أحدث الإكسسوارات.",
+      features: [
+        { name: "تركيب إكسسوارات وشاشات السيارات", desc: "تركيب شاشات أبل كاربلاي وأندرويد، وكاميرات المراقبة (داش كام)، وإضاءات الليد المحيطية." },
+        { name: "تظليل النوافذ العازل للحرارة", desc: "تركيب عازل حراري نانو سيراميك أصلي يعزل حتى 99% من الأشعة فوق البنفسجية ويقلل حرارة المقصورة." },
+        { name: "تنجيد وتجديد المقاعد والفرش الداخلي", desc: "تنجيد المقاعد بأفخم الجلود الطبيعية، وتجديد كسوة المقود وسقف السيارة بحرفية يدوية متقنة." }
       ]
     }
   }
@@ -216,188 +338,157 @@ const serviceDetails = {
 const categoryMedia = {
   "general-maintenance": {
     index: "01",
-    leftImg: "/service_general.jpg",
-    rightImg: "/service_engine.jpg",
-    leftTitle: { en: "THOROUGH CARE", ar: "رعاية شاملة" },
-    leftDesc: { en: "Detailed inspections and expert maintenance for peak performance.", ar: "عمليات فحص مفصلة وصيانة خبراء للحصول على أفضل أداء." },
-    rightTitle: { en: "LASTING PERFORMANCE", ar: "أداء مستدام" },
-    rightDesc: { en: "Preventive maintenance that enhances reliability and extends your car's life.", ar: "صيانة وقائية تعزز الموثوقية وتطيل عمر سيارتك." }
+    leftBadge: { en: "TECHNICAL INSPECTION", ar: "فحص تقني معتمد" },
+    leftImg: "/services/general-maintenance.jpg",
+    leftTitle: { en: "SYNTHETIC FLUIDS & MULTI-POINT CHECK", ar: "زيوت تخليقية وفحص متعدد النقاط" },
+    leftDesc: { en: "Mobil 1 & Castrol Edge synthetic lubricants paired with OEM multi-point digital diagnostic checks.", ar: "زيوت تخليقية بالكامل من كاسترول وموبيل 1 مع فحص شامل لأدق أجزاء المحرك." },
+    rightBadge: { en: "BMW SERVICE PROTOCOLS", ar: "معايير بي إم دبليو" },
+    rightImg: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "BMW FACTORY SPECIFICATIONS", ar: "معايير بي إم دبليو الرسمية" },
+    rightDesc: { en: "Routine scheduled maintenance adhering to strict Bavarian engineering standards.", ar: "صيانة دورية معتمدة وفق أدق المعايير الهندسية لسيارات بي إم دبليو الفاخرة." }
   },
   "engine-repair": {
     index: "02",
-    leftImg: "/service_engine.jpg",
-    rightImg: "/service_ecu.jpg",
-    leftTitle: { en: "DIAGNOSTIC ACCURACY", ar: "دقة التشخيص" },
-    leftDesc: { en: "Pinpointing complex mechanical faults using dealer-certified code scanners.", ar: "تحديد الأعطال الميكانيكية المعقدة باستخدام أجهزة فحص معتمدة." },
-    rightTitle: { en: "BLOCK RESTORATION", ar: "توضيب كامل" },
-    rightDesc: { en: "Complete blueprints rebuilds and block overhauls restoring compression.", ar: "إعادة بناء وتوضيب المحركات بالكامل استعادة للضغط الطبيعي." }
+    leftBadge: { en: "ENGINE BLUEPRINTING", ar: "توضيب وهندسة المحركات" },
+    leftImg: "/services/engine-repair.jpg",
+    leftTitle: { en: "PRECISION ENGINE OVERHAUL", ar: "توضيب وهندسة المحركات" },
+    leftDesc: { en: "Cylinder honing, timing chain calibration, and high-tolerance mechanical rebuilds.", ar: "خرط دقيق للسلندرات، معايرة جنزير التوقيت، وإعادة التجميع المتقن." },
+    rightBadge: { en: "MERCEDES-AMG EXPERTISE", ar: "خبرة مرسيدس و AMG" },
+    rightImg: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "MERCEDES-BENZ & AMG POWERPLANTS", ar: "محركات مرسيدس-بنز و AMG" },
+    rightDesc: { en: "Certified diagnostic mastery for German V6, V8, and V12 twin-turbo engines.", ar: "تشخيصات متقدمة وخبرة ميكانيكية متخصصة لمحركات مرسيدس الألمانية." }
   },
   "transmission-service": {
     index: "03",
-    leftImg: "/service_transmission.jpg",
-    rightImg: "/service_general.jpg",
-    leftTitle: { en: "GEAR CALIBRATION", ar: "معايرة التروس" },
-    leftDesc: { en: "Isolating solenoids, torque converter faults and shifting delays.", ar: "عزل الصمامات، وعيوب محول عزم الدوران، وتأخير التبديل." },
-    rightTitle: { en: "PREVENTIVE FLUSHING", ar: "غسيل وقائي" },
-    rightDesc: { en: "Replacing seals, fluids, and pan filters with factory quality replacements.", ar: "استبدال الحشوات والسوائل وفلاتر الكرتير بجودة المصنع الأصلي." }
+    leftBadge: { en: "TRANSMISSION INTERNALS", ar: "أجزاء الجيربوكس الدقيقة" },
+    leftImg: "/services/transmission-service.jpg",
+    leftTitle: { en: "MECHATRONIC & GEARBOX CALIBRATION", ar: "معايرة الميكاترونيك والجيربوكس" },
+    leftDesc: { en: "Pressure testing solenoids, torque converter overhauls, and pressurized fluid flushes.", ar: "فحص الضغط الهيدروليكي، وصيانة صمامات التحكم، واستبدال زيت القير الأصلي." },
+    rightBadge: { en: "AUDI S-TRONIC & ZF", ar: "ناقلات حركة أودي و ZF" },
+    rightImg: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "AUDI S-TRONIC & ZF DUAL-CLUTCH", ar: "ناقلات حركة أودي S-Tronic و ZF" },
+    rightDesc: { en: "Factory-grade transmission diagnostics and adaptive shift tuning for Audi platforms.", ar: "تشخيص بمستوى المصنع ومعايرة استجابة التعشيق لسيارات أودي الفاخرة." }
   },
   "brake-repair": {
     index: "04",
-    leftImg: "/service_brake.jpg",
-    rightImg: "/service_general.jpg",
-    leftTitle: { en: "STOPPING POWER", ar: "قوة كبح كاملة" },
-    leftDesc: { en: "High-grade hydraulic line pressure checks and full caliper services.", ar: "فحص ضغط خطوط الفرامل الهيدروليكية وصيانة الكليبرات بالكامل." },
-    rightTitle: { en: "CERAMIC UPGRADES", ar: "فحمات سيراميك" },
-    rightDesc: { en: "Installing low-dust ceramic pads and carbon-alloy brake rotors.", ar: "تركيب فحمات سيراميك قليلة الغبار وديسكات مكابح عالية الكربون." }
+    leftBadge: { en: "BRAKE HYDRAULICS", ar: "أنظمة الكبح والهيدروليك" },
+    leftImg: "/services/brake-repair.jpg",
+    leftTitle: { en: "HIGH-CARBON ROTORS & BRAKE CALIPERS", ar: "ديسكات عالية الكربون وكليبرات فرامل" },
+    leftDesc: { en: "Laser runout measurements, low-dust ceramic pads, and pressurized ABS fluid flushes.", ar: "فحص استقامة الديسكات، وفحمات سيراميك قليلة الغبار، وغسيل سائل ABS." },
+    rightBadge: { en: "PORSCHE STOPPING BENCHMARK", ar: "معايير مكابح بورش" },
+    rightImg: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "PORSCHE STOPPING PERFORMANCE", ar: "أداء مكابح بورش الفائق" },
+    rightDesc: { en: "Track-proven deceleration systems engineered for maximum braking stability.", ar: "معايير توقف فائقة مجربة على الحلبات لضمان أقصى درجات الأمان والثبات." }
   },
   "suspension-steering": {
     index: "05",
-    leftImg: "/service_general.jpg",
-    rightImg: "/service_transmission.jpg",
-    leftTitle: { en: "AIRMATIC SERVICES", ar: "أنظمة تعليق هوائية" },
-    leftDesc: { en: "Specialized diagnosis and calibration of active air springs and dampers.", ar: "تشخيص ومعايرة متخصصة لمساعدات العجلات ومساعدات الهواء النشطة والمخمدات." },
-    rightTitle: { en: "STEERING PRECISION", ar: "دقة التوجيه" },
-    rightDesc: { en: "Laser aligned steering racks and high pressure hydraulic repairs.", ar: "إصلاح علب التوجيه هيدروليكياً ومحاذاة التوجيه بالليزر." }
+    leftBadge: { en: "3D LASER GEOMETRY", ar: "هندسة المحاذاة بالليزر" },
+    leftImg: "/services/suspension-steering.jpg",
+    leftTitle: { en: "AIRMATIC STRUTS & LASER ALIGNMENT", ar: "مساعدات هوائية وميزان ليزري" },
+    leftDesc: { en: "Multi-axis 3D laser alignment and active pneumatic air suspension bag restorations.", ar: "ميزان ثلاثي الأبعاد بالليزر وإصلاح وسائد ومساعدات التعليق الهوائي النشط." },
+    rightBadge: { en: "RANGE ROVER AIRMATIC", ar: "أنظمة رينج روفر الهوائية" },
+    rightImg: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "RANGE ROVER & TERRAIN SUSPENSION", ar: "أنظمة تعليق رينج روفر المتطورة" },
+    rightDesc: { en: "Specialized calibration for electronic height dampers and luxury active airmatic.", ar: "معايرة متخصصة لمخمدات الارتفاع الإلكترونية والأنظمة الهوائية الذكية." }
   },
   "electrical-electronics": {
     index: "06",
-    leftImg: "/service_ecu.jpg",
-    rightImg: "/service_engine.jpg",
-    leftTitle: { en: "SOFTWARE CODING", ar: "برمجة السوفتوير" },
-    leftDesc: { en: "SCN coding and software gateway calibrations matching local dealers.", ar: "ترميز SCN ومعايرة بوابات السوفتوير لمطابقة الوكالات المحلية." },
-    rightTitle: { en: "MODULE DIAGNOSTICS", ar: "تشخيصات الوحدات" },
-    rightDesc: { en: "Advanced network communication scans isolating short-circuit faults.", ar: "فحص متقدم لاتصالات شبكة السيارة لعزل أعطال الدوائر القصيرة." }
+    leftBadge: { en: "ECU / SCN CODING", ar: "برمجة الكمبيوتر والشرائح" },
+    leftImg: "/services/electrical-electronics.jpg",
+    leftTitle: { en: "ECU CODING & CAN-BUS TELEMETRY", ar: "برمجة كمبيوتر السيارة وشبكات CAN" },
+    leftDesc: { en: "Direct-server SCN coding, gateway synchronizations, and circuit diagnostics.", ar: "برمجة SCN المتصلة بالمصنع، ومزامنة البوابات، وإصلاح الدوائر الكهربائية." },
+    rightBadge: { en: "BENTLEY ELECTRONICS", ar: "إلكترونيات بنتلي الفاخرة" },
+    rightImg: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "BENTLEY ON-BOARD ELECTRONICS", ar: "الأنظمة الإلكترونية لسيارات بنتلي" },
+    rightDesc: { en: "Troubleshooting complex network architectures across ultra-luxury British vehicles.", ar: "تشخيص الأعطال في الشبكات الإلكترونية المعقدة لأفخم السيارات البريطانية." }
   },
   "air-conditioning": {
     index: "07",
-    leftImg: "/service_ac.jpg",
-    rightImg: "/service_general.jpg",
-    leftTitle: { en: "CLIMATE CALIBRATION", ar: "معايرة التكييف" },
-    leftDesc: { en: "Recharging R-134a & R-1234yf refrigerants using precise digital scales.", ar: "إعادة شحن غاز الفريون R-134a و R-1234yf بمقاييس رقمية دقيقة." },
-    rightTitle: { en: "EVAPORATOR CHANGING", ar: "تغيير ثلاجة المكيف" },
-    rightDesc: { en: "Expert dashboard removals to service hidden lines and leak points.", ar: "فك الداشبورد باحترافية لصيانة الخطوط المخفية ونقاط التسريب." }
+    leftBadge: { en: "CLIMATE RECOVERY STATION", ar: "محطة شحن التكييف الرقمية" },
+    leftImg: "/services/air-conditioning.jpg",
+    leftTitle: { en: "DIGITAL R-134A & R-1234YF RECOVERY", ar: "شحن وسحب غاز الفريون رقمياً" },
+    leftDesc: { en: "Moisture evacuation, digital scale charging, UV dye detection, and compressor repair.", ar: "تفريغ الرطوبة، وشحن الغاز بموازين دقيقة، وكشف التسريب بالأشعة فوق البنفسجية." },
+    rightBadge: { en: "ROLLS-ROYCE REFINEMENT", ar: "تبريد رولز رويس الفاخر" },
+    rightImg: "https://images.unsplash.com/photo-1631295868223-63265b40d9e4?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "ROLLS-ROYCE CLIMATE CONTROL", ar: "نظام مناخ رولز رويس فائق الهدوء" },
+    rightDesc: { en: "Delivering ice-cold, whisper-quiet multi-zone cabin cooling engineered for Oman heat.", ar: "تبريد فائق البرودة والهدوء لجميع مناطق المقصورة لمقاومة حرارة الصيف في عُمان." }
+  },
+  "tires-wheels": {
+    index: "08",
+    leftBadge: { en: "DYNAMIC HARMONIC BALANCE", ar: "ترصيص ديناميكي دقيق" },
+    leftImg: "/services/tires-wheels.jpg",
+    leftTitle: { en: "ROAD-FORCE DYNAMIC BALANCING", ar: "ترصيص ديناميكي وموازنة العجلات" },
+    leftDesc: { en: "Harmonic road-force balancing and touchless mounting of low-profile UHP tires.", ar: "ترصيص متقدم بدون خدوش للجنوط لمنع الاهتزازات عند السرعات العالية." },
+    rightBadge: { en: "ASTON MARTIN SPEED RATING", ar: "إطارات أستون مارتن الرياضية" },
+    rightImg: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "ASTON MARTIN SPEED-RATED TIRES", ar: "إطارات أستون مارتن فائقة السرعة" },
+    rightDesc: { en: "Fitting Pirelli P-Zero and Michelin Pilot Sport rubber on forged alloy wheels.", ar: "تركيب إطارات ميشلان وبيريلي فائقة التماسك على جنوط الألمنيوم الأصلية." }
   },
   "body-paint": {
-    index: "08",
-    leftImg: "/service_general.jpg",
-    rightImg: "/service_ecu.jpg",
-    leftTitle: { en: "SHADE MATCHING", ar: "مطابقة درجات الألوان" },
-    leftDesc: { en: "Color spectrophotometer scans for precise factory paint matches.", ar: "فحص بأجهزة مطابقة الألوان بالكمبيوتر لمطابقة طلاء المصنع." },
-    rightTitle: { en: "CERAMIC PROTECTION", ar: "حماية النانو سيراميك" },
-    rightDesc: { en: "Adding molecular barrier guards shield paint against UV rays and heat.", ar: "إضافة طبقات حماية جزيئية لحماية دهان السيارة من الشمس والحرارة." }
+    index: "09",
+    leftBadge: { en: "DOWNDRAFT THERMAL BAKE", ar: "كبائن الرش الحراري" },
+    leftImg: "/services/body-paint.jpg",
+    leftTitle: { en: "DOWNDRAFT SPRAY BAKE BOOTH", ar: "كبائن رش حراري خالية من الأتربة" },
+    leftDesc: { en: "Spectrophotometer computerized paint matching using Glasurit & Standox formulations.", ar: "مطابقة ألوان الطلاء بالكمبيوتر مع استخدام دهانات جلاسوريت وستاندوكس الأصلية." },
+    rightBadge: { en: "FERRARI ROSSO STANDARDS", ar: "معايير طلاء فيراري" },
+    rightImg: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "FERRARI SHOWROOM FINISH", ar: "معايير طلاء فيراري الخارقة" },
+    rightDesc: { en: "High-gloss exotic paint repairs and micro-scratch clearcoat perfection.", ar: "إعادة طلاء وتلميع فائق الدقة يضاهي جودة وخلو عيوب طلاء المصنع." }
+  },
+  "detailing-protection": {
+    index: "10",
+    leftBadge: { en: "MACHINE PAINT CORRECTION", ar: "تصحيح الطلاء الآلي" },
+    leftImg: "/services/detailing-protection.jpg",
+    leftTitle: { en: "MULTI-STAGE PAINT CORRECTION", ar: "تصحيح الطلاء متعدد المراحل" },
+    leftDesc: { en: "Rotary machine compounding eliminating swirl marks, holograms, and oxidation.", ar: "معالجة الخدوش السطحية والدوائر الضوئية واستعادة بريق الطلاء الأصلي." },
+    rightBadge: { en: "MASERATI CERAMIC SHIELD", ar: "سيراميك مازيراتي الفاخر" },
+    rightImg: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "MASERATI 9H CERAMIC SHIELD", ar: "درع النانو سيراميك لسيارات مازيراتي" },
+    rightDesc: { en: "Long-lasting hydrophobic glass shields safeguarding sensitive Italian paint from UV and sand.", ar: "طبقات نانو سيراميك فائقة الصلابة تحمي الدهان الإيطالي من الخدوش وأشعة الشمس." }
+  },
+  "luxury-performance": {
+    index: "11",
+    leftBadge: { en: "DYNO & EXHAUST TUNING", ar: "تعديل العادم والداينو" },
+    leftImg: "/services/luxury-performance.jpg",
+    leftTitle: { en: "VALVE-CONTROLLED SPORTS EXHAUST", ar: "عوادم رياضية بصمامات إلكترونية" },
+    leftDesc: { en: "Custom exhaust downpipes, high-flow catalytic converters, and dyno performance tuning.", ar: "أنظمة عادم متطورة، وفلاتر رياضية عالية التدفق، وبرمجة القوة الحصانية." },
+    rightBadge: { en: "JAGUAR SUPERCHARGED", ar: "محركات جاجوار سوبرتشارج" },
+    rightImg: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "SUPERCHARGED TRACK CALIBRATION", ar: "معايرة محركات السوبرتشارج الرياضية" },
+    rightDesc: { en: "Track-tested cooling adaptations and dynamic stability calibrations for sports cars.", ar: "أنظمة تبريد مطورة ومعايرة الثبات الديناميكي للسيارات الرياضية الخارقة." }
+  },
+  "emergency-services": {
+    index: "12",
+    leftBadge: { en: "LOW-CLEARANCE HYDRAULICS", ar: "سطحات هيدروليكية منخفضة" },
+    leftImg: "/services/emergency-services.jpg",
+    leftTitle: { en: "HYDRAULIC FLATBED RECOVERY", ar: "سطحات هيدروليكية منخفضة السحب" },
+    leftDesc: { en: "Zero-angle loading beds protecting lowered bumpers, air splitters, and exotic undercarriages.", ar: "سحب آمن بزاوية مسطحة لحماية الزوائد والمصدات المنخفضة للسيارات الفاخرة." },
+    rightBadge: { en: "CADILLAC & AMERICAN FLEET", ar: "إنقاذ كاديلاك والسيارات الأمريكية" },
+    rightImg: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "CADILLAC & PREMIUM FLEET ROADSIDE", ar: "إنقاذ فوري لكاديلاك والسيارات الأمريكية" },
+    rightDesc: { en: "24/7 rapid dispatch across Muscat equipped for heavy luxury SUVs and battery triage.", ar: "استجابة فورية 24/7 في كافة أنحاء مسقط بمعدات متقدمة للسيارات الفارهة." }
+  },
+  "additional-services": {
+    index: "13",
+    leftBadge: { en: "BESPOKE INTERIOR CRAFT", ar: "حرفية التنجيد المخصصة" },
+    leftImg: "/services/additional-services.jpg",
+    leftTitle: { en: "BESPOKE LEATHER & NANO TINTING", ar: "تنجيد يدوي وعازل نانو سيراميك" },
+    leftDesc: { en: "Handmade Italian leather re-trimming and 99% UV heat-blocking nano-ceramic window film.", ar: "تنجيد يدوي فاخر للمقاعد والمقود مع تركيب عوازل حرارية متطورة للنوافذ." },
+    rightBadge: { en: "VOLVO SCANDINAVIAN REFINEMENT", ar: "أناقة فولفو الإسكندنافية" },
+    rightImg: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    rightTitle: { en: "VOLVO SCANDINAVIAN LUXURY", ar: "أناقة فولفو الإسكندنافية المخصصة" },
+    rightDesc: { en: "Apple CarPlay screens, ambient LED lighting, and bespoke interior appointments.", ar: "شاشات كاربلاي متطورة، وإضاءة محيطية، وتعديلات داخلية راقية مصممة حسب الطلب." }
   }
 };
 
 const getFeatureIcon = (category, index) => {
-  const icons = {
-    "general-maintenance": [
-      // Periodic Vehicle Service
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="3" y="4" width="18" height="17" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><circle cx="9" cy="15" r="2" /><path d="M15 13l1.5 1.5L19.5 11" /></svg>,
-      // Minor Service
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /><circle cx="18" cy="6" r="1.25" fill="currentColor" /><line x1="7.5" y1="16.5" x2="10.5" y2="13.5" /></svg>,
-      // Major Service
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="5" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1l2.1-2.1M17 7l2.1-2.1" /><circle cx="12" cy="12" r="1.5" fill="currentColor" /></svg>,
-      // Oil & Filter Change
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.2 16.2l2.8 2.8M2 12h4M18 12h4" /><path d="M12 8a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0v-2a4 4 0 0 1 4-4z" /><circle cx="12" cy="13" r="1" fill="currentColor" /></svg>,
-      // Multi-Point Vehicle Inspection
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="5" y="4" width="14" height="16" rx="2" /><path d="M9 2h6M9 9h6M9 13h4" /><circle cx="15" cy="15" r="3" /><line x1="17.1" y1="17.1" x2="19" y2="19" /></svg>,
-      // Fluid Top-Up & Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M10 2h4l1 4v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6l1-4z" /><line x1="7" y1="10" x2="17" y2="10" /><circle cx="12" cy="14" r="1.5" fill="currentColor" /></svg>
-    ],
-    "engine-repair": [
-      // Engine Diagnostics
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="4" y="6" width="16" height="12" rx="2" /><path d="M8 6V4M16 6V4M4 12h16M12 6v12M9 10h6" /><circle cx="12" cy="15" r="1.5" fill="currentColor" /></svg>,
-      // Engine Repair & Overhaul
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="6" y="3" width="12" height="6" rx="1" /><line x1="8" y1="5" x2="16" y2="5" /><line x1="8" y1="7" x2="16" y2="7" /><path d="M12 9v9" /><circle cx="12" cy="18" r="3" /><circle cx="12" cy="18" r="1" fill="currentColor" /></svg>,
-      // Timing Belt/Chain Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="8" cy="12" r="3" /><circle cx="16" cy="12" r="4" /><path d="M8 8h8M8 16h8" /><circle cx="8" cy="12" r="1" fill="currentColor" /><circle cx="16" cy="12" r="1.5" fill="currentColor" /></svg>,
-      // Cooling System Service
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="9" /><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6" /><circle cx="12" cy="12" r="3" fill="#ffffff" stroke="currentColor" strokeWidth="1.8" /><circle cx="12" cy="12" r="1" fill="currentColor" /></svg>,
-      // Radiator Repair & Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="3" y="4" width="18" height="16" rx="2" /><line x1="7" y1="4" x2="7" y2="20" /><line x1="12" y1="4" x2="12" y2="20" /><line x1="17" y1="4" x2="17" y2="20" /><line x1="3" y1="8" x2="21" y2="8" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="16" x2="21" y2="16" /></svg>
-    ],
-    "transmission-service": [
-      // Automatic Transmission Service
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M2 12h2M20 12h2" /><path d="M16 8l2-2M8 16l-2 2M16 16l2 2M8 8l-2-2" /></svg>,
-      // Gearbox Diagnostics
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="6" /><path d="M12 3v3M12 18v3M3 12h3M18 12h3" /><path d="M5.6 5.6l2.2 2.2M16.2 16.2l2.2 2.2M5.6 18.4l2.2-2.2M16.2 7.8l2.2-2.2" /><rect x="9" y="9" width="6" height="6" rx="1" /></svg>,
-      // Transmission Oil Change
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M6 3h12v12H6z" /><path d="M12 15v4" /><circle cx="12" cy="20" r="1.5" fill="currentColor" /><line x1="9" y1="7" x2="15" y2="7" /><line x1="9" y1="11" x2="15" y2="11" /></svg>,
-      // Automatic Transmission Repair & Overhaul
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3" /><circle cx="12" cy="6" r="1.5" fill="currentColor" /><circle cx="12" cy="18" r="1.5" fill="currentColor" /><circle cx="6" cy="12" r="1.5" fill="currentColor" /><circle cx="18" cy="12" r="1.5" fill="currentColor" /></svg>
-    ],
-    "brake-repair": [
-      // Brake Pad Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="4" y="7" width="16" height="10" rx="2" /><line x1="8" y1="7" x2="8" y2="17" /><line x1="16" y1="7" x2="16" y2="17" /><circle cx="12" cy="12" r="2" /><circle cx="12" cy="12" r="0.75" fill="currentColor" /></svg>,
-      // Brake Disc/Rotor Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="1" fill="currentColor" /><circle cx="12" cy="7" r="0.75" fill="currentColor" /><circle cx="12" cy="17" r="0.75" fill="currentColor" /><circle cx="7" cy="12" r="0.75" fill="currentColor" /><circle cx="17" cy="12" r="0.75" fill="currentColor" /><circle cx="8.5" cy="8.5" r="0.75" fill="currentColor" /><circle cx="15.5" cy="15.5" r="0.75" fill="currentColor" /><circle cx="8.5" cy="15.5" r="0.75" fill="currentColor" /><circle cx="15.5" cy="8.5" r="0.75" fill="currentColor" /></svg>,
-      // Brake Fluid Flush
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="6" y="8" width="12" height="12" rx="2" /><path d="M9 8V4h6v4M12 11v6" /><circle cx="12" cy="14" r="1.5" fill="currentColor" /></svg>,
-      // ABS Diagnostics & Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="8" /><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5l1.5 1.5M5 19l1.5-1.5M17.5 6.5l1.5 1.5" /><circle cx="12" cy="12" r="4" fill="rgba(225,29,72,0.15)" /></svg>,
-      // Complete Brake System Inspection
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="11" cy="11" r="8" /><circle cx="11" cy="11" r="3" /><path d="M16 16l3 3m-1-5l2.5 2.5" /></svg>
-    ],
-    "suspension-steering": [
-      // Suspension Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M12 4L4 12h5v8h6v-8h5L12 4z" /><circle cx="12" cy="8" r="1.5" fill="currentColor" /><circle cx="8" cy="15" r="1" fill="currentColor" /><circle cx="16" cy="15" r="1" fill="currentColor" /></svg>,
-      // Shock Absorber Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="4" r="2" /><circle cx="12" cy="20" r="2" /><line x1="12" y1="6" x2="12" y2="18" /><path d="M9 9h6M9 12h6M9 15h6" /></svg>,
-      // Steering System Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><line x1="2" y1="12" x2="22" y2="12" /><path d="M6 10v4M8 9v6M10 10v4M14 10v4M16 9v6M18 10v4" /><circle cx="12" cy="12" r="2" /><line x1="12" y1="6" x2="12" y2="10" /></svg>,
-      // Wheel Alignment
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="4" y="3" width="16" height="18" rx="2" /><line x1="8" y1="3" x2="8" y2="21" /><line x1="12" y1="3" x2="12" y2="21" /><line x1="16" y1="3" x2="16" y2="21" /><line x1="4" y1="9" x2="20" y2="9" /><line x1="4" y1="15" x2="20" y2="15" /></svg>,
-      // Wheel Balancing
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><line x1="12" y1="3" x2="12" y2="21" /><line x1="3" y1="12" x2="22" y2="12" /></svg>
-    ],
-    "electrical-electronics": [
-      // Computer Diagnostics
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" /><line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" /><line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="15" x2="23" y2="15" /><line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="15" x2="4" y2="15" /></svg>,
-      // Battery Testing & Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="3" y="6" width="18" height="14" rx="2" /><line x1="7" y1="3" x2="7" y2="6" /><line x1="17" y1="3" x2="17" y2="6" /><line x1="5" y1="11" x2="9" y2="11" /><line x1="15" y1="11" x2="19" y2="11" /><line x1="17" y1="9" x2="17" y2="13" /><circle cx="12" cy="14" r="1.5" fill="currentColor" /></svg>,
-      // Starter Motor & Alternator Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4" /><path d="M12 2a10 10 0 0 1 10 10" /><polygon points="12,8 14,12 10,12" fill="currentColor" /></svg>,
-      // ECU Programming
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M7 7h10v10H7z" /><circle cx="12" cy="12" r="2" /></svg>,
-      // VGS 3&4 Programming
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z" /><path d="M9 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z" /><circle cx="6" cy="6" r="1" fill="currentColor" /><circle cx="18" cy="18" r="1" fill="currentColor" /></svg>,
-      // TCU / SCN Coding
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><circle cx="12" cy="16" r="1.5" fill="currentColor" /></svg>
-    ],
-    "air-conditioning": [
-      // A/C Performance Check
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="7" cy="12" r="4" /><circle cx="17" cy="12" r="4" /><line x1="7" y1="12" x2="9" y2="10" /><line x1="17" y1="12" x2="19" y2="10" /><path d="M12 16h.01" /></svg>,
-      // A/C Gas Recharge
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M8 7V4h8v3" /><rect x="5" y="7" width="14" height="14" rx="3" /><line x1="5" y1="12" x2="19" y2="12" /><circle cx="12" cy="16" r="2" /><circle cx="12" cy="16" r="0.75" fill="currentColor" /></svg>,
-      // Compressor Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="6" y="4" width="12" height="16" rx="2" /><circle cx="12" cy="10" r="3" /><circle cx="12" cy="10" r="1" fill="currentColor" /><line x1="6" y1="16" x2="18" y2="16" /></svg>,
-      // Cabin Filter Replacement
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="3" y="6" width="18" height="12" rx="1" /><line x1="7" y1="6" x2="7" y2="18" /><line x1="12" y1="6" x2="12" y2="18" /><line x1="17" y1="6" x2="17" y2="18" /><path d="M4 3c1.5 1 1.5 2 3 2s1.5-1 3-1 1.5 1 3 1" /></svg>,
-      // A/C Leak Detection
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M18 8A6 6 0 0 0 6 8c0 7 6 13 6 13s6-6 6-13z" /><circle cx="12" cy="8" r="3" /><circle cx="12" cy="8" r="1" fill="currentColor" /></svg>,
-      // A/C Evaporator Changing
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M7 3v18M17 3v18M3 9h14M7 15h14" /></svg>
-    ],
-    "body-paint": [
-      // Dent Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M12 22v-8M5 12h14v2H5z" /><path d="M12 12V6c0-2 2-3 4-3" /><circle cx="16" cy="3" r="1.5" fill="currentColor" /></svg>,
-      // Premium Painting & Refinishing
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M7 3h6v4H7zM5 7h10v6l-3 4-2-2-1.5 5H5l1.5-7H5V7z" /><circle cx="18" cy="8" r="1" fill="currentColor" /><circle cx="21" cy="9.5" r="0.75" fill="currentColor" /><circle cx="19" cy="11.5" r="0.75" fill="currentColor" /></svg>,
-      // Scratch Removal & Paint Correction
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3" /><path d="M12 3a9 9 0 0 1 9 9" /><path d="M12 21a9 9 0 0 1-9-9" /></svg>,
-      // Ceramic Coating
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><circle cx="12" cy="11" r="3" /><circle cx="12" cy="11" r="1.25" fill="currentColor" /></svg>,
-      // Accident Repair
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><rect x="4" y="4" width="16" height="16" rx="2" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="12" y1="4" x2="12" y2="20" /><path d="M8 8l8 8M8 16l8-8" /></svg>,
-      // Engine Bay Cleaning
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="6" cy="12" r="3" /><path d="M9 12h13M21 9l-3 3 3 3" /><circle cx="6" cy="12" r="1" fill="currentColor" /></svg>
-    ]
-  };
-  return icons[category]?.[index] || (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}><circle cx="12" cy="12" r="10" /></svg>
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent, #e11d48)" }}>
+      <circle cx="12" cy="12" r="9" />
+      <polyline points="12 7 12 12 15 15" />
+    </svg>
   );
 };
-
 
 export default function LocalizedServiceCategoryPage({ params }) {
   const { locale, category } = use(params);
@@ -427,8 +518,6 @@ export default function LocalizedServiceCategoryPage({ params }) {
       <Header />
       <div style={{ padding: "6rem 2rem 5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", width: "100%", background: "transparent", direction: isArabic ? "rtl" : "ltr" }}>
         
-
-
         {/* Top Headline Area */}
         <div style={{
           display: "flex",
@@ -468,7 +557,7 @@ export default function LocalizedServiceCategoryPage({ params }) {
               <div style={{
                 width: "24px",
                 height: "24px",
-                borderRadius: "50%",
+                borderRadius: "50",
                 border: "1.5px solid var(--accent, #e11d48)",
                 color: "var(--accent, #e11d48)",
                 display: "flex",
@@ -484,7 +573,7 @@ export default function LocalizedServiceCategoryPage({ params }) {
             
             {/* Category Tracker Index */}
             <div style={{ fontSize: "0.85rem", fontWeight: "700", color: "#a1a1aa", marginTop: "0.25rem" }}>
-              <span style={{ color: "var(--accent, #e11d48)" }}>{media.index}</span> / 08
+              <span style={{ color: "var(--accent, #e11d48)" }}>{media.index}</span> / 13
             </div>
           </div>
         </div>
@@ -498,10 +587,10 @@ export default function LocalizedServiceCategoryPage({ params }) {
           direction: isArabic ? "rtl" : "ltr"
         }}>
           
-          {/* Image 1: Left */}
+          {/* Image 1: Left (Informative Technical) */}
           <div style={{
             position: "relative",
-            height: "360px",
+            height: "380px",
             borderRadius: "16px",
             overflow: "hidden",
             boxShadow: "0 10px 30px -10px rgba(0,0,0,0.15)"
@@ -510,37 +599,16 @@ export default function LocalizedServiceCategoryPage({ params }) {
               src={media.leftImg} 
               alt={categoryData.title} 
               fill
+              priority
               style={{ objectFit: "cover" }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            {/* Dark gradient overlay at the bottom */}
-            <div style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: "60%",
-              background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-end",
-              padding: "2rem",
-              textAlign: isArabic ? "right" : "left"
-            }}>
-              <div style={{ width: "32px", height: "3px", background: "var(--accent, #e11d48)", marginBottom: "0.75rem", alignSelf: isArabic ? "flex-end" : "flex-start" }} />
-              <h3 style={{ color: "#ffffff", fontSize: "1.1rem", fontWeight: "900", letterSpacing: "0.05em", margin: "0 0 0.25rem 0" }}>
-                {isArabic ? media.leftTitle.ar : media.leftTitle.en}
-              </h3>
-              <p style={{ color: "#d4d4d8", fontSize: "0.85rem", lineHeight: "1.4", margin: 0 }}>
-                {isArabic ? media.leftDesc.ar : media.leftDesc.en}
-              </p>
-            </div>
           </div>
 
-          {/* Image 2: Right */}
+          {/* Image 2: Right (Premium Brand Vehicle) */}
           <div style={{
             position: "relative",
-            height: "360px",
+            height: "380px",
             borderRadius: "16px",
             overflow: "hidden",
             boxShadow: "0 10px 30px -10px rgba(0,0,0,0.15)"
@@ -549,31 +617,10 @@ export default function LocalizedServiceCategoryPage({ params }) {
               src={media.rightImg} 
               alt={categoryData.title} 
               fill
+              priority
               style={{ objectFit: "cover" }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            {/* Dark gradient overlay at the bottom */}
-            <div style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: "60%",
-              background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-end",
-              padding: "2rem",
-              textAlign: isArabic ? "right" : "left"
-            }}>
-              <div style={{ width: "32px", height: "3px", background: "var(--accent, #e11d48)", marginBottom: "0.75rem", alignSelf: isArabic ? "flex-end" : "flex-start" }} />
-              <h3 style={{ color: "#ffffff", fontSize: "1.1rem", fontWeight: "900", letterSpacing: "0.05em", margin: "0 0 0.25rem 0" }}>
-                {isArabic ? media.rightTitle.ar : media.rightTitle.en}
-              </h3>
-              <p style={{ color: "#d4d4d8", fontSize: "0.85rem", lineHeight: "1.4", margin: 0 }}>
-                {isArabic ? media.rightDesc.ar : media.rightDesc.en}
-              </p>
-            </div>
           </div>
 
         </div>
@@ -643,7 +690,7 @@ export default function LocalizedServiceCategoryPage({ params }) {
 
               {/* Content */}
               <div style={{
-                maxHeight: expandedFeature === idx ? "200px" : "0px",
+                maxHeight: expandedFeature === idx ? "300px" : "0px",
                 opacity: expandedFeature === idx ? 1 : 0,
                 overflow: "hidden",
                 transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"

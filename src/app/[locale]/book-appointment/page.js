@@ -125,7 +125,12 @@ export default function LocalizedBookAppointmentPage({ params }) {
                     <option value="suspension-steering">{isArabic ? "نظام التعليق والتوجيه (Airmatic)" : "Suspension & Steering (Airmatic & Hydraulic)"}</option>
                     <option value="electrical-electronics">{isArabic ? "الأنظمة الكهربائية والإلكترونية" : "Electrical & Electronics"}</option>
                     <option value="air-conditioning">{isArabic ? "تكييف الهواء" : "Air Conditioning"}</option>
+                    <option value="tires-wheels">{isArabic ? "الإطارات والعجلات" : "Tires & Wheels"}</option>
                     <option value="body-paint">{isArabic ? "هيكل وطلاء السيارات (تعديل الضربات ورش)" : "Body & Paint (Denting & Painting)"}</option>
+                    <option value="detailing-protection">{isArabic ? "العناية والحماية الفائقة (نانو سيراميك وتلميع)" : "Detailing & Protection (Ceramic Coating)"}</option>
+                    <option value="luxury-performance">{isArabic ? "خدمات السيارات الفاخرة والأداء العالي" : "Luxury & Performance Services"}</option>
+                    <option value="emergency-services">{isArabic ? "خدمات الطوارئ والمساعدة (سطحات واشتراك)" : "Emergency Services (Recovery & Jump Start)"}</option>
+                    <option value="additional-services">{isArabic ? "خدمات إضافية وتجهيزات (تظليل وتنجيد)" : "Additional Services (Tinting & Upholstery)"}</option>
                   </select>
                 </div>
 
@@ -226,7 +231,7 @@ export default function LocalizedBookAppointmentPage({ params }) {
               height: "300px"
             }}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.480088921865!2d58.5587781!3d23.5511874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff6cf7dbad9b%3A0x6b72a6b2ea82697c!2sAl%20Wadi%20Al%20Kabir%2C%20Muscat%2C%20Oman!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s23.585497,58.5588108!6i17!3m1!1sen!5m1!1sen" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -235,6 +240,34 @@ export default function LocalizedBookAppointmentPage({ params }) {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+            <a
+              href="https://maps.google.com/maps?q=23.585497%2C58.5588108&z=17&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.5rem",
+                padding: "0.85rem 1.25rem",
+                borderRadius: "6px",
+                background: "#ffffff",
+                border: "1px solid var(--card-border)",
+                color: "var(--accent, #e11d48)",
+                fontSize: "0.9rem",
+                fontWeight: "700",
+                textDecoration: "none",
+                transition: "var(--transition)",
+                boxShadow: "0 1px 3px rgba(0,0,0,0.05)"
+              }}
+              className="map-directions-btn"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              {isArabic ? "فتح في خرائط Google (الاتجاهات) ←" : "Open in Google Maps (Get Directions) →"}
+            </a>
           </div>
 
         </div>

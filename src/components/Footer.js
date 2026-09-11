@@ -41,7 +41,7 @@ export default function Footer() {
           />
           <p style={{
             color: "var(--text-muted)",
-            fontSize: "0.9rem",
+            fontSize: "0.95rem",
             lineHeight: "1.6",
             marginBottom: "1.5rem"
           }}>
@@ -73,8 +73,8 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div style={{ textAlign: isArabic ? "right" : "left" }}>
-          <h4 style={{ fontSize: "1.1rem", fontWeight: "600", marginBottom: "1.5rem", color: "var(--foreground)" }}>{t.contact}</h4>
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "1rem", fontSize: "0.9rem", color: "var(--text-muted)" }}>
+          <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "1.5rem", color: "var(--foreground)" }}>{t.contact}</h4>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "1rem", fontSize: "0.95rem", color: "var(--text-muted)" }}>
             <li style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", flexDirection: isArabic ? "row-reverse" : "row" }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" style={{ marginTop: "3px" }}>
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -108,8 +108,8 @@ export default function Footer() {
 
         {/* Location & Hours */}
         <div style={{ textAlign: isArabic ? "right" : "left" }}>
-          <h4 style={{ fontSize: "1.1rem", fontWeight: "600", marginBottom: "1.5rem", color: "var(--foreground)" }}>{t.location}</h4>
-          <p style={{ color: "var(--text-muted)", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
+          <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "1.5rem", color: "var(--foreground)" }}>{t.location}</h4>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: "1.6", marginBottom: "1rem" }}>
             {isArabic ? (
               <>
                 شاطئ الراحة الحديث،<br />
@@ -124,7 +124,7 @@ export default function Footer() {
               </>
             )}
           </p>
-          <div style={{ fontSize: "0.9rem", color: "var(--text-muted)" }}>
+          <div style={{ fontSize: "0.95rem", color: "var(--text-muted)" }}>
             <strong style={{ color: "var(--foreground)" }}>{isArabic ? "ساعات العمل:" : "Business Hours:"}</strong>
             <p style={{ marginTop: "2px" }}>{isArabic ? "السبت - الخميس: ٨:٠٠ صباحًا - ٨:٠٠ مساءً" : "Saturday - Thursday: 8:00 AM - 8:00 PM"}</p>
             <p style={{ color: "var(--accent)", marginTop: "4px" }}>{isArabic ? "الجمعة: مغلق" : "Friday: Closed"}</p>
@@ -133,7 +133,7 @@ export default function Footer() {
 
         {/* Find Us */}
         <div style={{ textAlign: isArabic ? "right" : "left" }}>
-          <h4 style={{ fontSize: "1.1rem", fontWeight: "600", marginBottom: "1.5rem", color: "var(--foreground)" }}>{t.find}</h4>
+          <h4 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "1.5rem", color: "var(--foreground)" }}>{t.find}</h4>
           <div style={{
             borderRadius: "6px",
             overflow: "hidden",
@@ -142,7 +142,7 @@ export default function Footer() {
             position: "relative"
           }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.480088921865!2d58.5587781!3d23.5511874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff6cf7dbad9b%3A0x6b72a6b2ea82697c!2sAl%20Wadi%20Al%20Kabir%2C%20Muscat%2C%20Oman!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+              src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s23.585497,58.5588108!6i17!3m1!1sen!5m1!1sen" 
               width="100%" 
               height="100%" 
               style={{ border: 0, filter: "grayscale(0.5) contrast(1.1)" }} 
@@ -151,6 +151,28 @@ export default function Footer() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+          <a
+            href="https://maps.google.com/maps?q=23.585497%2C58.5588108&z=17&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              fontSize: "0.85rem",
+              color: "var(--accent, #e11d48)",
+              fontWeight: "600",
+              marginTop: "0.75rem",
+              textDecoration: "none"
+            }}
+            className="footer-map-link"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            {isArabic ? "فتح في خرائط Google ←" : "View on Google Maps →"}
+          </a>
         </div>
       </div>
 
@@ -163,7 +185,7 @@ export default function Footer() {
         alignItems: "center",
         flexWrap: "wrap",
         gap: "1.5rem",
-        fontSize: "0.85rem",
+        fontSize: "0.92rem",
         color: "var(--text-muted)",
         flexDirection: isArabic ? "row-reverse" : "row"
       }}>
@@ -171,6 +193,7 @@ export default function Footer() {
         <div style={{ display: "flex", gap: "1.5rem", flexDirection: isArabic ? "row-reverse" : "row" }}>
           <Link href={getLocalizedPath("/services")} className="footer-link">{isArabic ? "خدماتنا" : "Services"}</Link>
           <Link href={getLocalizedPath("/about")} className="footer-link">{isArabic ? "من نحن" : "About"}</Link>
+          <Link href={getLocalizedPath("/blog")} className="footer-link">{isArabic ? "المدونة" : "Blog"}</Link>
           <Link href={getLocalizedPath("/contact")} className="footer-link">{isArabic ? "اتصل بنا" : "Contact"}</Link>
           <Link href={getLocalizedPath("/privacy")} className="footer-link">{isArabic ? "سياسة الخصوصية" : "Privacy Policy"}</Link>
         </div>
