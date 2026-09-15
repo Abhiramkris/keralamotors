@@ -1054,12 +1054,148 @@ span.highlight {
 
 
 /* ==========================================================================
-   DIAGNOSTIC SOFTWARE SHOWCASE RESPONSIVE STYLES
+   DIAGNOSTIC SOFTWARE SHOWCASE - FLAT RED GRADIENT & ROTATING FLOATING TIRES
    ========================================================================== */
 .software-showcase-section {
-  padding: 5rem 2rem;
+  position: relative;
   width: 100%;
+  padding: 5.5rem 2rem;
   box-sizing: border-box;
+  overflow: hidden;
+  background: #991b1b;
+  background-image: 
+    radial-gradient(ellipse at 85% 15%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(0, 0, 0, 0.32) 0%, transparent 55%),
+    linear-gradient(135deg, #7f1d1d 0%, #991b1b 28%, #be123c 60%, #881337 100%);
+}
+
+/* Subtle Animated Floating Rotating Tires Background */
+.showcase-tires-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.tire-float-track {
+  position: absolute;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Track 1: Upper layer, subtle vertical 3D spin + floating moving right to left */
+.track-1 {
+  top: 8%;
+  right: -240px;
+  width: 220px;
+  height: 220px;
+  color: rgba(255, 255, 255, 0.13);
+  animation: floatRightToLeft 24s linear infinite;
+  animation-delay: -6s;
+}
+
+/* Track 2: Lower layer, rolling on axle + gentle vertical wave floating right to left */
+.track-2 {
+  bottom: 8%;
+  right: -200px;
+  width: 175px;
+  height: 175px;
+  color: rgba(255, 255, 255, 0.11);
+  animation: floatRightToLeftBob 20s linear infinite;
+  animation-delay: -13s;
+}
+
+/* Track 3: Mid-height smaller tire, faster subtle pass */
+.track-3 {
+  top: 46%;
+  right: -160px;
+  width: 140px;
+  height: 140px;
+  color: rgba(255, 255, 255, 0.09);
+  animation: floatRightToLeft 28s linear infinite;
+  animation-delay: -21s;
+}
+
+/* Track 4: Large deep background watermark tire, slow drift */
+.track-4 {
+  top: 22%;
+  right: -360px;
+  width: 330px;
+  height: 330px;
+  color: rgba(255, 255, 255, 0.07);
+  animation: floatRightToLeft 38s linear infinite;
+  animation-delay: -2s;
+}
+
+/* Translation: Floating moving right to left across viewport */
+@keyframes floatRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100vw - 420px));
+  }
+}
+
+@keyframes floatRightToLeftBob {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(calc((-100vw - 420px) * 0.25)) translateY(-22px);
+  }
+  50% {
+    transform: translateX(calc((-100vw - 420px) * 0.5)) translateY(15px);
+  }
+  75% {
+    transform: translateX(calc((-100vw - 420px) * 0.75)) translateY(-18px);
+  }
+  100% {
+    transform: translateX(calc(-100vw - 420px)) translateY(0);
+  }
+}
+
+/* Tire rotating on its own vertical axis (3D perspective) + rolling axle spin */
+.tire-spin-vertical {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: tireSpinVerticalAxis 10s ease-in-out infinite alternate, tireRollCounterClockwise 14s linear infinite;
+}
+
+@keyframes tireSpinVerticalAxis {
+  0% {
+    transform: perspective(700px) rotateY(-36deg);
+  }
+  100% {
+    transform: perspective(700px) rotateY(36deg);
+  }
+}
+
+/* Continuous Rolling rotation on its own center axis */
+.tire-spin-rolling {
+  width: 100%;
+  height: 100%;
+  animation: tireRollCounterClockwise 12s linear infinite;
+}
+
+@keyframes tireRollCounterClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Content Container positioned above animated background */
+.software-showcase-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .software-showcase-header {
@@ -1071,18 +1207,20 @@ span.highlight {
   font-size: clamp(1.85rem, 4vw, 2.5rem);
   font-weight: 800;
   margin-top: 0.5rem;
-  color: #18181b;
+  color: #ffffff !important;
   line-height: 1.2;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
 }
 
 .software-showcase-subtitle {
-  color: #71717a;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-size: 0.95rem;
   margin-top: 0.5rem;
-  max-width: 600px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.5;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
 }
 
 .software-showcase-card {
@@ -1093,8 +1231,9 @@ span.highlight {
   gap: 2.5rem;
   align-items: center;
   position: relative;
-  background: #f8f9fa;
-  border: 1px solid #e4e4e7;
+  background: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
@@ -1116,13 +1255,17 @@ span.highlight {
 }
 
 .software-platform-badge {
-  display: block;
+  display: inline-block;
   font-size: 0.75rem;
   color: var(--accent, #e11d48);
-  font-weight: 700;
+  background: #ffe4e6;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
+  width: fit-content;
 }
 
 .software-slide-title {
@@ -1134,7 +1277,7 @@ span.highlight {
 }
 
 .software-slide-desc {
-  color: #71717a;
+  color: #52525b;
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
@@ -1195,7 +1338,7 @@ span.highlight {
   overflow: hidden;
   border: 1px solid #e4e4e7;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  background: #ffffff;
+  background: #f8fafc;
   padding: 1.5rem;
   box-sizing: border-box;
 }
@@ -1218,6 +1361,18 @@ span.highlight {
   }
   .software-info-block {
     min-height: auto;
+  }
+  .track-1 {
+    width: 160px;
+    height: 160px;
+  }
+  .track-2 {
+    width: 130px;
+    height: 130px;
+  }
+  .track-4 {
+    width: 240px;
+    height: 240px;
   }
 }
 
@@ -1259,6 +1414,24 @@ span.highlight {
     justify-content: center;
     padding: 0.5rem 0.75rem !important;
     font-size: 0.82rem !important;
+  }
+  .track-1 {
+    width: 130px;
+    height: 130px;
+    top: 6%;
+  }
+  .track-2 {
+    width: 105px;
+    height: 105px;
+    bottom: 5%;
+  }
+  .track-3 {
+    display: none;
+  }
+  .track-4 {
+    width: 180px;
+    height: 180px;
+    top: 35%;
   }
 }
 

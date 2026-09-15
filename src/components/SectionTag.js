@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SectionTag({ text, isArabic = false }) {
+export default function SectionTag({ text, isArabic = false, color = "var(--accent)", barColor = "var(--accent)" }) {
   return (
     <div style={{
       display: "inline-flex",
@@ -9,7 +9,7 @@ export default function SectionTag({ text, isArabic = false }) {
       marginBottom: "0.75rem",
       flexDirection: isArabic ? "row-reverse" : "row"
     }}>
-      {/* Three Slanted Red Bars */}
+      {/* Three Slanted Bars */}
       <div style={{ 
         display: "inline-flex", 
         gap: "3px",
@@ -21,7 +21,7 @@ export default function SectionTag({ text, isArabic = false }) {
             style={{ 
               width: "4px", 
               height: "16px", 
-              background: "var(--accent)", 
+              background: barColor, 
               transform: isArabic ? "skewX(20deg)" : "skewX(-20deg)",
               display: "inline-block"
             }} 
@@ -34,7 +34,7 @@ export default function SectionTag({ text, isArabic = false }) {
         fontSize: "0.92rem",
         fontWeight: "800",
         letterSpacing: "3px",
-        color: "var(--accent)",
+        color: color,
         textTransform: "uppercase"
       }}>
         {text}

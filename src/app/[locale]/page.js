@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
 import BlogEmbed from "@/components/BlogEmbed";
+import TireWheelSvg from "@/components/TireWheelSvg";
 
 export default function LocalizedHomePage({ params }) {
   const { locale } = use(params);
@@ -786,70 +787,96 @@ export default function LocalizedHomePage({ params }) {
       </section>
 
       {/* 4. DIAGNOSTIC SOFTWARE SHOWCASE */}
-      <section className="software-showcase-section" style={{ maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
-        <div className="software-showcase-header">
-          <SectionTag text={t.software.tag} isArabic={isArabic} />
-          <h2 className="software-showcase-title">
-            {t.software.title}
-          </h2>
-          <p className="software-showcase-subtitle">{t.software.desc}</p>
-        </div>
-
-        <div className="software-showcase-card glass" style={{ direction: isArabic ? "rtl" : "ltr" }}>
-          <div className="software-text-col" style={{ textAlign: isArabic ? "right" : "left" }}>
-            {/* Responsive text container */}
-            <div className="software-info-block">
-              <div style={{ display: "inline-block", marginBottom: "0.75rem" }}>
-                {softwares[activeSlide].iconSvg}
-              </div>
-              <span className="software-platform-badge">
-                {softwares[activeSlide].platform}
-              </span>
-              <h3 className="software-slide-title">
-                {softwares[activeSlide].title}
-              </h3>
-              <p className="software-slide-desc">
-                {softwares[activeSlide].description}
-              </p>
-            </div>
-            
-            {/* Responsive Control buttons */}
-            <div className="software-controls-wrapper" style={{
-              flexDirection: isArabic ? "row-reverse" : "row"
-            }}>
-              <div className="software-btn-group" style={{
-                flexDirection: isArabic ? "row-reverse" : "row"
-              }}>
-                <button onClick={prevSlide} className="btn btn-secondary software-nav-btn" style={{ background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
-                  {isArabic ? "السابق ←" : "← Prev"}
-                </button>
-                <button onClick={nextSlide} className="btn btn-primary software-nav-btn">
-                  {isArabic ? "التالي →" : "Next →"}
-                </button>
-              </div>
-              <div className="software-dots-wrapper">
-                {softwares.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveSlide(idx)}
-                    className={`software-dot ${activeSlide === idx ? "active" : ""}`}
-                    aria-label={`Slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
+      <section className="software-showcase-section flat-red-gradient">
+        {/* Subtle Animated Floating Rotating Tires Background */}
+        <div className="showcase-tires-backdrop" aria-hidden="true">
+          <div className="tire-float-track track-1">
+            <div className="tire-spin-vertical">
+              <TireWheelSvg />
             </div>
           </div>
+          <div className="tire-float-track track-2">
+            <div className="tire-spin-rolling">
+              <TireWheelSvg />
+            </div>
+          </div>
+          <div className="tire-float-track track-3">
+            <div className="tire-spin-vertical">
+              <TireWheelSvg />
+            </div>
+          </div>
+          <div className="tire-float-track track-4">
+            <div className="tire-spin-rolling">
+              <TireWheelSvg />
+            </div>
+          </div>
+        </div>
 
-          {/* Premium image card with responsive aspect ratio */}
-          <div className="software-image-card">
-            <Image
-              src={softwares[activeSlide].image}
-              alt={softwares[activeSlide].title}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: "contain" }}
-              priority
-            />
+        <div className="software-showcase-container">
+          <div className="software-showcase-header">
+            <SectionTag text={t.software.tag} isArabic={isArabic} color="#ffffff" barColor="#ffffff" />
+            <h2 className="software-showcase-title">
+              {t.software.title}
+            </h2>
+            <p className="software-showcase-subtitle">{t.software.desc}</p>
+          </div>
+
+          <div className="software-showcase-card" style={{ direction: isArabic ? "rtl" : "ltr" }}>
+            <div className="software-text-col" style={{ textAlign: isArabic ? "right" : "left" }}>
+              {/* Responsive text container */}
+              <div className="software-info-block">
+                <div style={{ display: "inline-block", marginBottom: "0.75rem" }}>
+                  {softwares[activeSlide].iconSvg}
+                </div>
+                <span className="software-platform-badge">
+                  {softwares[activeSlide].platform}
+                </span>
+                <h3 className="software-slide-title">
+                  {softwares[activeSlide].title}
+                </h3>
+                <p className="software-slide-desc">
+                  {softwares[activeSlide].description}
+                </p>
+              </div>
+              
+              {/* Responsive Control buttons */}
+              <div className="software-controls-wrapper" style={{
+                flexDirection: isArabic ? "row-reverse" : "row"
+              }}>
+                <div className="software-btn-group" style={{
+                  flexDirection: isArabic ? "row-reverse" : "row"
+                }}>
+                  <button onClick={prevSlide} className="btn btn-secondary software-nav-btn" style={{ background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
+                    {isArabic ? "السابق ←" : "← Prev"}
+                  </button>
+                  <button onClick={nextSlide} className="btn btn-primary software-nav-btn" style={{ background: "var(--accent, #e11d48)", color: "#ffffff", border: "none" }}>
+                    {isArabic ? "التالي →" : "Next →"}
+                  </button>
+                </div>
+                <div className="software-dots-wrapper">
+                  {softwares.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveSlide(idx)}
+                      className={`software-dot ${activeSlide === idx ? "active" : ""}`}
+                      aria-label={`Slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Premium image card with responsive aspect ratio */}
+            <div className="software-image-card">
+              <Image
+                src={softwares[activeSlide].image}
+                alt={softwares[activeSlide].title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: "contain" }}
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
