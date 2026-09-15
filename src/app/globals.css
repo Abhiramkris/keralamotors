@@ -1054,7 +1054,7 @@ span.highlight {
 
 
 /* ==========================================================================
-   DIAGNOSTIC SOFTWARE SHOWCASE - FLAT RED GRADIENT & ROTATING FLOATING TIRES
+   DIAGNOSTIC SOFTWARE SHOWCASE - 2D WHEELS IN ROWS & LOGICAL CARD LAYOUT
    ========================================================================== */
 .software-showcase-section {
   position: relative;
@@ -1069,123 +1069,87 @@ span.highlight {
     linear-gradient(135deg, #7f1d1d 0%, #991b1b 28%, #be123c 60%, #881337 100%);
 }
 
-/* Subtle Animated Floating Rotating Tires Background */
-.showcase-tires-backdrop {
+/* --- 2D WHEELS IN ROWS: SUBTLE LEFT TO RIGHT ROTATING MARQUEE --- */
+.wheels-rows-backdrop {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  contain: strict;
 }
 
-.tire-float-track {
-  position: absolute;
+.wheel-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  color: #ffffff;
+}
+
+.row-top {
+  opacity: 0.13;
+}
+
+.row-mid {
+  opacity: 0.08;
+}
+
+.row-bot {
+  opacity: 0.14;
+}
+
+.wheel-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  flex-shrink: 0;
+  padding-right: 3.5rem;
   will-change: transform;
-  pointer-events: none;
 }
 
-/* Track 1: Upper layer, subtle vertical 3D spin + floating moving right to left */
-.track-1 {
-  top: 8%;
-  right: -240px;
-  width: 220px;
-  height: 220px;
-  color: rgba(255, 255, 255, 0.13);
-  animation: floatRightToLeft 24s linear infinite;
-  animation-delay: -6s;
+/* Left to Right continuous marquee */
+.row-top .wheel-marquee-track {
+  animation: wheelMarqueeLTR 26s linear infinite;
 }
 
-/* Track 2: Lower layer, rolling on axle + gentle vertical wave floating right to left */
-.track-2 {
-  bottom: 8%;
-  right: -200px;
-  width: 175px;
-  height: 175px;
-  color: rgba(255, 255, 255, 0.11);
-  animation: floatRightToLeftBob 20s linear infinite;
-  animation-delay: -13s;
+.row-mid .wheel-marquee-track {
+  animation: wheelMarqueeLTR 36s linear infinite;
 }
 
-/* Track 3: Mid-height smaller tire, faster subtle pass */
-.track-3 {
-  top: 46%;
-  right: -160px;
-  width: 140px;
-  height: 140px;
-  color: rgba(255, 255, 255, 0.09);
-  animation: floatRightToLeft 28s linear infinite;
-  animation-delay: -21s;
+.row-bot .wheel-marquee-track {
+  animation: wheelMarqueeLTR 30s linear infinite;
 }
 
-/* Track 4: Large deep background watermark tire, slow drift */
-.track-4 {
-  top: 22%;
-  right: -360px;
-  width: 330px;
-  height: 330px;
-  color: rgba(255, 255, 255, 0.07);
-  animation: floatRightToLeft 38s linear infinite;
-  animation-delay: -2s;
-}
-
-/* Translation: Floating moving right to left across viewport */
-@keyframes floatRightToLeft {
+@keyframes wheelMarqueeLTR {
   0% {
-    transform: translateX(0);
+    transform: translate3d(-100%, 0, 0);
   }
   100% {
-    transform: translateX(calc(-100vw - 420px));
+    transform: translate3d(0%, 0, 0);
   }
 }
 
-@keyframes floatRightToLeftBob {
+/* 2D Wheel Clockwise Rotation */
+.wheel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  will-change: transform;
+  animation: wheelSpinClockwise 4.5s linear infinite;
+}
+
+@keyframes wheelSpinClockwise {
   0% {
-    transform: translateX(0) translateY(0);
-  }
-  25% {
-    transform: translateX(calc((-100vw - 420px) * 0.25)) translateY(-22px);
-  }
-  50% {
-    transform: translateX(calc((-100vw - 420px) * 0.5)) translateY(15px);
-  }
-  75% {
-    transform: translateX(calc((-100vw - 420px) * 0.75)) translateY(-18px);
-  }
-  100% {
-    transform: translateX(calc(-100vw - 420px)) translateY(0);
-  }
-}
-
-/* Tire rotating on its own vertical axis (3D perspective) + rolling axle spin */
-.tire-spin-vertical {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  animation: tireSpinVerticalAxis 10s ease-in-out infinite alternate, tireRollCounterClockwise 14s linear infinite;
-}
-
-@keyframes tireSpinVerticalAxis {
-  0% {
-    transform: perspective(700px) rotateY(-36deg);
-  }
-  100% {
-    transform: perspective(700px) rotateY(36deg);
-  }
-}
-
-/* Continuous Rolling rotation on its own center axis */
-.tire-spin-rolling {
-  width: 100%;
-  height: 100%;
-  animation: tireRollCounterClockwise 12s linear infinite;
-}
-
-@keyframes tireRollCounterClockwise {
-  from {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(-360deg);
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -1223,12 +1187,17 @@ span.highlight {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* --- THE SHOWCASE CARD: LOGICAL 2-COLUMN DESKTOP GRID --- */
 .software-showcase-card {
-  padding: 3rem;
+  padding: 2.75rem;
   border-radius: 16px;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 2.5rem;
+  grid-template-areas:
+    "header image"
+    "desc   image"
+    "controls image";
+  gap: 1.5rem 2.5rem;
   align-items: center;
   position: relative;
   background: #ffffff !important;
@@ -1239,19 +1208,18 @@ span.highlight {
   overflow: hidden;
 }
 
-.software-text-col {
+.software-header-block {
+  grid-area: header;
   display: flex;
   flex-direction: column;
-  justifyContent: center;
-  width: 100%;
-  min-width: 0;
+  gap: 0.75rem;
 }
 
-.software-info-block {
-  min-height: 200px;
+.software-meta-row {
   display: flex;
-  flex-direction: column;
-  justifyContent: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .software-platform-badge {
@@ -1263,17 +1231,46 @@ span.highlight {
   border-radius: 999px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
   width: fit-content;
+}
+
+.software-slide-counter {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #18181b;
+  background: #f4f4f5;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.software-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.software-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .software-slide-title {
   font-size: clamp(1.4rem, 2.5vw, 1.85rem);
   font-weight: 800;
   color: #18181b;
-  margin-bottom: 0.75rem;
   line-height: 1.25;
+  margin: 0;
+}
+
+.software-desc-block {
+  grid-area: desc;
 }
 
 .software-slide-desc {
@@ -1284,11 +1281,12 @@ span.highlight {
 }
 
 .software-controls-wrapper {
+  grid-area: controls;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -1330,10 +1328,12 @@ span.highlight {
   background: var(--accent, #e11d48);
 }
 
+/* The Changing Slideshow Image Card */
 .software-image-card {
+  grid-area: image;
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 330px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid #e4e4e7;
@@ -1343,7 +1343,35 @@ span.highlight {
   box-sizing: border-box;
 }
 
-/* Tablet (max-width: 900px) */
+.software-image-card img {
+  animation: fadeInSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0.4;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.software-image-badge {
+  position: absolute;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.06);
+  color: #71717a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+/* Tablet & Mobile (max-width: 900px): Reorder to 1-column logical layout */
 @media (max-width: 900px) {
   .software-showcase-section {
     padding: 4rem 1.5rem;
@@ -1352,58 +1380,66 @@ span.highlight {
     margin-bottom: 2.5rem;
   }
   .software-showcase-card {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding: 1.75rem 1.5rem !important;
+  }
+  .software-header-block {
+    order: 1;
+    width: 100%;
   }
   .software-image-card {
-    height: 280px;
+    order: 2; /* THE CHANGING SLIDESHOW RIGHT UNDER NUMBER & TITLE! */
+    height: 250px;
+    width: 100%;
   }
-  .software-info-block {
-    min-height: auto;
+  .software-desc-block {
+    order: 3;
+    width: 100%;
   }
-  .track-1 {
-    width: 160px;
-    height: 160px;
+  .software-controls-wrapper {
+    order: 4; /* CONTROLS AT THE VERY BOTTOM! */
+    width: 100%;
+    margin-top: 0.5rem;
   }
-  .track-2 {
-    width: 130px;
-    height: 130px;
-  }
-  .track-4 {
-    width: 240px;
-    height: 240px;
+  .wheel-marquee-track {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
 /* Mobile (max-width: 640px) */
 @media (max-width: 640px) {
   .software-showcase-section {
-    padding: 3rem 1rem;
+    padding: 3rem 1rem !important;
   }
   .software-showcase-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem !important;
   }
   .software-showcase-card {
-    padding: 1.25rem 1rem;
-    border-radius: 14px;
-    gap: 1.5rem;
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+    gap: 1rem !important;
+  }
+  .software-header-block {
+    gap: 0.5rem !important;
+  }
+  .software-slide-title {
+    font-size: 1.25rem !important;
   }
   .software-image-card {
-    height: 210px;
-    padding: 0.75rem;
-    border-radius: 10px;
-  }
-  .software-info-block {
-    min-height: auto;
+    height: 210px !important;
+    padding: 0.75rem !important;
+    border-radius: 10px !important;
   }
   .software-slide-desc {
-    font-size: 0.88rem;
-    line-height: 1.5;
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
   }
   .software-controls-wrapper {
-    margin-top: 1.25rem;
-    gap: 0.75rem;
+    margin-top: 0.5rem !important;
+    gap: 0.75rem !important;
   }
   .software-btn-group {
     flex: 1 1 auto;
@@ -1415,35 +1451,20 @@ span.highlight {
     padding: 0.5rem 0.75rem !important;
     font-size: 0.82rem !important;
   }
-  .track-1 {
-    width: 130px;
-    height: 130px;
-    top: 6%;
-  }
-  .track-2 {
-    width: 105px;
-    height: 105px;
-    bottom: 5%;
-  }
-  .track-3 {
+  .row-mid {
     display: none;
-  }
-  .track-4 {
-    width: 180px;
-    height: 180px;
-    top: 35%;
   }
 }
 
 /* Extra Small Mobile (max-width: 380px) */
 @media (max-width: 380px) {
   .software-showcase-section {
-    padding: 2.5rem 0.75rem;
+    padding: 2.5rem 0.75rem !important;
   }
   .software-showcase-card {
-    padding: 1rem 0.75rem;
+    padding: 1rem 0.75rem !important;
   }
   .software-image-card {
-    height: 180px;
+    height: 180px !important;
   }
 }

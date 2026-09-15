@@ -788,26 +788,59 @@ export default function LocalizedHomePage({ params }) {
 
       {/* 4. DIAGNOSTIC SOFTWARE SHOWCASE */}
       <section className="software-showcase-section flat-red-gradient">
-        {/* Subtle Animated Floating Rotating Tires Background */}
-        <div className="showcase-tires-backdrop" aria-hidden="true">
-          <div className="tire-float-track track-1">
-            <div className="tire-spin-vertical">
-              <TireWheelSvg />
+        {/* Lightweight 2D Wheels in Rows (Moving Left to Right) */}
+        <div className="wheels-rows-backdrop" aria-hidden="true">
+          {/* Row 1 - Top */}
+          <div className="wheel-marquee-row row-top">
+            <div className="wheel-marquee-track">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r1-${i}`} className="wheel-item">
+                  <TireWheelSvg size={44} />
+                </div>
+              ))}
+            </div>
+            <div className="wheel-marquee-track" aria-hidden="true">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r1-dup-${i}`} className="wheel-item">
+                  <TireWheelSvg size={44} />
+                </div>
+              ))}
             </div>
           </div>
-          <div className="tire-float-track track-2">
-            <div className="tire-spin-rolling">
-              <TireWheelSvg />
+
+          {/* Row 2 - Middle */}
+          <div className="wheel-marquee-row row-mid">
+            <div className="wheel-marquee-track">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r2-${i}`} className="wheel-item">
+                  <TireWheelSvg size={38} />
+                </div>
+              ))}
+            </div>
+            <div className="wheel-marquee-track" aria-hidden="true">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r2-dup-${i}`} className="wheel-item">
+                  <TireWheelSvg size={38} />
+                </div>
+              ))}
             </div>
           </div>
-          <div className="tire-float-track track-3">
-            <div className="tire-spin-vertical">
-              <TireWheelSvg />
+
+          {/* Row 3 - Bottom */}
+          <div className="wheel-marquee-row row-bot">
+            <div className="wheel-marquee-track">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r3-${i}`} className="wheel-item">
+                  <TireWheelSvg size={46} />
+                </div>
+              ))}
             </div>
-          </div>
-          <div className="tire-float-track track-4">
-            <div className="tire-spin-rolling">
-              <TireWheelSvg />
+            <div className="wheel-marquee-track" aria-hidden="true">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r3-dup-${i}`} className="wheel-item">
+                  <TireWheelSvg size={46} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -822,53 +855,31 @@ export default function LocalizedHomePage({ params }) {
           </div>
 
           <div className="software-showcase-card" style={{ direction: isArabic ? "rtl" : "ltr" }}>
-            <div className="software-text-col" style={{ textAlign: isArabic ? "right" : "left" }}>
-              {/* Responsive text container */}
-              <div className="software-info-block">
-                <div style={{ display: "inline-block", marginBottom: "0.75rem" }}>
-                  {softwares[activeSlide].iconSvg}
-                </div>
+            {/* Header Block: Badge, Slide Counter (01 / 04), and Title */}
+            <div className="software-header-block">
+              <div className="software-meta-row" style={{ flexDirection: isArabic ? "row-reverse" : "row" }}>
                 <span className="software-platform-badge">
                   {softwares[activeSlide].platform}
                 </span>
+                <span className="software-slide-counter">
+                  0{activeSlide + 1} <span style={{ opacity: 0.45 }}>/ 0{softwares.length}</span>
+                </span>
+              </div>
+
+              <div className="software-title-row" style={{ flexDirection: isArabic ? "row-reverse" : "row" }}>
+                <div className="software-icon-wrap">
+                  {softwares[activeSlide].iconSvg}
+                </div>
                 <h3 className="software-slide-title">
                   {softwares[activeSlide].title}
                 </h3>
-                <p className="software-slide-desc">
-                  {softwares[activeSlide].description}
-                </p>
-              </div>
-              
-              {/* Responsive Control buttons */}
-              <div className="software-controls-wrapper" style={{
-                flexDirection: isArabic ? "row-reverse" : "row"
-              }}>
-                <div className="software-btn-group" style={{
-                  flexDirection: isArabic ? "row-reverse" : "row"
-                }}>
-                  <button onClick={prevSlide} className="btn btn-secondary software-nav-btn" style={{ background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
-                    {isArabic ? "السابق ←" : "← Prev"}
-                  </button>
-                  <button onClick={nextSlide} className="btn btn-primary software-nav-btn" style={{ background: "var(--accent, #e11d48)", color: "#ffffff", border: "none" }}>
-                    {isArabic ? "التالي →" : "Next →"}
-                  </button>
-                </div>
-                <div className="software-dots-wrapper">
-                  {softwares.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveSlide(idx)}
-                      className={`software-dot ${activeSlide === idx ? "active" : ""}`}
-                      aria-label={`Slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
               </div>
             </div>
 
-            {/* Premium image card with responsive aspect ratio */}
+            {/* The Changing Slide Show (Visual Image Card) - Placed directly under the number & title! */}
             <div className="software-image-card">
               <Image
+                key={activeSlide}
                 src={softwares[activeSlide].image}
                 alt={softwares[activeSlide].title}
                 fill
@@ -876,6 +887,42 @@ export default function LocalizedHomePage({ params }) {
                 style={{ objectFit: "contain" }}
                 priority
               />
+              <div className="software-image-badge" style={{ [isArabic ? "left" : "right"]: "12px" }}>
+                0{activeSlide + 1}
+              </div>
+            </div>
+
+            {/* Description Block */}
+            <div className="software-desc-block" style={{ textAlign: isArabic ? "right" : "left" }}>
+              <p className="software-slide-desc">
+                {softwares[activeSlide].description}
+              </p>
+            </div>
+
+            {/* Bottom Controls Bar (Prev / Next + Dots) */}
+            <div className="software-controls-wrapper" style={{
+              flexDirection: isArabic ? "row-reverse" : "row"
+            }}>
+              <div className="software-btn-group" style={{
+                flexDirection: isArabic ? "row-reverse" : "row"
+              }}>
+                <button onClick={prevSlide} className="btn btn-secondary software-nav-btn" style={{ background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
+                  {isArabic ? "السابق ←" : "← Prev"}
+                </button>
+                <button onClick={nextSlide} className="btn btn-primary software-nav-btn" style={{ background: "var(--accent, #e11d48)", color: "#ffffff", border: "none" }}>
+                  {isArabic ? "التالي →" : "Next →"}
+                </button>
+              </div>
+              <div className="software-dots-wrapper">
+                {softwares.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveSlide(idx)}
+                    className={`software-dot ${activeSlide === idx ? "active" : ""}`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
