@@ -534,10 +534,10 @@ export default function LocalizedHomePage({ params }) {
       </section>
 
       {/* 2. SERVICES PREVIEW GRID (OUR PRECISION SOLUTIONS) */}
-      <section id="services-preview" style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+      <section id="services-preview" className="services-preview-section">
+        <div className="services-preview-header">
           <SectionTag text={t.services.subtitle} isArabic={isArabic} />
-          <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
+          <h2 className="services-preview-title">
             {isArabic ? "حلولنا الدقيقة" : t.services.title}
           </h2>
         </div>
@@ -545,31 +545,22 @@ export default function LocalizedHomePage({ params }) {
         <div className="services-preview-grid">
           {previewServices.map((service, idx) => (
             <Link href={`/${locale}${service.path}`} key={idx} className="service-card">
-              {/* Left content block (60% width) */}
-              <div style={{ width: "60%", display: "flex", flexDirection: "column", gap: "0.5rem", textAlign: isArabic ? "right" : "left" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexDirection: isArabic ? "row-reverse" : "row" }}>
-                  <div style={{
-                    width: "36px", height: "36px", borderRadius: "50%", background: "#e11d48", color: "#ffffff",
-                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
-                  }}>
+              {/* Left content block */}
+              <div className="service-card-info" style={{ textAlign: isArabic ? "right" : "left" }}>
+                <div className="service-card-header" style={{ flexDirection: isArabic ? "row-reverse" : "row" }}>
+                  <div className="service-card-icon">
                     {service.iconSvg}
                   </div>
-                  <h3 style={{ fontSize: "1.15rem", fontWeight: "800", color: "#18181b", lineHeight: "1.2" }}>{service.name}</h3>
+                  <h3 className="service-card-title">{service.name}</h3>
                 </div>
                   
-                <p style={{ color: "#71717a", fontSize: "0.88rem", lineHeight: "1.5", margin: "0.25rem 0" }}>
+                <p className="service-card-desc">
                   {service.desc}
                 </p>
               </div>
 
-              {/* Right content block (Image 38% width) */}
-              <div style={{
-                width: "38%",
-                height: "110px",
-                position: "relative",
-                borderRadius: "8px",
-                overflow: "hidden"
-              }}>
+              {/* Right content block (Image) */}
+              <div className="service-card-media">
                 <Image 
                   src={service.image} 
                   alt={service.name} 
@@ -577,23 +568,10 @@ export default function LocalizedHomePage({ params }) {
                   style={{ objectFit: "cover" }}
                 />
                 {/* Black Circular Button Overlay */}
-                <div style={{
-                  position: "absolute",
-                  bottom: "6px",
-                  [isArabic ? "left" : "right"]: "6px",
-                  width: "28px",
-                  height: "28px",
-                  borderRadius: "50%",
-                  background: "#000000",
-                  color: "#ffffff",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.85rem",
-                  fontWeight: "900",
-                  border: "1.5px solid #ffffff",
-                  zIndex: 5
-                }}>
+                <div 
+                  className="service-card-arrow"
+                  style={{ [isArabic ? "left" : "right"]: "6px" }}
+                >
                   {isArabic ? "←" : "→"}
                 </div>
               </div>
@@ -602,43 +580,16 @@ export default function LocalizedHomePage({ params }) {
         </div>
 
         {/* Load More Option -> Redirect to /services */}
-        <div style={{ marginTop: "3.5rem", textAlign: "center" }}>
+        <div className="load-more-services-wrap">
           <Link
             href={`/${locale}/services`}
             className="load-more-services-btn"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "0.75rem",
-              padding: "1rem 2.5rem",
-              borderRadius: "8px",
-              background: "#18181b",
-              color: "#ffffff",
-              fontSize: "1rem",
-              fontWeight: "700",
-              letterSpacing: "0.02em",
-              textDecoration: "none",
-              boxShadow: "0 4px 14px rgba(0,0,0,0.12)",
-              transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-              border: "1px solid #27272a",
-              flexDirection: isArabic ? "row-reverse" : "row"
-            }}
+            style={{ flexDirection: isArabic ? "row-reverse" : "row" }}
           >
-            <span>{isArabic ? "تحميل المزيد من الخدمات (استكشف كافة الخدمات)" : "Load More Services (View All Services)"}</span>
-            <span style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "26px",
-              height: "26px",
-              borderRadius: "50%",
-              background: "var(--accent, #e11d48)",
-              color: "#ffffff",
-              fontSize: "0.85rem",
-              fontWeight: "900",
-              transition: "transform 0.3s ease"
-            }}>
+            <span className="load-more-btn-text">
+              {isArabic ? "تحميل المزيد من الخدمات (استكشف كافة الخدمات)" : "Load More Services (View All Services)"}
+            </span>
+            <span className="load-more-btn-arrow">
               {isArabic ? "←" : "→"}
             </span>
           </Link>
