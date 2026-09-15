@@ -118,7 +118,7 @@ export default function LocalizedHomePage({ params }) {
           <path d="M7 11V7a5 5 0 0 1 10 0v4" />
         </svg>
       ),
-      platform: "Multi-Brand Security Engine",
+      platform: isArabic ? "أمان متعدد العلامات" : "Multi-Brand Security",
       image: "/diagnostics/abrites.png"
     },
     {
@@ -132,7 +132,7 @@ export default function LocalizedHomePage({ params }) {
           <circle cx="12" cy="18" r="1" />
         </svg>
       ),
-      platform: "Universal Luxury Vehicle Coverage",
+      platform: isArabic ? "تغطية فاخرة شاملة" : "Universal Luxury Coverage",
       image: "/diagnostics/autel.png"
     },
     {
@@ -148,7 +148,7 @@ export default function LocalizedHomePage({ params }) {
           <path d="M12 7v4M12 11h.01" />
         </svg>
       ),
-      platform: "BMW / MINI / Rolls-Royce",
+      platform: isArabic ? "بي إم دبليو / ميني / رولز" : "BMW / MINI / Rolls-Royce",
       image: "/diagnostics/bmw-ista.png"
     },
     {
@@ -162,7 +162,7 @@ export default function LocalizedHomePage({ params }) {
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       ),
-      platform: "Mercedes-Benz / Smart / Maybach",
+      platform: isArabic ? "مرسيدس / سمارت / مايباخ" : "Mercedes-Benz / Smart / Maybach",
       image: "/diagnostics/mercedes-xentry.png"
     }
   ];

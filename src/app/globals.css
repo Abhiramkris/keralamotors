@@ -1425,6 +1425,22 @@ span.highlight {
   .software-header-block {
     gap: 0.5rem !important;
   }
+  .software-meta-row {
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+  .software-platform-badge {
+    font-size: 0.64rem !important;
+    padding: 0.18rem 0.5rem !important;
+    letter-spacing: 0.03em !important;
+    white-space: nowrap !important;
+  }
+  .software-slide-counter {
+    font-size: 0.72rem !important;
+    padding: 0.15rem 0.45rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
   .software-slide-title {
     font-size: 1.25rem !important;
   }
@@ -1463,6 +1479,15 @@ span.highlight {
   }
   .software-showcase-card {
     padding: 1rem 0.75rem !important;
+  }
+  .software-platform-badge {
+    font-size: 0.58rem !important;
+    padding: 0.14rem 0.4rem !important;
+    letter-spacing: 0.02em !important;
+  }
+  .software-slide-counter {
+    font-size: 0.66rem !important;
+    padding: 0.12rem 0.35rem !important;
   }
   .software-image-card {
     height: 180px !important;
