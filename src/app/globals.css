@@ -1092,15 +1092,15 @@ span.highlight {
 }
 
 .row-top {
-  opacity: 0.13;
+  opacity: 0.06;
 }
 
 .row-mid {
-  opacity: 0.08;
+  opacity: 0.035;
 }
 
 .row-bot {
-  opacity: 0.14;
+  opacity: 0.065;
 }
 
 .wheel-marquee-track {
@@ -1491,5 +1491,103 @@ span.highlight {
   }
   .software-image-card {
     height: 180px !important;
+  }
+}
+
+/* ==========================================================================
+   WHAT OUR CLIENTS SAY (TESTIMONIALS) - PORSCHE 911 BACKGROUND ROWS
+   ========================================================================== */
+.testimonials-showcase-section {
+  position: relative;
+  width: 100%;
+  padding: 6rem 2rem;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.testimonials-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.porsche-rows-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+  contain: strict;
+}
+
+.porsche-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  color: #18181b;
+}
+
+.porsche-marquee-row.row-top {
+  opacity: 0.055;
+}
+
+.porsche-marquee-row.row-bot {
+  opacity: 0.065;
+}
+
+.porsche-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 5.5rem;
+  flex-shrink: 0;
+  padding-right: 5.5rem;
+  will-change: transform;
+}
+
+.porsche-marquee-row.row-top .porsche-marquee-track {
+  animation: porscheMarqueeLTR 34s linear infinite;
+}
+
+.porsche-marquee-row.row-bot .porsche-marquee-track {
+  animation: porscheMarqueeLTR 38s linear infinite;
+}
+
+@keyframes porscheMarqueeLTR {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+.porsche-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Rotating spoked alloy wheels on each Porsche 911 */
+.porsche-wheel-item {
+  will-change: transform;
+  animation: wheelSpinClockwise 3s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .testimonials-showcase-section {
+    padding: 4rem 1rem !important;
+  }
+  .porsche-marquee-track {
+    gap: 3.5rem !important;
+    padding-right: 3.5rem !important;
   }
 }

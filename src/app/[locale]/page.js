@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
 import BlogEmbed from "@/components/BlogEmbed";
 import TireWheelSvg from "@/components/TireWheelSvg";
+import Porsche911Svg from "@/components/Porsche911Svg";
 
 export default function LocalizedHomePage({ params }) {
   const { locale } = use(params);
@@ -1171,43 +1172,84 @@ export default function LocalizedHomePage({ params }) {
       </section>
 
       {/* 6. GOOGLE REVIEWS (TESTIMONIALS) */}
-      <section style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <SectionTag text={t.testimonials.tag} isArabic={isArabic} />
-          <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
-            {t.testimonials.title}
-          </h2>
+      <section className="testimonials-showcase-section">
+        {/* Ambient 2D Porsche 911s in Rows (Cruising Left to Right) */}
+        <div className="porsche-rows-backdrop" aria-hidden="true">
+          {/* Row 1 - Top */}
+          <div className="porsche-marquee-row row-top">
+            <div className="porsche-marquee-track">
+              {[...Array(10)].map((_, i) => (
+                <div key={`p1-${i}`} className="porsche-item">
+                  <Porsche911Svg width={160} />
+                </div>
+              ))}
+            </div>
+            <div className="porsche-marquee-track" aria-hidden="true">
+              {[...Array(10)].map((_, i) => (
+                <div key={`p1-dup-${i}`} className="porsche-item">
+                  <Porsche911Svg width={160} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 - Bottom */}
+          <div className="porsche-marquee-row row-bot">
+            <div className="porsche-marquee-track">
+              {[...Array(10)].map((_, i) => (
+                <div key={`p2-${i}`} className="porsche-item">
+                  <Porsche911Svg width={150} />
+                </div>
+              ))}
+            </div>
+            <div className="porsche-marquee-track" aria-hidden="true">
+              {[...Array(10)].map((_, i) => (
+                <div key={`p2-dup-${i}`} className="porsche-item">
+                  <Porsche911Svg width={150} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", direction: isArabic ? "rtl" : "ltr" }}>
-          <div className="glass" style={{ padding: "2rem", borderRadius: "8px", textAlign: isArabic ? "right" : "left", background: "#f8f9fa", border: "1px solid #e4e4e7" }}>
-            <div style={{ color: "#fbbf24", marginBottom: "0.75rem" }}>★★★★★</div>
-            <p style={{ color: "#71717a", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
-              {isArabic 
-                ? "خدمة استثنائية لسيارتي أودي A6. لقد اكتشفوا تسريبًا معقدًا في نظام التعليق الهوائي (Airmatic) أغفلته الورش الأخرى وعايروه باستخدام التشخيص المناسب."
-                : '"Exceptional service for my Audi A6. They identified a complex Airmatic suspension leak that other workshops missed and calibrated it using proper diagnostics."'}
-            </p>
-            <strong style={{ color: "#18181b", fontSize: "0.85rem" }}>{isArabic ? "— حارس الزدجالي" : "— Haris Al-Zadjali"}</strong>
+        <div className="testimonials-container">
+          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <SectionTag text={t.testimonials.tag} isArabic={isArabic} />
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
+              {t.testimonials.title}
+            </h2>
           </div>
 
-          <div className="glass" style={{ padding: "2rem", borderRadius: "8px", textAlign: isArabic ? "right" : "left", background: "#f8f9fa", border: "1px solid #e4e4e7" }}>
-            <div style={{ color: "#fbbf24", marginBottom: "0.75rem" }}>★★★★★</div>
-            <p style={{ color: "#71717a", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
-              {isArabic
-                ? "مهنيون للغاية. شرح صادق لنتائج فحص علبة التروس الخاصة بي، بدون إشارات تسعير مخفية، وتوصيل سريع. مانوج عبقري حقيقي."
-                : '"Very professional. Honest explanation of my gearbox diagnostic results, no hidden pricing references, and fast delivery. Manoj is a real genius."'}
-            </p>
-            <strong style={{ color: "#18181b", fontSize: "0.85rem" }}>{isArabic ? "— سليم البلوشي" : "— Salim Al-Balushi"}</strong>
-          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", direction: isArabic ? "rtl" : "ltr" }}>
+            <div className="glass" style={{ padding: "2rem", borderRadius: "8px", textAlign: isArabic ? "right" : "left", background: "#f8f9fa", border: "1px solid #e4e4e7" }}>
+              <div style={{ color: "#fbbf24", marginBottom: "0.75rem" }}>★★★★★</div>
+              <p style={{ color: "#71717a", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
+                {isArabic 
+                  ? "خدمة استثنائية لسيارتي أودي A6. لقد اكتشفوا تسريبًا معقدًا في نظام التعليق الهوائي (Airmatic) أغفلته الورش الأخرى وعايروه باستخدام التشخيص المناسب."
+                  : '"Exceptional service for my Audi A6. They identified a complex Airmatic suspension leak that other workshops missed and calibrated it using proper diagnostics."'}
+              </p>
+              <strong style={{ color: "#18181b", fontSize: "0.85rem" }}>{isArabic ? "— حارس الزدجالي" : "— Haris Al-Zadjali"}</strong>
+            </div>
 
-          <div className="glass" style={{ padding: "2rem", borderRadius: "8px", textAlign: isArabic ? "right" : "left", background: "#f8f9fa", border: "1px solid #e4e4e7" }}>
-            <div style={{ color: "#fbbf24", marginBottom: "0.75rem" }}>★★★★★</div>
-            <p style={{ color: "#71717a", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
-              {isArabic
-                ? "خدمات ممتازة لتعديل الضربات وطلاء السيارات. تبدو سيارتي البي إم دبليو وكأنها جديدة تمامًا من المعرض. نوصي بشدة بورشة كيرلا أوتو موتورز لأي سيارة فاخرة في مسقط."
-                : '"Excellent paint correction and denting services. My BMW looks showroom fresh. Highly recommend Kerala Auto Motors for any luxury car in Muscat."'}
-            </p>
-            <strong style={{ color: "#18181b", fontSize: "0.85rem" }}>{isArabic ? "— محمد الحارثي" : "— Mohammed Al-Harthy"}</strong>
+            <div className="glass" style={{ padding: "2rem", borderRadius: "8px", textAlign: isArabic ? "right" : "left", background: "#f8f9fa", border: "1px solid #e4e4e7" }}>
+              <div style={{ color: "#fbbf24", marginBottom: "0.75rem" }}>★★★★★</div>
+              <p style={{ color: "#71717a", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
+                {isArabic
+                  ? "مهنيون للغاية. شرح صادق لنتائج فحص علبة التروس الخاصة بي، بدون إشارات تسعير مخفية، وتوصيل سريع. مانوج عبقري حقيقي."
+                  : '"Very professional. Honest explanation of my gearbox diagnostic results, no hidden pricing references, and fast delivery. Manoj is a real genius."'}
+              </p>
+              <strong style={{ color: "#18181b", fontSize: "0.85rem" }}>{isArabic ? "— سليم البلوشي" : "— Salim Al-Balushi"}</strong>
+            </div>
+
+            <div className="glass" style={{ padding: "2rem", borderRadius: "8px", textAlign: isArabic ? "right" : "left", background: "#f8f9fa", border: "1px solid #e4e4e7" }}>
+              <div style={{ color: "#fbbf24", marginBottom: "0.75rem" }}>★★★★★</div>
+              <p style={{ color: "#71717a", fontSize: "0.9rem", lineHeight: "1.6", marginBottom: "1rem" }}>
+                {isArabic
+                  ? "خدمات ممتازة لتعديل الضربات وطلاء السيارات. تبدو سيارتي البي إم دبليو وكأنها جديدة تمامًا من المعرض. نوصي بشدة بورشة كيرلا أوتو موتورز لأي سيارة فاخرة في مسقط."
+                  : '"Excellent paint correction and denting services. My BMW looks showroom fresh. Highly recommend Kerala Auto Motors for any luxury car in Muscat."'}
+              </p>
+              <strong style={{ color: "#18181b", fontSize: "0.85rem" }}>{isArabic ? "— محمد الحارثي" : "— Mohammed Al-Harthy"}</strong>
+            </div>
           </div>
         </div>
       </section>
