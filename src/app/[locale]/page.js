@@ -354,17 +354,67 @@ export default function LocalizedHomePage({ params }) {
       {/* 1. HERO SECTION */}
       <section className="hero-section" style={{
         background: "#09090b",
-        padding: "5rem 2rem 7rem 2rem",
-        minHeight: "75vh",
+        padding: "5.5rem 2rem 7rem 2rem",
+        minHeight: "82vh",
         display: "flex",
         alignItems: "center",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
         direction: isArabic ? "rtl" : "ltr",
-        position: "relative"
+        position: "relative",
+        overflow: "hidden"
       }}>
+        {/* Background Workshop Image with Professional Blend */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          overflow: "hidden",
+          pointerEvents: "none"
+        }}>
+          <Image 
+            src="/workshop_facade.jpg" 
+            alt="Kerala Auto Motors Workshop Facade" 
+            fill 
+            priority 
+            style={{
+              objectFit: "cover",
+              objectPosition: "center 30%",
+              filter: "brightness(0.38) contrast(1.15) saturate(1.05)",
+              transform: "scale(1.02)"
+            }}
+          />
+          {/* Multi-layer luxury dark gradients for professional seamless blend */}
+          {/* Directional vignette to keep text 100% legible while revealing workshop facade & cars */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: isArabic
+              ? "linear-gradient(270deg, rgba(9,9,11,0.95) 0%, rgba(9,9,11,0.88) 40%, rgba(9,9,11,0.55) 75%, rgba(9,9,11,0.7) 100%)"
+              : "linear-gradient(90deg, rgba(9,9,11,0.95) 0%, rgba(9,9,11,0.88) 40%, rgba(9,9,11,0.55) 75%, rgba(9,9,11,0.7) 100%)"
+          }} />
+          {/* Top & bottom edge fading smoothly into navigation and adjacent section */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.15) 30%, rgba(9,9,11,0.3) 70%, #09090b 100%)"
+          }} />
+          {/* Subtle brand accent red glow */}
+          <div style={{
+            position: "absolute",
+            top: "15%",
+            [isArabic ? "left" : "right"]: "18%",
+            width: "500px",
+            height: "500px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(225,29,72,0.12) 0%, transparent 70%)"
+          }} />
+        </div>
+
         <div 
           key={currentSlide}
           style={{
+            position: "relative",
+            zIndex: 1,
             maxWidth: "var(--max-width)",
             margin: "0 auto",
             width: "100%",
@@ -421,7 +471,7 @@ export default function LocalizedHomePage({ params }) {
               
               <a href="tel:+96871717259" className="btn btn-secondary" style={{
                 borderRadius: "30px", padding: "0.9rem 2rem", border: "1.5px solid rgba(255,255,255,0.25)",
-                display: "flex", gap: "0.5rem", alignItems: "center", background: "transparent"
+                display: "flex", gap: "0.5rem", alignItems: "center", background: "rgba(0,0,0,0.3)", backdropFilter: "blur(8px)"
               }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -431,14 +481,16 @@ export default function LocalizedHomePage({ params }) {
             </div>
           </div>
 
-          {/* Right Column (Image) */}
+          {/* Right Column (Image Card with luxury glass rim) */}
           <div style={{
             position: "relative",
             width: "100%",
             height: "360px",
-            borderRadius: "12px",
+            borderRadius: "16px",
             overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.08)"
+            border: "1px solid rgba(255,255,255,0.12)",
+            boxShadow: "0 25px 50px -12px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06)",
+            backdropFilter: "blur(8px)"
           }}>
             <Image 
               src={slides[currentSlide].img} 
