@@ -835,74 +835,53 @@ export default function LocalizedHomePage({ params }) {
       </section>
 
       {/* 4. DIAGNOSTIC SOFTWARE SHOWCASE */}
-      <section style={{ padding: "5rem 2rem", maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+      <section className="software-showcase-section" style={{ maxWidth: "var(--max-width)", margin: "0 auto", background: "#ffffff" }}>
+        <div className="software-showcase-header">
           <SectionTag text={t.software.tag} isArabic={isArabic} />
-          <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
+          <h2 className="software-showcase-title">
             {t.software.title}
           </h2>
-          <p style={{ color: "#71717a", fontSize: "0.95rem", marginTop: "0.5rem" }}>{t.software.desc}</p>
+          <p className="software-showcase-subtitle">{t.software.desc}</p>
         </div>
 
-        <div className="glass" style={{
-          padding: "3rem",
-          borderRadius: "8px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "2rem",
-          alignItems: "center",
-          position: "relative",
-          direction: isArabic ? "rtl" : "ltr",
-          background: "#f8f9fa",
-          border: "1px solid #e4e4e7"
-        }}>
-          <div style={{ textAlign: isArabic ? "right" : "left" }}>
-            {/* Stable height container to prevent layout shifting on transitions */}
-            <div style={{ minHeight: "220px", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
-              <div style={{ display: "inline-block", marginBottom: "1rem" }}>
+        <div className="software-showcase-card glass" style={{ direction: isArabic ? "rtl" : "ltr" }}>
+          <div className="software-text-col" style={{ textAlign: isArabic ? "right" : "left" }}>
+            {/* Responsive text container */}
+            <div className="software-info-block">
+              <div style={{ display: "inline-block", marginBottom: "0.75rem" }}>
                 {softwares[activeSlide].iconSvg}
               </div>
-              <span style={{ display: "block", fontSize: "0.75rem", color: "var(--accent)", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.5rem" }}>
+              <span className="software-platform-badge">
                 {softwares[activeSlide].platform}
               </span>
-              <h3 style={{ fontSize: "1.8rem", fontWeight: "800", color: "#18181b", marginBottom: "1rem" }}>
+              <h3 className="software-slide-title">
                 {softwares[activeSlide].title}
               </h3>
-              <p style={{ color: "#71717a", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
+              <p className="software-slide-desc">
                 {softwares[activeSlide].description}
               </p>
             </div>
             
-            {/* Control buttons */}
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "1.25rem",
-              marginTop: "2rem",
-              flexDirection: isArabic ? "row-reverse" : "row",
-              justifyContent: isArabic ? "flex-start" : "flex-start"
+            {/* Responsive Control buttons */}
+            <div className="software-controls-wrapper" style={{
+              flexDirection: isArabic ? "row-reverse" : "row"
             }}>
-              <button onClick={prevSlide} className="btn btn-secondary" style={{ padding: "0.5rem 1rem", fontSize: "0.9rem", background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
-                {isArabic ? "السابق ←" : "← Prev"}
-              </button>
-              <button onClick={nextSlide} className="btn btn-primary" style={{ padding: "0.5rem 1rem", fontSize: "0.9rem" }}>
-                {isArabic ? "التالي →" : "Next →"}
-              </button>
-              <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+              <div className="software-btn-group" style={{
+                flexDirection: isArabic ? "row-reverse" : "row"
+              }}>
+                <button onClick={prevSlide} className="btn btn-secondary software-nav-btn" style={{ background: "#ffffff", border: "1px solid #e4e4e7", color: "#18181b" }}>
+                  {isArabic ? "السابق ←" : "← Prev"}
+                </button>
+                <button onClick={nextSlide} className="btn btn-primary software-nav-btn">
+                  {isArabic ? "التالي →" : "Next →"}
+                </button>
+              </div>
+              <div className="software-dots-wrapper">
                 {softwares.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveSlide(idx)}
-                    style={{
-                      width: activeSlide === idx ? "20px" : "8px",
-                      height: "8px",
-                      borderRadius: "4px",
-                      background: activeSlide === idx ? "var(--accent, #e11d48)" : "#d4d4d8",
-                      border: "none",
-                      cursor: "pointer",
-                      padding: 0,
-                      transition: "all 0.3s ease"
-                    }}
+                    className={`software-dot ${activeSlide === idx ? "active" : ""}`}
                     aria-label={`Slide ${idx + 1}`}
                   />
                 ))}
@@ -910,23 +889,14 @@ export default function LocalizedHomePage({ params }) {
             </div>
           </div>
 
-          {/* Premium image card with constant size */}
-          <div style={{
-            position: "relative",
-            width: "100%",
-            height: "320px",
-            borderRadius: "8px",
-            overflow: "hidden",
-            border: "1px solid #e4e4e7",
-            boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-            background: "#ffffff"
-          }}>
+          {/* Premium image card with responsive aspect ratio */}
+          <div className="software-image-card">
             <Image
               src={softwares[activeSlide].image}
               alt={softwares[activeSlide].title}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              style={{ objectFit: "contain", padding: "1.25rem" }}
+              style={{ objectFit: "contain" }}
               priority
             />
           </div>
