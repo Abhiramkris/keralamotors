@@ -1161,6 +1161,90 @@ span.highlight {
   }
 }
 
+/* --- 2D WHEELS IN ROWS: SUBTLE LEFT TO RIGHT ROTATING MARQUEE --- */
+.wheels-rows-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  contain: strict;
+}
+
+.wheel-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  color: #ffffff;
+}
+
+.row-top {
+  opacity: 0.06;
+}
+
+.row-mid {
+  opacity: 0.035;
+}
+
+.row-bot {
+  opacity: 0.065;
+}
+
+.wheel-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  flex-shrink: 0;
+  padding-right: 3.5rem;
+  will-change: transform;
+}
+
+/* Left to Right continuous marquee */
+.row-top .wheel-marquee-track {
+  animation: wheelMarqueeLTR 26s linear infinite;
+}
+
+.row-mid .wheel-marquee-track {
+  animation: wheelMarqueeLTR 36s linear infinite;
+}
+
+.row-bot .wheel-marquee-track {
+  animation: wheelMarqueeLTR 30s linear infinite;
+}
+
+@keyframes wheelMarqueeLTR {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+/* 2D Wheel Clockwise Rotation */
+.wheel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  will-change: transform;
+  animation: wheelSpinClockwise 4.5s linear infinite;
+}
+
+@keyframes wheelSpinClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Content Container positioned above animated background */
 .software-showcase-container {
   max-width: var(--max-width);
@@ -1509,7 +1593,6 @@ span.highlight {
   position: relative;
   width: 100%;
   padding: 6rem 2rem;
-  background: #ffffff;
   overflow: hidden;
   box-sizing: border-box;
 }

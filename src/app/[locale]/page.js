@@ -1137,12 +1137,68 @@ export default function LocalizedHomePage({ params }) {
       </section>
 
       {/* 6. GOOGLE REVIEWS (TESTIMONIALS) */}
-      <section className="testimonials-showcase-section">
+      <section className="testimonials-showcase-section flat-red-gradient">
+        {/* Lightweight 2D Wheels in Rows (Moving Left to Right) */}
+        <div className="wheels-rows-backdrop" aria-hidden="true">
+          {/* Row 1 - Top */}
+          <div className="wheel-marquee-row row-top">
+            <div className="wheel-marquee-track">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r1-${i}`} className="wheel-item">
+                  <TireWheelSvg size={44} />
+                </div>
+              ))}
+            </div>
+            <div className="wheel-marquee-track" aria-hidden="true">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r1-dup-${i}`} className="wheel-item">
+                  <TireWheelSvg size={44} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 - Middle */}
+          <div className="wheel-marquee-row row-mid">
+            <div className="wheel-marquee-track">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r2-${i}`} className="wheel-item">
+                  <TireWheelSvg size={38} />
+                </div>
+              ))}
+            </div>
+            <div className="wheel-marquee-track" aria-hidden="true">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r2-dup-${i}`} className="wheel-item">
+                  <TireWheelSvg size={38} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 3 - Bottom */}
+          <div className="wheel-marquee-row row-bot">
+            <div className="wheel-marquee-track">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r3-${i}`} className="wheel-item">
+                  <TireWheelSvg size={46} />
+                </div>
+              ))}
+            </div>
+            <div className="wheel-marquee-track" aria-hidden="true">
+              {[...Array(14)].map((_, i) => (
+                <div key={`r3-dup-${i}`} className="wheel-item">
+                  <TireWheelSvg size={46} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <div className="testimonials-container">
           <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-            <SectionTag text={t.testimonials.tag} isArabic={isArabic} />
-            <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#18181b" }}>
+            <SectionTag text={t.testimonials.tag} isArabic={isArabic} color="white" barColor="white" />
+            <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#ffffff" }}>
               {t.testimonials.title}
             </h2>
           </div>
