@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
 import BlogEmbed from "@/components/BlogEmbed";
 import TireWheelSvg from "@/components/TireWheelSvg";
-import Porsche911Svg from "@/components/Porsche911Svg";
+import PistonSvg from "@/components/PistonSvg";
 
 export default function LocalizedHomePage({ params }) {
   const { locale } = use(params);
@@ -789,61 +789,26 @@ export default function LocalizedHomePage({ params }) {
 
       {/* 4. DIAGNOSTIC SOFTWARE SHOWCASE */}
       <section className="software-showcase-section flat-red-gradient">
-        {/* Lightweight 2D Wheels in Rows (Moving Left to Right) */}
-        <div className="wheels-rows-backdrop" aria-hidden="true">
-          {/* Row 1 - Top */}
-          <div className="wheel-marquee-row row-top">
-            <div className="wheel-marquee-track">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r1-${i}`} className="wheel-item">
-                  <TireWheelSvg size={44} />
-                </div>
-              ))}
+        {/* Lightweight 2D Pistons in Rows (Moving Left to Right, Slanting) */}
+        <div className="pistons-rows-backdrop" aria-hidden="true">
+          {[...Array(5)].map((_, rowIndex) => (
+            <div key={`p-row-${rowIndex}`} className={`piston-marquee-row row-${rowIndex}`}>
+              <div className="piston-marquee-track">
+                {[...Array(20)].map((_, i) => (
+                  <div key={`p-r${rowIndex}-${i}`} className="piston-item">
+                    <PistonSvg size={24} color="rgba(255, 255, 255, 0.05)" />
+                  </div>
+                ))}
+              </div>
+              <div className="piston-marquee-track" aria-hidden="true">
+                {[...Array(20)].map((_, i) => (
+                  <div key={`p-r${rowIndex}-dup-${i}`} className="piston-item">
+                    <PistonSvg size={24} color="rgba(255, 255, 255, 0.05)" />
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="wheel-marquee-track" aria-hidden="true">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r1-dup-${i}`} className="wheel-item">
-                  <TireWheelSvg size={44} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 2 - Middle */}
-          <div className="wheel-marquee-row row-mid">
-            <div className="wheel-marquee-track">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r2-${i}`} className="wheel-item">
-                  <TireWheelSvg size={38} />
-                </div>
-              ))}
-            </div>
-            <div className="wheel-marquee-track" aria-hidden="true">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r2-dup-${i}`} className="wheel-item">
-                  <TireWheelSvg size={38} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 3 - Bottom */}
-          <div className="wheel-marquee-row row-bot">
-            <div className="wheel-marquee-track">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r3-${i}`} className="wheel-item">
-                  <TireWheelSvg size={46} />
-                </div>
-              ))}
-            </div>
-            <div className="wheel-marquee-track" aria-hidden="true">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r3-dup-${i}`} className="wheel-item">
-                  <TireWheelSvg size={46} />
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="software-showcase-container">
@@ -1173,44 +1138,6 @@ export default function LocalizedHomePage({ params }) {
 
       {/* 6. GOOGLE REVIEWS (TESTIMONIALS) */}
       <section className="testimonials-showcase-section">
-        {/* Ambient 2D Porsche 911s in Rows (Cruising Left to Right) */}
-        <div className="porsche-rows-backdrop" aria-hidden="true">
-          {/* Row 1 - Top */}
-          <div className="porsche-marquee-row row-top">
-            <div className="porsche-marquee-track">
-              {[...Array(10)].map((_, i) => (
-                <div key={`p1-${i}`} className="porsche-item">
-                  <Porsche911Svg width={160} />
-                </div>
-              ))}
-            </div>
-            <div className="porsche-marquee-track" aria-hidden="true">
-              {[...Array(10)].map((_, i) => (
-                <div key={`p1-dup-${i}`} className="porsche-item">
-                  <Porsche911Svg width={160} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 2 - Bottom */}
-          <div className="porsche-marquee-row row-bot">
-            <div className="porsche-marquee-track">
-              {[...Array(10)].map((_, i) => (
-                <div key={`p2-${i}`} className="porsche-item">
-                  <Porsche911Svg width={150} />
-                </div>
-              ))}
-            </div>
-            <div className="porsche-marquee-track" aria-hidden="true">
-              {[...Array(10)].map((_, i) => (
-                <div key={`p2-dup-${i}`} className="porsche-item">
-                  <Porsche911Svg width={150} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
         <div className="testimonials-container">
           <div style={{ textAlign: "center", marginBottom: "4rem" }}>
