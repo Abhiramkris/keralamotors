@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function BlogEmbed({ 
   type = "container", 
@@ -8,7 +8,12 @@ export default function BlogEmbed({
   limit = 9, 
   redirectUrl = "/blog" 
 }) {
+  const initialized = useRef(false);
+
   useEffect(() => {
+    if (initialized.current) return;
+    initialized.current = true;
+    
     const SCRIPT_SRC = "https://bloggfeature.certifyied.workers.dev/adminApiBlog/api/embed";
 
     function ensureLoaded() {
@@ -23,6 +28,8 @@ export default function BlogEmbed({
         const targetId = type === "post" ? "certifyied-blog-post" : "certifyied-blog-container";
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
+          // Clear any previously injected content by the external script to prevent duplicates
+          targetEl.innerHTML = "";
           delete targetEl.dataset.rendered;
           // Trigger DOM mutation to wake up MutationObserver inside embed script
           const tick = document.createElement("span");
@@ -33,8 +40,6 @@ export default function BlogEmbed({
     }
 
     ensureLoaded();
-    const timer = setTimeout(ensureLoaded, 250);
-    return () => clearTimeout(timer);
   }, [type, projectId, limit, redirectUrl]);
 
   if (type === "post") {

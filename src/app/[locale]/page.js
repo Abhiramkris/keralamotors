@@ -373,18 +373,45 @@ export default function LocalizedHomePage({ params }) {
           overflow: "hidden",
           pointerEvents: "none"
         }}>
-          <Image 
-            src="/workshop_facade_new.png" 
-            alt="Kerala Auto Motors Workshop Facade" 
-            fill 
-            priority 
-            style={{
-              objectFit: "cover",
-              objectPosition: "center 30%",
-              filter: "brightness(0.65) contrast(1.1) saturate(1.1)",
-              transform: "scale(1.02)"
-            }}
-          />
+          <style jsx>{`
+            .hero-bg-desktop { display: block; position: absolute; inset: 0; }
+            .hero-bg-mobile { display: none; position: absolute; inset: 0; }
+            @media (max-width: 768px) {
+              .hero-bg-desktop { display: none; }
+              .hero-bg-mobile { display: block; }
+            }
+          `}</style>
+          
+          <div className="hero-bg-desktop">
+            <Image 
+              src="/workshop_facade_new.png" 
+              alt="Kerala Auto Motors Workshop Facade" 
+              fill 
+              priority 
+              style={{
+                objectFit: "cover",
+                objectPosition: "center 30%",
+                filter: "brightness(0.65) contrast(1.1) saturate(1.1)",
+                transform: "scale(-1.02, 1.02)"
+              }}
+            />
+          </div>
+
+          <div className="hero-bg-mobile">
+            <Image 
+              src="/workshop_facade_mobile.jpg" 
+              alt="Kerala Auto Motors Workshop Facade Mobile" 
+              fill 
+              priority 
+              style={{
+                objectFit: "cover",
+                objectPosition: "center 40%",
+                filter: "brightness(0.6) contrast(1.1) saturate(1.1)",
+                transform: "scale(1.02)"
+              }}
+            />
+          </div>
+
           {/* Multi-layer luxury dark gradients for professional seamless blend */}
           {/* Directional vignette to keep text legible while revealing much more of the workshop facade */}
           <div style={{
@@ -640,8 +667,11 @@ export default function LocalizedHomePage({ params }) {
             position: "relative",
             borderRadius: "16px",
             overflow: "hidden",
+            width: "100%",
             aspectRatio: "1/1",
-            boxShadow: "0 15px 40px -15px rgba(0,0,0,0.15)"
+            maxHeight: "350px",
+            boxShadow: "0 15px 40px -15px rgba(0,0,0,0.15)",
+            margin: "0 auto"
           }}>
             <Image 
               src="/why_choose_us_center.jpg" 
@@ -791,7 +821,7 @@ export default function LocalizedHomePage({ params }) {
       <section className="software-showcase-section flat-red-gradient">
         {/* Lightweight 2D Pistons in Rows (Moving Left to Right, Slanting) */}
         <div className="pistons-rows-backdrop" aria-hidden="true">
-          {[...Array(5)].map((_, rowIndex) => (
+          {[...Array(12)].map((_, rowIndex) => (
             <div key={`p-row-${rowIndex}`} className={`piston-marquee-row row-${rowIndex}`}>
               <div className="piston-marquee-track">
                 {[...Array(20)].map((_, i) => (
@@ -1140,65 +1170,30 @@ export default function LocalizedHomePage({ params }) {
       <section className="testimonials-showcase-section flat-red-gradient">
         {/* Lightweight 2D Wheels in Rows (Moving Left to Right) */}
         <div className="wheels-rows-backdrop" aria-hidden="true">
-          {/* Row 1 - Top */}
-          <div className="wheel-marquee-row row-top">
-            <div className="wheel-marquee-track">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r1-${i}`} className="wheel-item">
-                  <TireWheelSvg size={44} />
-                </div>
-              ))}
+          {[...Array(12)].map((_, rowIndex) => (
+            <div key={`w-row-${rowIndex}`} className={`wheel-marquee-row row-${rowIndex}`}>
+              <div className="wheel-marquee-track">
+                {[...Array(20)].map((_, i) => (
+                  <div key={`w-r${rowIndex}-${i}`} className="wheel-item">
+                    <TireWheelSvg size={56} />
+                  </div>
+                ))}
+              </div>
+              <div className="wheel-marquee-track" aria-hidden="true">
+                {[...Array(20)].map((_, i) => (
+                  <div key={`w-r${rowIndex}-dup-${i}`} className="wheel-item">
+                    <TireWheelSvg size={56} />
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="wheel-marquee-track" aria-hidden="true">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r1-dup-${i}`} className="wheel-item">
-                  <TireWheelSvg size={44} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 2 - Middle */}
-          <div className="wheel-marquee-row row-mid">
-            <div className="wheel-marquee-track">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r2-${i}`} className="wheel-item">
-                  <TireWheelSvg size={38} />
-                </div>
-              ))}
-            </div>
-            <div className="wheel-marquee-track" aria-hidden="true">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r2-dup-${i}`} className="wheel-item">
-                  <TireWheelSvg size={38} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 3 - Bottom */}
-          <div className="wheel-marquee-row row-bot">
-            <div className="wheel-marquee-track">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r3-${i}`} className="wheel-item">
-                  <TireWheelSvg size={46} />
-                </div>
-              ))}
-            </div>
-            <div className="wheel-marquee-track" aria-hidden="true">
-              {[...Array(14)].map((_, i) => (
-                <div key={`r3-dup-${i}`} className="wheel-item">
-                  <TireWheelSvg size={46} />
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="testimonials-container">
-          <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-            <SectionTag text={t.testimonials.tag} isArabic={isArabic} color="white" barColor="white" />
-            <h2 style={{ fontSize: "2.5rem", fontWeight: "800", marginTop: "0.5rem", color: "#ffffff" }}>
+          <div className="software-showcase-header">
+            <SectionTag text={t.testimonials.tag} isArabic={isArabic} color="#ffffff" barColor="#ffffff" />
+            <h2 className="software-showcase-title">
               {t.testimonials.title}
             </h2>
           </div>

@@ -1075,13 +1075,17 @@ span.highlight {
 /* --- 2D PISTONS IN ROWS: SUBTLE LEFT TO RIGHT SLANTING MARQUEE --- */
 .pistons-rows-backdrop {
   position: absolute;
-  inset: 0;
+  top: -10%;
+  left: 0;
+  right: 0;
+  bottom: -50%;
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3.5rem;
   padding: 1.25rem 0;
   contain: strict;
 }
@@ -1089,22 +1093,14 @@ span.highlight {
 .piston-marquee-row {
   display: flex;
   width: 100%;
-  overflow: hidden;
   user-select: none;
   color: #ffffff;
 }
 
-.piston-marquee-row.row-0, .piston-marquee-row.row-4 {
-  opacity: 0.05;
-}
-
-.piston-marquee-row.row-1, .piston-marquee-row.row-3 {
-  opacity: 0.03;
-}
-
-.piston-marquee-row.row-2 {
-  opacity: 0.07;
-}
+.piston-marquee-row:nth-child(4n+1) { opacity: 0.05; }
+.piston-marquee-row:nth-child(4n+2) { opacity: 0.03; }
+.piston-marquee-row:nth-child(4n+3) { opacity: 0.07; }
+.piston-marquee-row:nth-child(4n+4) { opacity: 0.04; }
 
 .piston-marquee-track {
   display: flex;
@@ -1116,25 +1112,11 @@ span.highlight {
 }
 
 /* Left to Right continuous marquee */
-.row-0 .piston-marquee-track {
-  animation: pistonMarqueeLTR 45s linear infinite;
-}
-
-.row-1 .piston-marquee-track {
-  animation: pistonMarqueeLTR 65s linear infinite;
-}
-
-.row-2 .piston-marquee-track {
-  animation: pistonMarqueeLTR 50s linear infinite;
-}
-
-.row-3 .piston-marquee-track {
-  animation: pistonMarqueeLTR 75s linear infinite;
-}
-
-.row-4 .piston-marquee-track {
-  animation: pistonMarqueeLTR 60s linear infinite;
-}
+.piston-marquee-row:nth-child(5n+1) .piston-marquee-track { animation: pistonMarqueeLTR 45s linear infinite; }
+.piston-marquee-row:nth-child(5n+2) .piston-marquee-track { animation: pistonMarqueeLTR 65s linear infinite; }
+.piston-marquee-row:nth-child(5n+3) .piston-marquee-track { animation: pistonMarqueeLTR 50s linear infinite; }
+.piston-marquee-row:nth-child(5n+4) .piston-marquee-track { animation: pistonMarqueeLTR 75s linear infinite; }
+.piston-marquee-row:nth-child(5n+5) .piston-marquee-track { animation: pistonMarqueeLTR 60s linear infinite; }
 
 @keyframes pistonMarqueeLTR {
   0% {
@@ -1167,13 +1149,17 @@ span.highlight {
 /* --- 2D WHEELS IN ROWS: SUBTLE LEFT TO RIGHT ROTATING MARQUEE --- */
 .wheels-rows-backdrop {
   position: absolute;
-  inset: 0;
+  top: -10%;
+  left: 0;
+  right: 0;
+  bottom: -50%;
   pointer-events: none;
   overflow: hidden;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3.5rem;
   padding: 1.25rem 0;
   contain: strict;
 }
@@ -1181,44 +1167,30 @@ span.highlight {
 .wheel-marquee-row {
   display: flex;
   width: 100%;
-  overflow: hidden;
   user-select: none;
   color: #ffffff;
 }
 
-.row-top {
-  opacity: 0.06;
-}
-
-.row-mid {
-  opacity: 0.035;
-}
-
-.row-bot {
-  opacity: 0.065;
-}
+.wheel-marquee-row:nth-child(4n+1) { opacity: 0.05; }
+.wheel-marquee-row:nth-child(4n+2) { opacity: 0.03; }
+.wheel-marquee-row:nth-child(4n+3) { opacity: 0.07; }
+.wheel-marquee-row:nth-child(4n+4) { opacity: 0.04; }
 
 .wheel-marquee-track {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 4.5rem;
   flex-shrink: 0;
-  padding-right: 3.5rem;
+  padding-right: 4.5rem;
   will-change: transform;
 }
 
 /* Left to Right continuous marquee */
-.row-top .wheel-marquee-track {
-  animation: wheelMarqueeLTR 26s linear infinite;
-}
-
-.row-mid .wheel-marquee-track {
-  animation: wheelMarqueeLTR 36s linear infinite;
-}
-
-.row-bot .wheel-marquee-track {
-  animation: wheelMarqueeLTR 30s linear infinite;
-}
+.wheel-marquee-row:nth-child(5n+1) .wheel-marquee-track { animation: wheelMarqueeLTR 45s linear infinite; }
+.wheel-marquee-row:nth-child(5n+2) .wheel-marquee-track { animation: wheelMarqueeLTR 65s linear infinite; }
+.wheel-marquee-row:nth-child(5n+3) .wheel-marquee-track { animation: wheelMarqueeLTR 50s linear infinite; }
+.wheel-marquee-row:nth-child(5n+4) .wheel-marquee-track { animation: wheelMarqueeLTR 75s linear infinite; }
+.wheel-marquee-row:nth-child(5n+5) .wheel-marquee-track { animation: wheelMarqueeLTR 60s linear infinite; }
 
 @keyframes wheelMarqueeLTR {
   0% {
@@ -1235,8 +1207,12 @@ span.highlight {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.wheel-item svg {
   will-change: transform;
-  animation: wheelSpinClockwise 4.5s linear infinite;
+  transform-origin: center;
+  animation: wheelSpinClockwise 15s linear infinite;
 }
 
 @keyframes wheelSpinClockwise {
@@ -1683,5 +1659,20 @@ span.highlight {
   .porsche-marquee-track {
     gap: 3.5rem !important;
     padding-right: 3.5rem !important;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US GRID
+   ========================================================================== */
+.why-choose-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .why-choose-us-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
   }
 }
