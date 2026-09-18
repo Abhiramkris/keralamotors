@@ -1092,15 +1092,15 @@ span.highlight {
 }
 
 .piston-marquee-row.row-0, .piston-marquee-row.row-4 {
-  opacity: 0.07;
+  opacity: 0.10;
 }
 
 .piston-marquee-row.row-1, .piston-marquee-row.row-3 {
-  opacity: 0.04;
+  opacity: 0.06;
 }
 
 .piston-marquee-row.row-2 {
-  opacity: 0.09;
+  opacity: 0.12;
 }
 
 .piston-marquee-track {
