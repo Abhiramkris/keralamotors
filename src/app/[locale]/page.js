@@ -796,14 +796,14 @@ export default function LocalizedHomePage({ params }) {
               <div className="piston-marquee-track">
                 {[...Array(20)].map((_, i) => (
                   <div key={`p-r${rowIndex}-${i}`} className="piston-item">
-                    <PistonSvg size={28} />
+                    <PistonSvg size={56} />
                   </div>
                 ))}
               </div>
               <div className="piston-marquee-track" aria-hidden="true">
                 {[...Array(20)].map((_, i) => (
                   <div key={`p-r${rowIndex}-dup-${i}`} className="piston-item">
-                    <PistonSvg size={28} />
+                    <PistonSvg size={56} />
                   </div>
                 ))}
               </div>

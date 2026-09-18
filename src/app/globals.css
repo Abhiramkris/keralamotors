@@ -1092,45 +1092,45 @@ span.highlight {
 }
 
 .piston-marquee-row.row-0, .piston-marquee-row.row-4 {
-  opacity: 0.10;
+  opacity: 0.05;
 }
 
 .piston-marquee-row.row-1, .piston-marquee-row.row-3 {
-  opacity: 0.06;
+  opacity: 0.03;
 }
 
 .piston-marquee-row.row-2 {
-  opacity: 0.12;
+  opacity: 0.07;
 }
 
 .piston-marquee-track {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
+  gap: 4.5rem;
   flex-shrink: 0;
-  padding-right: 3.5rem;
+  padding-right: 4.5rem;
   will-change: transform;
 }
 
 /* Left to Right continuous marquee */
 .row-0 .piston-marquee-track {
-  animation: pistonMarqueeLTR 26s linear infinite;
+  animation: pistonMarqueeLTR 45s linear infinite;
 }
 
 .row-1 .piston-marquee-track {
-  animation: pistonMarqueeLTR 38s linear infinite;
+  animation: pistonMarqueeLTR 65s linear infinite;
 }
 
 .row-2 .piston-marquee-track {
-  animation: pistonMarqueeLTR 22s linear infinite;
+  animation: pistonMarqueeLTR 50s linear infinite;
 }
 
 .row-3 .piston-marquee-track {
-  animation: pistonMarqueeLTR 32s linear infinite;
+  animation: pistonMarqueeLTR 75s linear infinite;
 }
 
 .row-4 .piston-marquee-track {
-  animation: pistonMarqueeLTR 28s linear infinite;
+  animation: pistonMarqueeLTR 60s linear infinite;
 }
 
 @keyframes pistonMarqueeLTR {
@@ -1149,15 +1149,15 @@ span.highlight {
   justify-content: center;
   flex-shrink: 0;
   will-change: transform;
-  animation: pistonSlantMotion 3s ease-in-out infinite alternate;
+  animation: pistonSlantMotion 12s ease-in-out infinite alternate;
 }
 
 @keyframes pistonSlantMotion {
   0% {
-    transform: rotate(-15deg);
+    transform: rotate(-6deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(6deg);
   }
 }
 
