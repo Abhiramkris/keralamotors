@@ -374,31 +374,31 @@ export default function LocalizedHomePage({ params }) {
           pointerEvents: "none"
         }}>
           <Image 
-            src="/workshop_facade.jpg" 
+            src="/workshop_facade_new.png" 
             alt="Kerala Auto Motors Workshop Facade" 
             fill 
             priority 
             style={{
               objectFit: "cover",
               objectPosition: "center 30%",
-              filter: "brightness(0.38) contrast(1.15) saturate(1.05)",
+              filter: "brightness(0.65) contrast(1.1) saturate(1.1)",
               transform: "scale(1.02)"
             }}
           />
           {/* Multi-layer luxury dark gradients for professional seamless blend */}
-          {/* Directional vignette to keep text 100% legible while revealing workshop facade & cars */}
+          {/* Directional vignette to keep text legible while revealing much more of the workshop facade */}
           <div style={{
             position: "absolute",
             inset: 0,
             background: isArabic
-              ? "linear-gradient(270deg, rgba(9,9,11,0.95) 0%, rgba(9,9,11,0.88) 40%, rgba(9,9,11,0.55) 75%, rgba(9,9,11,0.7) 100%)"
-              : "linear-gradient(90deg, rgba(9,9,11,0.95) 0%, rgba(9,9,11,0.88) 40%, rgba(9,9,11,0.55) 75%, rgba(9,9,11,0.7) 100%)"
+              ? "linear-gradient(270deg, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.75) 45%, rgba(9,9,11,0.2) 75%, rgba(9,9,11,0.3) 100%)"
+              : "linear-gradient(90deg, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.75) 45%, rgba(9,9,11,0.2) 75%, rgba(9,9,11,0.3) 100%)"
           }} />
           {/* Top & bottom edge fading smoothly into navigation and adjacent section */}
           <div style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(9,9,11,0.85) 0%, rgba(9,9,11,0.15) 30%, rgba(9,9,11,0.3) 70%, #09090b 100%)"
+            background: "linear-gradient(180deg, rgba(9,9,11,0.6) 0%, rgba(9,9,11,0.05) 30%, rgba(9,9,11,0.1) 70%, #09090b 100%)"
           }} />
           {/* Subtle brand accent red glow */}
           <div style={{
