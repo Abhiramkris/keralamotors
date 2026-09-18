@@ -1062,6 +1062,9 @@ span.highlight {
   padding: 5.5rem 2rem;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.flat-red-gradient {
   background: #991b1b;
   background-image: 
     radial-gradient(ellipse at 85% 15%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
