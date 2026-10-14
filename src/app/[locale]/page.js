@@ -9,6 +9,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
 import BlogEmbed from "@/components/BlogEmbed";
+import VideoShortsSection from "@/components/VideoShortsSection";
 import TireWheelSvg from "@/components/TireWheelSvg";
 import PistonSvg from "@/components/PistonSvg";
 
@@ -1429,6 +1430,9 @@ export default function LocalizedHomePage({ params }) {
           redirectUrl={`/${locale}/blog`} 
         />
       </section>
+
+      {/* 8.5 HORIZONTAL SCROLLABLE SHORTS / VIDEOS */}
+      <VideoShortsSection locale={locale} isArabic={isArabic} />
 
       {/* 9. CALL TO ACTION */}
       <section style={{

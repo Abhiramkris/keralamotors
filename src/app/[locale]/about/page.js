@@ -14,7 +14,7 @@ export default function LocalizedAboutPage({ params }) {
 
   const team = [
     {
-      name: isArabic ? "جون دو" : "John Doe",
+      name: isArabic ? "في جي موهانان" : "VG Mohanan",
       role: isArabic ? "مستشار الصيانة" : "Service Advisor",
       image: "/team-service-advisor.jpg",
       bio: isArabic 
@@ -22,7 +22,15 @@ export default function LocalizedAboutPage({ params }) {
         : "Experienced service advisor ensuring transparent communication and expert technical guidance for your luxury vehicle."
     },
     {
-      name: isArabic ? "أليكس سميث" : "Alex Smith",
+      name: isArabic ? "سيباستيان ماثيو" : "Sebastian Mathew",
+      role: isArabic ? "مستشار الصيانة" : "Service Advisor",
+      image: "/team-sebastian-mathew.jpg",
+      bio: isArabic 
+        ? "مستشار صيانة متخصص يحرص على تقديم استشارات تشخيصية دقيقة وعناية مخصصة لكل عميل."
+        : "Dedicated service advisor delivering accurate diagnostic consulting and personalized care for every customer."
+    },
+    {
+      name: isArabic ? "أجيش توماس" : "Ajesh Thomas",
       role: isArabic ? "المدير العام" : "General Manager",
       image: "/team-gm-1.jpg",
       bio: isArabic 
@@ -30,7 +38,7 @@ export default function LocalizedAboutPage({ params }) {
         : "Oversees daily operations to ensure the highest standards of quality and customer satisfaction."
     },
     {
-      name: isArabic ? "ديفيد جونسون" : "David Johnson",
+      name: isArabic ? "شينسون أنتوني" : "Shinson Antony",
       role: isArabic ? "المدير العام" : "General Manager",
       image: "/team-gm-2.jpg",
       bio: isArabic 

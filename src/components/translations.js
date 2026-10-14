@@ -154,6 +154,11 @@ export const translations = {
       backToBlogs: "← Back to Articles",
       readMore: "Read More"
     },
+    shorts: {
+      tag: "Shorts & Reels",
+      title: "Workshop In Action",
+      subtitle: "Watch our certified technicians at work with high-precision repairs, diagnostics, and vehicle restoration."
+    },
     footer: {
       desc: "Premium care for European and American luxury vehicles. Dealership-level service, diagnostics, and paint restoration with certified expertise in Oman.",
       contact: "CONTACT US",
@@ -322,6 +327,11 @@ export const translations = {
       subtitle: "أحدث المقالات والإرشادات الهندسية لصيانة السيارات الفاخرة من كيرلا أوتو موتورز في مسقط.",
       backToBlogs: "← العودة إلى كافة المقالات",
       readMore: "اقرأ المزيد"
+    },
+    shorts: {
+      tag: "فيديوهات قصيرة",
+      title: "شاهد أعمالنا الميدانية",
+      subtitle: "فيديوهات حصرية توثق الدقة الهندسية والتقنيات الحديثة في فحص وصيانة السيارات الفاخرة."
     },
     footer: {
       desc: "رعاية فائقة للمركبات الأوروبية والأمريكية الفاخرة. خدمة بمستوى الوكلاء، تشخيص الأعطال، وإعادة طلاء السيارات بخبرة معتمدة في سلطنة عمان.",
