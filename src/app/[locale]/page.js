@@ -392,7 +392,7 @@ export default function LocalizedHomePage({ params }) {
               style={{
                 objectFit: "cover",
                 objectPosition: "center 30%",
-                filter: "brightness(0.65) contrast(1.1) saturate(1.1)",
+                filter: "brightness(0.82) contrast(1.05) saturate(1.05)",
                 transform: "scale(1.02)"
               }}
             />
@@ -407,7 +407,7 @@ export default function LocalizedHomePage({ params }) {
               style={{
                 objectFit: "cover",
                 objectPosition: "center 40%",
-                filter: "brightness(0.6) contrast(1.1) saturate(1.1)",
+                filter: "brightness(0.78) contrast(1.05) saturate(1.05)",
                 transform: "scale(1.02)"
               }}
             />
@@ -418,15 +418,17 @@ export default function LocalizedHomePage({ params }) {
           <div style={{
             position: "absolute",
             inset: 0,
+            opacity: 0.55,
             background: isArabic
-              ? "linear-gradient(270deg, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.75) 45%, rgba(9,9,11,0.2) 75%, rgba(9,9,11,0.3) 100%)"
-              : "linear-gradient(90deg, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.75) 45%, rgba(9,9,11,0.2) 75%, rgba(9,9,11,0.3) 100%)"
+              ? "linear-gradient(270deg, rgba(9,9,11,0.8) 0%, rgba(9,9,11,0.5) 45%, rgba(9,9,11,0.1) 75%, rgba(9,9,11,0.15) 100%)"
+              : "linear-gradient(90deg, rgba(9,9,11,0.8) 0%, rgba(9,9,11,0.5) 45%, rgba(9,9,11,0.1) 75%, rgba(9,9,11,0.15) 100%)"
           }} />
           {/* Top & bottom edge fading smoothly into navigation and adjacent section */}
           <div style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(9,9,11,0.6) 0%, rgba(9,9,11,0.05) 30%, rgba(9,9,11,0.1) 70%, #09090b 100%)"
+            opacity: 0.55,
+            background: "linear-gradient(180deg, rgba(9,9,11,0.45) 0%, rgba(9,9,11,0.02) 30%, rgba(9,9,11,0.05) 70%, #09090b 100%)"
           }} />
           {/* Subtle brand accent red glow */}
           <div style={{
@@ -466,16 +468,18 @@ export default function LocalizedHomePage({ params }) {
               marginTop: "0.5rem",
               marginBottom: "1.5rem",
               letterSpacing: "-1.5px",
-              color: "#ffffff"
+              color: "#ffffff",
+              textShadow: "0 2px 16px rgba(0,0,0,0.7)"
             }}>
               {slides[currentSlide].title}
             </h1>
             <p style={{
-              color: "#a1a1aa",
+              color: "#e4e4e7",
               fontSize: "1.05rem",
               lineHeight: "1.6",
               marginBottom: "2.5rem",
-              maxWidth: "520px"
+              maxWidth: "520px",
+              textShadow: "0 1px 10px rgba(0,0,0,0.6)"
             }}>
               {slides[currentSlide].desc}
             </p>

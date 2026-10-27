@@ -116,8 +116,8 @@ export default function LocalizedContactPage({ params }) {
                   </svg>
                   <div>
                     <span style={{ display: "block", fontSize: "0.8rem", color: "var(--text-muted)" }}>{t.contact.emailLabel}</span>
-                    <a href="mailto:info@keralamotor.om" style={{ fontSize: "1.1rem", fontWeight: "700", color: "#18181b", transition: "var(--transition)" }} className="contact-link">
-                      info@keralamotor.om
+                    <a href="mailto:info@keralamotor.com" style={{ fontSize: "1.1rem", fontWeight: "700", color: "#18181b", transition: "var(--transition)" }} className="contact-link">
+                      info@keralamotor.com
                     </a>
                   </div>
                 </div>

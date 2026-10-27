@@ -17,7 +17,7 @@ export default function JsonLd({ locale = "en" }) {
       ? "مركز صيانة وتشخيص متكامل للسيارات الأوروبية والأمريكية الفاخرة في الوادي الكبير، مسقط، سلطنة عمان."
       : "Specialized maintenance and diagnostic services for European and American luxury vehicle brands in Al Wadi Al Kabir, Muscat, Oman.",
     telephone: "+96871717259",
-    email: "info@keralamotor.om",
+    email: "info@keralamotor.com",
     priceRange: "$$",
     currenciesAccepted: "OMR",
     paymentAccepted: "Cash, Credit Card, Debit Card",

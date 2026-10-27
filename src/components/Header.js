@@ -156,14 +156,14 @@ export default function Header() {
           }}>
             {/* Email */}
             <a 
-              href="mailto:info@keralamotor.om"
+              href="mailto:info@keralamotor.com"
               className="topbar-link"
-              aria-label="Email: info@keralamotor.om"
+              aria-label="Email: info@keralamotor.com"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#e11d48" style={{ flexShrink: 0 }}>
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
-              <span>info@keralamotor.om</span>
+              <span>info@keralamotor.com</span>
             </a>
 
             {/* Location */}

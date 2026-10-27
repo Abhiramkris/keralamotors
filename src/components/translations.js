@@ -8,7 +8,7 @@ export const translations = {
       blog: "Blog",
       contact: "Contact",
       phone: "+968 71717259",
-      email: "info@keralamotor.om",
+      email: "info@keralamotor.com",
       locations: "Our Locations",
       langToggle: "العربية"
     },
@@ -182,7 +182,7 @@ export const translations = {
       blog: "المدونة",
       contact: "اتصل بنا",
       phone: "+٩٦٨ ٧١٧١٧٢٥٩",
-      email: "info@keralamotor.om",
+      email: "info@keralamotor.com",
       locations: "مواقعنا",
       langToggle: "English"
     },

@@ -100,7 +100,7 @@ export default function Footer() {
               </svg>
               <div>
                 <strong>{isArabic ? "البريد الإلكتروني:" : "Email:"}</strong>
-                <a href="mailto:info@keralamotor.om" style={{ display: "block", color: "var(--foreground)", marginTop: "2px", transition: "var(--transition)" }} className="footer-link">info@keralamotor.om</a>
+                <a href="mailto:info@keralamotor.com" style={{ display: "block", color: "var(--foreground)", marginTop: "2px", transition: "var(--transition)" }} className="footer-link">info@keralamotor.com</a>
               </div>
             </li>
           </ul>
