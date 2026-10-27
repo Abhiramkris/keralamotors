@@ -15,12 +15,12 @@ const serviceDetails = {
       tagline: "Factory-compliant scheduled servicing, synthetic fluid engineering, and bumper-to-bumper multi-point digital diagnostic inspections.",
       desc: "Routine proactive maintenance is vital to the lifespan and mechanical integrity of a luxury vehicle. Our technicians execute comprehensive dealer-level protocols using premium synthetic lubricants and diagnostic telemetry.",
       features: [
-        { name: "Periodic Vehicle Service", desc: "Scheduled intervals aligned with manufacturer requirements to preserve performance and warranties." },
+        { name: "Periodic Vehicle Service", desc: "Scheduled intervals aligned with manufacturer requirements to preserve peak vehicle performance." },
         { name: "Minor Service", desc: "Lube, filter updates, and general performance diagnostics." },
         { name: "Major Service", desc: "In-depth checks including spark plugs, engine components, and comprehensive system tests." },
-        { name: "Oil & Filter Change", desc: "Using high-grade full synthetic lubricants (Castrol/Mobil 1) matched to your engine spec." },
+        { name: "Oil & Filter Change", desc: "Original oil company preferred full synthetic lubricants matched to your engine specifications." },
         { name: "Multi-Point Vehicle Inspection", desc: "A rigorous bumper-to-bumper check covering electronics, structure, braking, and mechanics." },
-        { name: "Fluid Top-Up & Replacement", desc: "Testing and replacing coolant, steering fluid, and washer fluids to safeguard systems." }
+        { name: "Fluid Top-Up & Replacement", desc: "Testing and replacing brake fluid, coolant, steering fluid, and washer fluids to safeguard systems." }
       ]
     },
     "engine-repair": {
@@ -150,14 +150,14 @@ const serviceDetails = {
       ]
     },
     "emergency-services": {
-      title: "24/7 Zero-Angle Hydraulic Flatbed Towing & Roadside Recovery",
+      title: "Rapid Zero-Angle Hydraulic Flatbed Towing & Roadside Recovery",
       tagline: "Rapid emergency roadside dispatch across Muscat with specialized zero-clearance flatbed recovery trucks protecting lowered supercars, exotic splitters, and luxury SUVs.",
       desc: "Vehicle breakdowns happen without warning. Our emergency dispatch team is ready around the clock with zero-angle flatbed towing, surge-protected jump-start packs, and quick roadside problem resolution.",
       features: [
         { name: "Battery Jump Start", desc: "Rapid mobile dispatch with professional surge-protected battery jump-starter packs preventing electronic damage." },
         { name: "Roadside Assistance", desc: "Quick roadside support for flat tires, fuel delivery, electrical lockouts, and emergency safety checks." },
         { name: "Vehicle Recovery & Towing", desc: "Low-clearance flatbed recovery trucks specialized in transporting lowered sports cars and luxury SUVs safely." },
-        { name: "Emergency Breakdown Support", desc: "24/7 priority workshop access, emergency diagnostic triage, and immediate advisor coordination." }
+        { name: "Emergency Breakdown Support", desc: "Priority workshop access, emergency diagnostic triage, and immediate advisor coordination." }
       ]
     },
     "additional-services": {
@@ -166,7 +166,7 @@ const serviceDetails = {
       desc: "Complete personalization and comfort upgrades for your driving experience. From heat-rejecting nano-ceramic window films to custom leather re-trimming and multimedia dash installations.",
       features: [
         { name: "Car Accessories Installation", desc: "Professional fitting of Android/Apple CarPlay screens, dash cams, ambient LED lighting, and body styling kits." },
-        { name: "Window Tinting", desc: "High-grade nano-ceramic thermal window films offering up to 99% UV rejection and maximum heat reduction." },
+        { name: "Window Tinting", desc: "" },
         { name: "Car Upholstery", desc: "Handcrafted genuine Italian leather reupholstery, steering wheel leather restoration, and headliner repair." }
       ]
     }
@@ -177,12 +177,12 @@ const serviceDetails = {
       tagline: "صيانة مجدولة معتمدة وفق معايير المصنع، واستخدام زيوت تخليقية فائقة، وفحص رقمي شامل من المصد إلى المصد.",
       desc: "الصيانة الدورية الاستباقية أمر حيوي لعمر مركبتك الفاخرة وسلامتها الميكانيكية. يقوم فنيونا المعتمدون بإجراء أدق الفحوصات ومطابقة معايير الوكالات الرسمية باستخدام زيوت تخليقية متطورة.",
       features: [
-        { name: "خدمة المركبة الدورية", desc: "فترات مجدولة متوافقة مع متطلبات الشركة المصنعة للحفاظ على الضمان نشطًا." },
+        { name: "خدمة المركبة الدورية", desc: "فترات مجدولة متوافقة مع متطلبات الشركة المصنعة للحفاظ على أعلى مستويات الأداء والاعتمادية." },
         { name: "صيانة صغرى", desc: "تحديثات الفلاتر، وتزييت المحرك، وتشخيصات الأداء العامة." },
         { name: "صيانة كبرى", desc: "فحوصات عميقة تشمل شمعات الاحتراق ومكونات المحرك واختبارات النظام الكاملة." },
-        { name: "تغيير الزيت والفلتر", desc: "باستخدام زيوت محركات تخليقية بالكامل عالية الجودة (كاسترول/موبيل 1) مطابقة لمواصفات محركك." },
+        { name: "تغيير الزيت والفلتر", desc: "باستخدام زيوت محركات تخليقية بالكامل معتمدة من الشركة الأصلية ومطابقة لمواصفات محركك." },
         { name: "فحص متعدد النقاط للمركبة", desc: "فحص دقيق وشامل من المصد إلى المصد يغطي الإلكترونيات والهيكل والميكانيكا." },
-        { name: "تعبئة واستبدال السوائل", desc: "اختبار واستبدال سائل التبريد وسائل التوجيه وسوائل الغسيل لحماية الأنظمة." }
+        { name: "تعبئة واستبدال السوائل", desc: "اختبار واستبدال سائل الفرامل وسائل التبريد وسائل التوجيه وسوائل الغسيل لحماية الأنظمة." }
       ]
     },
     "engine-repair": {
@@ -312,9 +312,9 @@ const serviceDetails = {
       ]
     },
     "emergency-services": {
-      title: "سحب هيدروليكي آمن 24/7 ودعم طارئ على مدار الساعة",
-      tagline: "استجابة طارئة فورية على مدار 24 ساعة بسطحات هيدروليكية منخفضة الزاوية لحماية الصدامات والسيارات الرياضية الفاخرة، مع شحن البطاريات ومساندة الطريق.",
-      desc: "أعطال السيارات قد تحدث في أي وقت. فريق الاستجابة السريعة لدينا جاهز على مدار الساعة لتقديم السحب الآمن بسطحات هيدروليكية منخفضة تماماً والمساعدة الطارئة على الطريق.",
+      title: "سحب هيدروليكي آمن ودعم طارئ سريع على الطريق",
+      tagline: "استجابة طارئة وفورية بسطحات هيدروليكية منخفضة الزاوية لحماية الصدامات والسيارات الرياضية الفاخرة، مع شحن البطاريات ومساندة الطريق.",
+      desc: "أعطال السيارات قد تحدث في أي وقت. فريق الاستجابة السريعة لدينا جاهز لتقديم السحب الآمن بسطحات هيدروليكية منخفضة تماماً والمساعدة الطارئة على الطريق.",
       features: [
         { name: "اشتراك وشحن البطارية فوراً", desc: "وصول فوري بأجهزة اشتراك ذكية ومحمية ضد التيارات المرتفعة لحماية عقول السيارة." },
         { name: "المساعدة الطارئة على الطريق", desc: "خدمة المساندة على الطريق لتبديل الإطارات وتوصيل الوقود وفحص الأعطال المفاجئة." },
@@ -328,7 +328,7 @@ const serviceDetails = {
       desc: "ارتقِ بمستوى الراحة والفخامة داخل مركبتك. نوفر أفلام العزل الحراري النانو سيراميك وتجديد وتنجيد المقاعد بالجلد الفاخر بتطريزات ماسية مخصصة وتركيب أحدث الإكسسوارات.",
       features: [
         { name: "تركيب إكسسوارات وشاشات السيارات", desc: "تركيب شاشات أبل كاربلاي وأندرويد، وكاميرات المراقبة (داش كام)، وإضاءات الليد المحيطية." },
-        { name: "تظليل النوافذ العازل للحرارة", desc: "تركيب عازل حراري نانو سيراميك أصلي يعزل حتى 99% من الأشعة فوق البنفسجية ويقلل حرارة المقصورة." },
+        { name: "تظليل النوافذ العازل للحرارة", desc: "" },
         { name: "تنجيد وتجديد المقاعد والفرش الداخلي", desc: "تنجيد المقاعد بأفخم الجلود الطبيعية، وتجديد كسوة المقود وسقف السيارة بحرفية يدوية متقنة." }
       ]
     }
@@ -341,7 +341,7 @@ const categoryMedia = {
     leftBadge: { en: "TECHNICAL INSPECTION", ar: "فحص تقني معتمد" },
     leftImg: "/services/general-maintenance.jpg",
     leftTitle: { en: "SYNTHETIC FLUIDS & MULTI-POINT CHECK", ar: "زيوت تخليقية وفحص متعدد النقاط" },
-    leftDesc: { en: "Mobil 1 & Castrol Edge synthetic lubricants paired with OEM multi-point digital diagnostic checks.", ar: "زيوت تخليقية بالكامل من كاسترول وموبيل 1 مع فحص شامل لأدق أجزاء المحرك." },
+    leftDesc: { en: "Original manufacturer-preferred synthetic lubricants paired with OEM multi-point digital diagnostic checks.", ar: "زيوت تخليقية بالكامل معتمدة من الشركة الأصلية مع فحص شامل لأدق أجزاء المحرك." },
     rightBadge: { en: "BMW SERVICE PROTOCOLS", ar: "معايير بي إم دبليو" },
     rightImg: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
     rightTitle: { en: "BMW FACTORY SPECIFICATIONS", ar: "معايير بي إم دبليو الرسمية" },
@@ -466,7 +466,7 @@ const categoryMedia = {
     rightBadge: { en: "CADILLAC & AMERICAN FLEET", ar: "إنقاذ كاديلاك والسيارات الأمريكية" },
     rightImg: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
     rightTitle: { en: "CADILLAC & PREMIUM FLEET ROADSIDE", ar: "إنقاذ فوري لكاديلاك والسيارات الأمريكية" },
-    rightDesc: { en: "24/7 rapid dispatch across Muscat equipped for heavy luxury SUVs and battery triage.", ar: "استجابة فورية 24/7 في كافة أنحاء مسقط بمعدات متقدمة للسيارات الفارهة." }
+    rightDesc: { en: "Rapid priority dispatch across Muscat equipped for heavy luxury SUVs and battery triage.", ar: "استجابة فورية وسريعة في كافة أنحاء مسقط بمعدات متقدمة للسيارات الفارهة." }
   },
   "additional-services": {
     index: "13",
@@ -647,13 +647,13 @@ export default function LocalizedServiceCategoryPage({ params }) {
             }} className={`accordion-card ${expandedFeature === idx ? "active" : ""}`}>
               {/* Header */}
               <div 
-                onClick={() => toggleFeature(idx)}
+                onClick={() => item.desc ? toggleFeature(idx) : null}
                 style={{
                   padding: "1.25rem 1.5rem",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  cursor: "pointer",
+                  cursor: item.desc ? "pointer" : "default",
                   userSelect: "none",
                   flexDirection: isArabic ? "row-reverse" : "row"
                 }}
@@ -676,38 +676,42 @@ export default function LocalizedServiceCategoryPage({ params }) {
                   </span>
                 </div>
                 
-                <div style={{
-                  transform: expandedFeature === idx ? "rotate(180deg)" : "rotate(0deg)",
-                  transition: "transform 0.2s ease",
-                  color: "#a1a1aa",
-                  display: "flex",
-                  alignItems: "center"
-                }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </div>
+                {item.desc && (
+                  <div style={{
+                    transform: expandedFeature === idx ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform 0.2s ease",
+                    color: "#a1a1aa",
+                    display: "flex",
+                    alignItems: "center"
+                  }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
-              <div style={{
-                maxHeight: expandedFeature === idx ? "300px" : "0px",
-                opacity: expandedFeature === idx ? 1 : 0,
-                overflow: "hidden",
-                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-              }}>
+              {item.desc && (
                 <div style={{
-                  padding: "0 1.5rem 1.5rem 1.5rem",
-                  borderTop: "1px solid #f4f4f5",
-                  paddingTop: "1rem",
-                  fontSize: "0.9rem",
-                  lineHeight: "1.6",
-                  color: "#71717a",
-                  textAlign: isArabic ? "right" : "left"
+                  maxHeight: expandedFeature === idx ? "300px" : "0px",
+                  opacity: expandedFeature === idx ? 1 : 0,
+                  overflow: "hidden",
+                  transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
                 }}>
-                  {item.desc}
+                  <div style={{
+                    padding: "0 1.5rem 1.5rem 1.5rem",
+                    borderTop: "1px solid #f4f4f5",
+                    paddingTop: "1rem",
+                    fontSize: "0.9rem",
+                    lineHeight: "1.6",
+                    color: "#71717a",
+                    textAlign: isArabic ? "right" : "left"
+                  }}>
+                    {item.desc}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>

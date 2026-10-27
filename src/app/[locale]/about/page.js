@@ -68,29 +68,30 @@ export default function LocalizedAboutPage({ params }) {
           </div>
           <div style={{
             position: "relative",
-            borderRadius: "8px",
+            borderRadius: "12px",
             overflow: "hidden",
-            border: "1px solid var(--card-border)",
-            height: "400px"
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+            height: "400px",
+            background: "radial-gradient(circle at center, #18181b 0%, #09090b 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "3rem 2rem",
+            boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.35)"
           }}>
-            <Image 
-              src="/pierre.jpg" 
-              alt="Workshop Facility" 
-              fill
-              style={{ objectFit: "cover" }}
-            />
             <div style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
+              position: "relative",
               width: "100%",
-              background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)",
-              padding: "2rem",
-              color: "white",
-              textAlign: isArabic ? "right" : "left"
+              maxWidth: "340px",
+              height: "150px"
             }}>
-              <h3 style={{ fontSize: "1.2rem", fontWeight: "700", marginBottom: "0.25rem" }}>{t.about.facilityTitle}</h3>
-              <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.85rem" }}>{t.about.facilityDesc}</p>
+              <Image 
+                src="/kerala_motors_logo_transparent.png" 
+                alt="Kerala Auto Motors Logo" 
+                fill
+                style={{ objectFit: "contain" }}
+                priority
+              />
             </div>
           </div>
         </div>

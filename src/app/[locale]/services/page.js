@@ -127,7 +127,7 @@ export default function LocalizedServicesPage({ params }) {
     {
       title: isArabic ? "خدمات الطوارئ والمساعدة" : "Emergency Services",
       slug: "emergency-services",
-      desc: isArabic ? "اشتراك وشحن البطارية، المساعدة على الطريق، وسحب المركبات 24/7" : "Battery jump start, roadside assistance & flatbed recovery 24/7",
+      desc: isArabic ? "اشتراك وشحن البطارية، المساعدة على الطريق، وسحب المركبات السريع" : "Battery jump start, roadside assistance & rapid flatbed recovery",
       price: isArabic ? "تبدأ من ١٥ ر.ع." : "From 15 OMR",
       image: "/process_step1.jpg",
       highlights: isArabic

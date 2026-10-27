@@ -125,9 +125,9 @@ export default function Footer() {
             )}
           </p>
           <div style={{ fontSize: "0.95rem", color: "var(--text-muted)" }}>
-            <strong style={{ color: "var(--foreground)" }}>{isArabic ? "ساعات العمل:" : "Business Hours:"}</strong>
-            <p style={{ marginTop: "2px" }}>{isArabic ? "السبت - الخميس: ٨:٠٠ صباحًا - ٨:٠٠ مساءً" : "Saturday - Thursday: 8:00 AM - 8:00 PM"}</p>
-            <p style={{ color: "var(--accent)", marginTop: "4px" }}>{isArabic ? "الجمعة: مغلق" : "Friday: Closed"}</p>
+            <strong style={{ color: "var(--foreground)" }}>{isArabic ? "ساعات العمل (يوميًا):" : "Business Hours (Everyday):"}</strong>
+            <p style={{ marginTop: "4px" }}>{isArabic ? "٨:٠٠ صباحًا – ١:٠٠ ظهرًا" : "8:00 AM – 1:00 PM"}</p>
+            <p style={{ marginTop: "2px" }}>{isArabic ? "٣:٣٠ مساءً – ٧:٣٠ مساءً" : "3:30 PM – 7:30 PM"}</p>
           </div>
         </div>
 

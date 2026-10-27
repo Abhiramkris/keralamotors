@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { translations } from "@/components/translations";
+import JsonLd from "@/components/JsonLd";
 
 export default async function LocalizedLayout({ children, params }) {
   const { locale } = await params;
@@ -18,6 +19,7 @@ export default async function LocalizedLayout({ children, params }) {
       width: "100%",
       direction: dir
     }}>
+      <JsonLd locale={locale} />
       {children}
       <FloatingWhatsApp locale={locale} />
     </div>

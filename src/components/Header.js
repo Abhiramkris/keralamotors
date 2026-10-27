@@ -78,7 +78,7 @@ export default function Header() {
     {
       title: isArabic ? "خدمات الطوارئ والمساعدة" : "Emergency Services",
       slug: "emergency-services",
-      desc: isArabic ? "اشتراك البطارية، المساعدة على الطريق، والسطحات 24/7" : "Battery jump start, roadside assistance & flatbed towing"
+      desc: isArabic ? "اشتراك البطارية، المساعدة على الطريق، وسحب المركبات السريع" : "Battery jump start, roadside assistance & flatbed towing"
     },
     {
       title: isArabic ? "خدمات إضافية وتجهيزات" : "Additional Services",

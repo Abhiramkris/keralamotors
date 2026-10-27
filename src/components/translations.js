@@ -48,7 +48,7 @@ export const translations = {
       techTitle: "Licensed Technology",
       techDesc: "Utilizing dealer-certified systems: BMW ISTA, Mercedes Xentry diagnostics.",
       partsTitle: "OEM Parts & Care",
-      partsDesc: "Only original OEM or certified OE-quality parts, paired with premium lubricants like Castrol & Mobil 1.",
+      partsDesc: "Only original OEM or certified OE-quality parts, paired with original company-preferred premium lubricants.",
       reportsTitle: "Clear Customer Reports",
       reportsDesc: "Digital health diagnostic reports and personalized maintenance plans."
     },
@@ -111,7 +111,7 @@ export const translations = {
       info4: "Vehicle recovery/towing service can be arranged upon request."
     },
     emergency: {
-      tag: "24/7 Roadside Help",
+      tag: "Rapid Roadside Help",
       title: "Emergency Breakdown Support",
       desc: "Stuck on the road? Experienced electrical/suspension failures? Contact our recovery fleet immediately for towing and roadside assistance.",
       fastest: "Fastest Response",
@@ -136,7 +136,7 @@ export const translations = {
       waLabel: "WhatsApp Support",
       emailLabel: "Official Email",
       hoursTitle: "Opening Hours",
-      hoursDesc: "Saturday - Thursday: 8:00 AM - 8:00 PM\nFriday: Closed",
+      hoursDesc: "Everyday:\n8:00 AM – 1:00 PM\n3:30 PM – 7:30 PM",
       sendMsg: "SEND A MESSAGE",
       successTitle: "Message Sent!",
       successDesc: "We have received your message and will reply via email within 24 hours.",
@@ -222,7 +222,7 @@ export const translations = {
       techTitle: "تكنولوجيا مرخصة",
       techDesc: "نستخدم أنظمة معتمدة من الوكلاء: فحص بي إم دبليو (ISTA) ومرسيدس (Xentry).",
       partsTitle: "قطع غيار أصلية ورعاية فائقة",
-      partsDesc: "فقط قطع الغيار الأصلية OEM أو ذات الجودة المعتمدة، مع زيوت ممتازة مثل كاسترول وموبيل 1.",
+      partsDesc: "فقط قطع الغيار الأصلية OEM أو ذات الجودة المعتمدة، مع زيوت ممتازة معتمدة من الشركة المصنعة الأصلية.",
       reportsTitle: "تقارير واضحة للعملاء",
       reportsDesc: "تقارير تشخيصية رقمية لحالة السيارة وخطط صيانة مخصصة."
     },
@@ -285,7 +285,7 @@ export const translations = {
       info4: "يمكن ترتيب خدمة نقل/قطر المركبة عند الطلب."
     },
     emergency: {
-      tag: "مساعدة على الطريق ٢٤/٧",
+      tag: "مساعدة طارئة وسريعة على الطريق",
       title: "دعم الأعطال الطارئة",
       desc: "عالق في الطريق؟ هل تعاني من أعطال كهربائية أو في نظام التعليق؟ اتصل بأسطول الإنقاذ لدينا فورًا للحصول على خدمات القطر والمساعدة على الطريق.",
       fastest: "الاستجابة الأسرع",
@@ -310,7 +310,7 @@ export const translations = {
       waLabel: "دعم الواتساب",
       emailLabel: "البريد الإلكتروني الرسمي",
       hoursTitle: "ساعات العمل",
-      hoursDesc: "السبت - الخميس: ٨:٠٠ صباحًا - ٨:٠٠ مساءً\nالجمعة: مغلق",
+      hoursDesc: "يوميًا:\n٨:٠٠ صباحًا – ١:٠٠ ظهرًا\n٣:٣٠ مساءً – ٧:٣٠ مساءً",
       sendMsg: "أرسل رسالة",
       successTitle: "تم إرسال الرسالة!",
       successDesc: "لقد تلقينا رسالتك وسنقوم بالرد عبر البريد الإلكتروني في غضون ٢٤ ساعة.",

@@ -385,7 +385,7 @@ export default function LocalizedHomePage({ params }) {
           
           <div className="hero-bg-desktop">
             <Image 
-              src="/workshop_facade_new.png" 
+              src="/workshop_facade_hero.webp" 
               alt="Kerala Auto Motors Workshop Facade" 
               fill 
               priority 
@@ -393,14 +393,14 @@ export default function LocalizedHomePage({ params }) {
                 objectFit: "cover",
                 objectPosition: "center 30%",
                 filter: "brightness(0.65) contrast(1.1) saturate(1.1)",
-                transform: "scale(-1.02, 1.02)"
+                transform: "scale(1.02)"
               }}
             />
           </div>
 
           <div className="hero-bg-mobile">
             <Image 
-              src="/workshop_facade_mobile.jpg" 
+              src="/workshop_facade_hero.webp" 
               alt="Kerala Auto Motors Workshop Facade Mobile" 
               fill 
               priority 
