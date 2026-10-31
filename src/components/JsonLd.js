@@ -46,7 +46,6 @@ export default function JsonLd({ locale = "en" }) {
           "Tuesday",
           "Wednesday",
           "Thursday",
-          "Friday",
           "Saturday",
           "Sunday"
         ],
@@ -60,7 +59,6 @@ export default function JsonLd({ locale = "en" }) {
           "Tuesday",
           "Wednesday",
           "Thursday",
-          "Friday",
           "Saturday",
           "Sunday"
         ],
@@ -69,8 +67,10 @@ export default function JsonLd({ locale = "en" }) {
       }
     ],
     openingHours: [
-      "Mo-Su 08:00-13:00",
-      "Mo-Su 15:30-19:30"
+      "Mo-Th 08:00-13:00",
+      "Sa-Su 08:00-13:00",
+      "Mo-Th 15:30-19:30",
+      "Sa-Su 15:30-19:30"
     ]
   };
 

@@ -32,7 +32,7 @@ export default function LocalizedAboutPage({ params }) {
     {
       name: isArabic ? "أجيش توماس" : "Ajesh Thomas",
       role: isArabic ? "المدير العام" : "General Manager",
-      image: "/team-gm-1.jpg",
+      image: "/team-gm-2.jpg",
       bio: isArabic 
         ? "يشرف على العمليات اليومية لضمان تقديم أعلى معايير الجودة ورضا العملاء في المركز."
         : "Oversees daily operations to ensure the highest standards of quality and customer satisfaction."
@@ -40,7 +40,7 @@ export default function LocalizedAboutPage({ params }) {
     {
       name: isArabic ? "شينسون أنتوني" : "Shinson Antony",
       role: isArabic ? "المدير العام" : "General Manager",
-      image: "/team-gm-2.jpg",
+      image: "/team-gm-1.jpg",
       bio: isArabic 
         ? "يركز على التخطيط الاستراتيجي وتطوير الخدمات للحفاظ على ريادتنا في صيانة السيارات الفاخرة."
         : "Focuses on strategic planning and service development to maintain our leadership in luxury auto repair."

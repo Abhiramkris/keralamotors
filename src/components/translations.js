@@ -111,9 +111,9 @@ export const translations = {
       info4: "Vehicle recovery/towing service can be arranged upon request."
     },
     emergency: {
-      tag: "Rapid Roadside Help",
-      title: "Emergency Breakdown Support",
-      desc: "Stuck on the road? Experienced electrical/suspension failures? Contact our recovery fleet immediately for towing and roadside assistance.",
+      tag: "24/7 Rapid Roadside Help",
+      title: "24/7 Emergency Breakdown Support",
+      desc: "Stuck on the road? Experienced electrical/suspension failures? Our emergency recovery fleet operates 24/7 across Muscat for immediate towing and roadside assistance.",
       fastest: "Fastest Response",
       callNow: "Call Dispatch Now",
       waBtn: "Share GPS via WhatsApp",
@@ -136,7 +136,7 @@ export const translations = {
       waLabel: "WhatsApp Support",
       emailLabel: "Official Email",
       hoursTitle: "Opening Hours",
-      hoursDesc: "Everyday:\n8:00 AM – 1:00 PM\n3:30 PM – 7:30 PM",
+      hoursDesc: "Saturday – Thursday:\n8:00 AM – 1:00 PM\n3:30 PM – 7:30 PM\n\nFriday: Closed",
       sendMsg: "SEND A MESSAGE",
       successTitle: "Message Sent!",
       successDesc: "We have received your message and will reply via email within 24 hours.",
@@ -285,9 +285,9 @@ export const translations = {
       info4: "يمكن ترتيب خدمة نقل/قطر المركبة عند الطلب."
     },
     emergency: {
-      tag: "مساعدة طارئة وسريعة على الطريق",
-      title: "دعم الأعطال الطارئة",
-      desc: "عالق في الطريق؟ هل تعاني من أعطال كهربائية أو في نظام التعليق؟ اتصل بأسطول الإنقاذ لدينا فورًا للحصول على خدمات القطر والمساعدة على الطريق.",
+      tag: "خدمة طوارئ ٢٤/٧ على الطريق",
+      title: "دعم الأعطال الطارئة على مدار الساعة (24/7)",
+      desc: "عالق في الطريق؟ هل تعاني من أعطال كهربائية أو في نظام التعليق؟ أسطول الإنقاذ والطوارئ لدينا متاح على مدار الساعة ٢٤/٧ في مسقط لتقديم خدمات القطر والمساعدة الفورية.",
       fastest: "الاستجابة الأسرع",
       callNow: "اتصل بغرفة الطوارئ الآن",
       waBtn: "مشاركة موقع GPS عبر الواتساب",
@@ -310,7 +310,7 @@ export const translations = {
       waLabel: "دعم الواتساب",
       emailLabel: "البريد الإلكتروني الرسمي",
       hoursTitle: "ساعات العمل",
-      hoursDesc: "يوميًا:\n٨:٠٠ صباحًا – ١:٠٠ ظهرًا\n٣:٣٠ مساءً – ٧:٣٠ مساءً",
+      hoursDesc: "السبت – الخميس:\n٨:٠٠ صباحًا – ١:٠٠ ظهرًا\n٣:٣٠ مساءً – ٧:٣٠ مساءً\n\nالجمعة: مغلق",
       sendMsg: "أرسل رسالة",
       successTitle: "تم إرسال الرسالة!",
       successDesc: "لقد تلقينا رسالتك وسنقوم بالرد عبر البريد الإلكتروني في غضون ٢٤ ساعة.",
